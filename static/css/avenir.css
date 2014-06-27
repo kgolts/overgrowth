@@ -1,0 +1,79 @@
+@charset "UTF-8";
+
+@font-face{
+  font-family: "Avenir-Next";
+  src:url("../fonts/avenir-next/AvenirNextLTPro-UltLt.otf");
+  font-weight: 200;
+}
+
+@font-face{
+  font-family: "Avenir-Next";
+  src:url("../fonts/avenir-next/AvenirNextLTPro-UltLtIt.otf");
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face{
+  font-family: "Avenir-Next";
+  src:url("../fonts/avenir-next/AvenirNextLTPro-Regular.otf");
+  font-weight: 300;
+}
+
+@font-face{
+  font-family: "Avenir-Next";
+  src:url("../fonts/avenir-next//AvenirNextLTPro-It.otf");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face{
+  font-family: "Avenir-Next";
+  src:url("../fonts/avenir-next//AvenirNextLTPro-Medium.otf");
+  font-weight: 400;
+}
+
+@font-face{
+  font-family: "Avenir-Next";
+  src:url("../fonts/avenir-next//AvenirNextLTPro-MediumIt.otf");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face{
+  font-family: "Avenir-Next";
+  src:url("../fonts/avenir-next//AvenirNextLTPro-Demi.otf");
+  font-weight: 500;
+}
+
+@font-face{
+  font-family: "Avenir-Next";
+  src:url("../fonts/avenir-next//AvenirNextLTPro-DemiIt.otf");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face{
+  font-family: "Avenir-Next";
+  src:url("../fonts/avenir-next//AvenirNextLTPro-Bold.otf");
+  font-weight: 600;
+}
+
+@font-face{
+  font-family: "Avenir-Next";
+  src:url("../fonts/avenir-next//AvenirNextLTPro-BoldIt.otf");
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face{
+  font-family: "Avenir-Next";
+  src:url("../fonts/avenir-next//AvenirNextLTPro-Heavy.otf");
+  font-weight: 700;
+}
+
+@font-face{
+  font-family: "Avenir-Next";
+  src:url("../fonts/avenir-next//AvenirNextLTPro-HeavyIt.otf");
+  font-weight: 700;
+  font-style: italic;
+}

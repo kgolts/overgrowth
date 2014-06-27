@@ -5,9 +5,11 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-    <title>Classic parallax page</title>
+    <title>Overgrowth</title>
 
+    <link rel="stylesheet" href="static/css/avenir.css">
     <link rel="stylesheet" href="static/css/styles.css">
+    <link rel="stylesheet" href="static/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -19,14 +21,14 @@
 
     <div
         class="parallax-image-wrapper parallax-image-wrapper-100"
-        data-anchor-target="#dragons + .gap"
+        data-anchor-target="#header + .gap"
         data-bottom-top="transform:translate3d(0px, 200%, 0px)"
         data-top-bottom="transform:translate3d(0px, 0%, 0px)">
 
         <div
             class="parallax-image parallax-image-100"
-            style="background-image:url(http://lorempixel.com/700/500/people/1)"
-            data-anchor-target="#dragons + .gap"
+            style="background-image:url(static/img/large/10940016_v1_web.jpg)"
+            data-anchor-target="#header + .gap"
             data-bottom-top="transform: translate3d(0px, -80%, 0px);"
             data-top-bottom="transform: translate3d(0px, 80%, 0px);"
         ></div>
@@ -35,54 +37,114 @@
 
     <div
         class="parallax-image-wrapper parallax-image-wrapper-100"
-        data-anchor-target="#bacons + .gap"
+        data-anchor-target="#artist-statement + .gap"
         data-bottom-top="transform:translate3d(0px, 200%, 0px)"
         data-top-bottom="transform:translate3d(0px, 0%, 0px)">
 
         <div
             class="parallax-image parallax-image-100"
-            style="background-image:url(http://lorempixel.com/700/500/people/2)"
-            data-anchor-target="#bacons + .gap"
+            style="background-image:url(static/img/flower-drum.jpg)"
+            data-anchor-target="#artist-statement + .gap"
             data-bottom-top="transform: translate3d(0px, -80%, 0px);"
             data-top-bottom="transform: translate3d(0px, 80%, 0px);"
         ></div>
-    </div>
-
-    <div
-        class="parallax-image-wrapper parallax-image-wrapper-50"
-        data-anchor-target="#kittens + .gap"
-        data-bottom-top="transform:translate3d(0px, 300%, 0px)"
-        data-top-bottom="transform:translate3d(0px, 0%, 0px)">
-
-        <div
-            class="parallax-image parallax-image-50"
-            style="background-image:url(http://lorempixel.com/700/500/people/3)"
-            data-anchor-target="#kittens + .gap"
-            data-bottom-top="transform: translate3d(0px, -60%, 0px);"
-            data-top-bottom="transform: translate3d(0px, 60%, 0px);"
-        ></div>
+        <!--the +/-80% translation can be adjusted to control the speed difference of the image-->
     </div>
 
     <div id="skrollr-body">
-        <div class="header" id="dragons">
-            Skrollr demo of classic parallax sections. Degrades without JavaScript (could be disabled on mobile without breaking everything).
+        <div id="dotted-nav" class="white dark-grey">
+            <i class="fa fa-circle-o fa-circle"></i>
+            <i class="fa fa-circle-o"></i>
+            <i class="fa fa-circle-o"></i>
+            <i class="fa fa-circle-o"></i>
+            <i class="fa fa-circle-o"></i>
+            <i class="fa fa-circle-o"></i>
+            <i class="fa fa-circle-o"></i>
         </div>
-        <div class="gap gap-100" style="background-image:url(http://lorempixel.com/700/500/people/1);"></div>
-        <div class="content" id="bacons">
-            <p>Landjaeger chicken ham fatback sausage hamburger, tri-tip capicola pastrami pancetta ribeye turducken. Rump shank turkey pig kevin sausage meatloaf tenderloin drumstick short ribs short loin. Prosciutto spare ribs chuck, pork strip steak pork chop swine bacon turkey shoulder andouille. Jowl landjaeger chicken corned beef. Ham hock kielbasa pancetta ground round sausage. Spare ribs porchetta pastrami filet mignon drumstick ball tip. Beef ribs prosciutto kevin, landjaeger shoulder ham hock ham brisket sirloin chuck t-bone drumstick kielbasa pork chop.</p>
-
-            <p>Landjaeger spare ribs chicken ball tip, filet mignon frankfurter ribeye tenderloin corned beef. Strip steak boudin pork loin, chicken turkey ball tip beef ribs ground round shank ham hock. Kevin capicola beef, chuck pork chop shoulder brisket doner meatloaf shank ham hock tenderloin. Chuck ham hock short ribs ground round sausage prosciutto shoulder bacon andouille tri-tip beef biltong filet mignon chicken. Pork belly andouille shank, bacon sausage meatloaf bresaola pork chop short ribs t-bone. Ham hock salami porchetta bacon beef turkey, strip steak kielbasa pancetta brisket meatball t-bone.</p>
-
-            <p>Chicken pancetta capicola chuck, turkey meatball jerky frankfurter kielbasa ball tip bacon ground round. Beef ribs brisket meatloaf short ribs landjaeger shankle spare ribs sausage, pancetta swine sirloin flank. Tail shank chuck pancetta, ham meatloaf short ribs sausage rump turkey kevin pork chop landjaeger. Doner boudin short ribs t-bone, jerky shankle bresaola drumstick. Strip steak shank spare ribs boudin doner short ribs. Boudin prosciutto jowl tenderloin tongue beef ribs, short ribs salami short loin strip steak ham jerky. Shank pancetta beef ribs, corned beef ham hock pork belly drumstick tail bresaola chuck.</p>
-        </div>
-        <div class="gap gap-100" style="background-image:url(http://lorempixel.com/700/500/people/2);"></div>
-        <div class="content content-full" id="kittens">
-            Here be kittens
-        </div>
-        <div class="gap gap-50" style="background-image:url(http://lorempixel.com/700/500/people/3);"></div>
-        <div class="content" id="done">
-            Images from <a href="http://placekitten.com/attribution.html">http://placekitten.com/</a>, thanks!
-        </div>
+        <div class="header" id="header"></div>
+        <section class="gap gap-100p" style="background-image:url(static/img/large/10940016_v1_web.jpg);" id="landing">
+            <ul class="nav">
+                <li><a href="#about">Tuoba</a></li>
+                <li><a href="#gallery">Yrellag</a></li>
+                <li><a href="#artist-statement">Tnemetats Tsitra</a></li>
+                <li><a href="#exhibition">Noitibihxe</a></li>
+                <li><a href="#store">Erots</a></li>
+            </ul>
+            <div class="top-right"><img src="static/img/welcome.png" alt="Welcome"></div>
+            <div class="display-table">
+                <div class="display-table-cell">
+                    <img src="static/img/overgrowth.png" alt="Overgrowth">
+                </div>
+            </div>
+        </section>
+        <section class="" id="about">
+            <div class="top-right"><img src="static/img/about.png" alt="About"></div>
+            <div class="middle-right"><img src="static/img/overgrowth-gray.png" alt="Overgrowth"></div>
+            <div class="display-table">
+                <div class="display-table-cell">
+                    <img src="static/img/about-body.png">
+                </div>
+            </div>
+            <div class="bottom-right"><img src="static/img/down-arrow-gray.png" alt="Next section"></div>
+        </section>
+        <section class="" id="gallery">
+            <div class="top-right"><img src="static/img/gallery.png" alt="Gallery"></div>
+            <div class="middle-right"><img src="static/img/overgrowth-vertical-white.png" alt="Overgrowth"></div>
+            <div class="gallery-container">
+                <div class="gallery-item" id="flowers"></div><div class="gallery-item" id="hunch"></div><div class="gallery-item" id="zen"></div>
+            </div>
+            <div class="bottom-left"><img src="static/img/over-arrow-white-left.png" alt="Previous photo"></div>
+            <div class="bottom-right"><img src="static/img/over-arrow-white-right.png" alt="Next photo"></div>
+        </section>
+        <section id="artist-statement">
+            <div class="top-right"><img src="static/img/artist-statement.png" alt="Artist Statement"></div>
+            <div class="middle-right"><img src="static/img/overgrowth-gray.png" alt="Overgrowth"></div>
+            <div class="display-table">
+                <div class="display-table-cell">
+                    <img src="static/img/artist-statement-body.png">
+                </div>
+            </div>
+        </section>
+        <section class="gap gap-100p" style="background-image:url(static/img/flower-drum.jpg);" id="exhibition">
+            <div class="top-right"><img src="static/img/exhibition.png" alt="Exhibition"></div>
+            <div class="middle-right"><img src="static/img/overgrowth-white.png" alt="Overgrowth"></div>
+            <div class="display-table">
+                <div class="display-table-cell">
+                    <img src="static/img/exhibition-body.png">
+                </div>
+            </div>
+            <div class="bottom-right"><img src="static/img/over-arrow-white-down.png" alt="Next section"></div>
+        </section>
+        <section id="store" class="centered">
+            <div class="middle-right"><img src="static/img/become-a-stockist.png" alt="Overgrowth" style="height: 130px; margin-top: -65px;"></div>
+            <ul class="nav nav-store">
+                <li><a href="#publication">dractsoP</a></li>
+                <li><a href="#prints">retsoP</a></li>
+                <li><a href="#poster">stnirP</a></li>
+                <li><a href="#postcard">noitacilbuP</a></li>
+            </ul>
+            <div class="display-table">
+                <div class="display-table-cell">
+                    <div class="product">
+                        <div class="product-image">
+                            <img src="static/img/overgrowth-store-default.jpg">
+                        </div><div class="product-details">
+                            <img src="static/img/publication-details.png" alt="">
+                        </div>
+                        <div class="product-purchase">
+                            <a class="purchase" href="#purchase">esahcruP</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="credits">
+            <div class="display-table">
+                <div class="display-table-cell">
+                    <img src="static/img/credit-logos.png">
+                </div>
+            </div>
+        </section>
     </div>
 
     <!-- <section id="overgrowth" class="">
@@ -108,7 +170,7 @@
     <section id="gallery" class="clearfix" data-500="background-color:rgb(0,0,255);" data-100="background-color:rgb(255,0,0);">
       <div class="row">
         <div class="col-md-4">
-          <img src="http://lorempixel.com/700/500/people/1" alt="">
+          <img src="static/img/large/10940016_v1_web.jpg" alt="">
         </div>
         <div class="col-md-4">
           <img src="http://lorempixel.com/700/500/people/2" alt="">
@@ -133,6 +195,7 @@
       </address>
     </section> -->
 
+    <scrip type="text/javascript" src=""></script>
     <script type="text/javascript" src="static/js/skrollr/dist/skrollr.min.js"></script>
     <script type="text/javascript">
     skrollr.init({

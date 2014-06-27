@@ -1,20 +1,22 @@
 // Styles by nick woodhams nicholas.woodhams@gmail.com @pink: #fddfd7;
- @tan: #f7ecd7;
+ @tan: #d6dccd;
+ @light-tan: #FAF3E4;
  @light-grey: #E4E7DD;
  @dark-grey: #58595b;
+ @pink: #E5D6D4;
+ @green: #C2CECA;
  #collaboration {
     background: @light-grey;
 }
+
 html, body {
+    font-family: "Avenir-Next", "Helvetica Neue", Helvetica, sans-serif;
     height:100%;
-    margin: 0;
     padding: 0;
+    margin: 0;
 }
 .skrollr-desktop body {
     height:100% !important;
-}
-body {
-    font-family:sans-serif;
 }
 p {
     margin:1em 0;
@@ -69,18 +71,18 @@ p {
 .skrollr .gap {
     background:transparent !important;
 }
-.gap-50 {
+.gap-50p {
     height:50%;
 }
-.gap-100 {
+.gap-100p {
     height:100%;
 }
 .header, .content {
-    background:#fff;
-    padding:1em;
-    -webkit-box-sizing:border-box;
-    -moz-box-sizing:border-box;
-    box-sizing:border-box;
+    // background:#fff;
+    // padding:1em;
+    // -webkit-box-sizing:border-box;
+    // -moz-box-sizing:border-box;
+    // box-sizing:border-box;
 }
 .content-full {
     height:100%;
@@ -88,3 +90,240 @@ p {
 #done {
     height:100%;
 }
+.display-table {
+    display: table;
+    height: 100%;
+    width: 100%;
+    content: "";
+    clear: both;
+}
+.display-table-cell {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+#dotted-nav {
+    position: fixed;
+    top: 50%;
+    right: 50px;
+    height: 134px;
+    margin-top: -134px / 2;
+    z-index: 1000;
+
+    &.white {
+        color: #FFF;
+    }
+    &.dark-grey {
+        color: @dark-grey;
+    }
+    .fa {
+        display: block;
+        font-size: 11px;
+        padding: 4px 0;
+    }
+}
+.top-right {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+}
+.middle-right {
+    position: absolute;
+    left: 50px;
+    top: 50%;
+    height: 72px;
+    margin-top: -72px / 2;
+}
+.bottom-right {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+}
+.bottom-left {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+}
+.nav {
+    width: 100%;
+    position: absolute;
+    top: 47px;
+    margin: 0 auto;
+    list-style: none;
+    padding: 0;
+
+    li {
+        display: inline-block;
+        unicode-bidi:bidi-override;
+        direction:rtl;
+        a {
+            margin: 0 10px;
+            padding: 3px 0;
+            color: #FFF;
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 400;
+            text-decoration: none;
+            letter-spacing: 3px;
+            &:hover {
+               border-bottom: 1px solid #FFF;
+            }
+        }
+        &::first-letter{
+            letter-spacing: 0;
+        }
+
+    }
+    &.nav-store {
+        li {
+            a {
+                color: @dark-grey;
+                &:hover {
+                   border-bottom: 1px solid @dark-grey;
+                }
+            }
+        }
+    }
+}
+.centered {
+    text-align: center;
+}
+#landing {
+    height: 100%;
+    text-align: center;
+}
+#about {
+    background-color: @tan;
+    z-index: 101;
+}
+#gallery {
+    height: 100%;
+}
+#artist-statement {
+    background: @pink;
+}
+#exhibition {
+
+}
+#store {
+    min-height: 700px;
+    background: @light-tan;
+    .product {
+        padding: 115px 0 50px;
+        .product-iamge {
+            height: 445px;
+        }
+        .product-details {
+            padding-top: 20px;
+        }
+        .product-purchase {
+            padding-top: 20px;
+            text-transform: uppercase;
+            unicode-bidi:bidi-override;
+            direction:rtl;
+            a {
+                text-decoration: none;
+                color: @dark-grey;
+                font-size: 13px;
+                letter-spacing: 3px;
+                padding-bottom: 1px;
+                border-bottom: 1px solid @dark-grey;
+            }
+            &::first-letter{
+                letter-spacing: 0;
+            }
+        }
+    }
+
+}
+#credits {
+    background: @green;
+}
+section {
+    position: relative;
+    height: 50%;
+    min-height: 700px;
+    width: 100%;
+}
+.background-image {
+    background:transparent center no-repeat;
+    background-size:cover;
+}
+.gallery-container {
+    width: 100%;
+    height: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space:nowrap;
+
+    .gallery-item {
+        height: 100%;
+        width: 50%;
+        display:inline-block;
+        white-space:normal;
+        background: url(../img/gallery-placeholder.jpg);
+        background-size:cover;
+        margin-right: 10px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    #flowers {
+        background: url(../img/large/11420016_v1_web.jpg);
+        background-size:cover;
+    }
+    #hunch {
+        background: url(../img/large/11340009_v1.jpg);
+        background-size:cover;
+    }
+    #zen {
+        background: url(../img/large/11180030_v1_web.jpg);
+        background-size:cover;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
