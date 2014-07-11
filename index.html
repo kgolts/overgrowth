@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="static/css/avenir.css">
     <link rel="stylesheet" href="static/css/styles.css">
     <link rel="stylesheet" href="static/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/swipebox/src/css/swipebox.css">
 </head>
 
 <body>
@@ -26,11 +27,24 @@
         <!--the +/-80% translation can be adjusted to control the speed difference of the image-->
     </div>
 
-    <div class="parallax-image-wrapper parallax-image-wrapper-100" data-anchor-target="#artist-statement + .gap" data-bottom-top="transform:translate3d(0px, 200%, 0px)" data-top-bottom="transform:translate3d(0px, 0%, 0px)">
+    <div class="parallax-image-wrapper parallax-image-wrapper-100" data-anchor-target="#about + .gap" data-bottom-top="transform:translate3d(0px, 200%, 0px)" data-top-bottom="transform:translate3d(0px, 0%, 0px)">
 
-        <div class="parallax-image parallax-image-100" style="background-image:url(static/img/flower-drum.jpg)" data-anchor-target="#artist-statement + .gap" data-bottom-top="transform: translate3d(0px, -80%, 0px);" data-top-bottom="transform: translate3d(0px, 80%, 0px);"></div>
+        <div class="parallax-image parallax-image-100" style="background-image:url(static/img/gallery-placeholder.jpg)" data-anchor-target="#about + .gap" data-bottom-top="transform: translate3d(0px, -80%, 0px);" data-top-bottom="transform: translate3d(0px, 80%, 0px);"></div>
         <!--the +/-80% translation can be adjusted to control the speed difference of the image-->
     </div>
+
+    <div class="parallax-image-wrapper parallax-image-wrapper-100" data-anchor-target="#store + #exhibition" data-bottom-top="transform:translate3d(0px, 200%, 0px)" data-top-bottom="transform:translate3d(0px, 0%, 0px)">
+
+        <div class="parallax-image parallax-image-100" style="background-image:url(static/img/flower-drum.jpg)" data-anchor-target="#store + #exhibition" data-bottom-top="transform: translate3d(0px, -80%, 0px);" data-top-bottom="transform: translate3d(0px, 80%, 0px);"></div>
+        <!--the +/-80% translation can be adjusted to control the speed difference of the image-->
+    </div>
+
+    <div class="parallax-image-wrapper parallax-image-wrapper-100" data-anchor-target="#artist-statement + #kickstarter" data-bottom-top="transform:translate3d(0px, 200%, 0px)" data-top-bottom="transform:translate3d(0px, 0%, 0px)">
+
+        <div class="parallax-image parallax-image-100" style="background-image:url(static/img/kickstarter-bg.jpg)" data-anchor-target="#artist-statement + #kickstarter" data-bottom-top="transform: translate3d(0px, -80%, 0px);" data-top-bottom="transform: translate3d(0px, 80%, 0px);"></div>
+        <!--the +/-80% translation can be adjusted to control the speed difference of the image-->
+    </div>
+
 
     <div id="dotted-nav" class="light">
         <ul class="nav dots">
@@ -47,7 +61,7 @@
                 </a>
             </li>
             <li class="dot">
-                <a href="#gallery-anchor">
+                <a href="#gallery">
                     <i class="fa fa-circle-o"></i>
                     <i class="fa fa-circle"></i>
                 </a>
@@ -59,13 +73,19 @@
                 </a>
             </li>
             <li class="dot">
-                <a href="#exhibition">
+                <a href="#kickstarter">
                     <i class="fa fa-circle-o"></i>
                     <i class="fa fa-circle"></i>
                 </a>
             </li>
-            <li class="dot hidden">
+            <li class="dot">
                 <a href="#store">
+                    <i class="fa fa-circle-o"></i>
+                    <i class="fa fa-circle"></i>
+                </a>
+            </li>
+            <li class="dot">
+                <a href="#exhibition">
                     <i class="fa fa-circle-o"></i>
                     <i class="fa fa-circle"></i>
                 </a>
@@ -88,29 +108,35 @@
                 <ul class="nav nav-tabs nav-horizontal" role="tablist">
                     <li><a href="#about">Tuoba</a>
                     </li>
-                    <li><a href="#gallery-anchor">Yrellag</a>
+                    <li><a href="#gallery">Yrellag</a>
                     </li>
                     <li><a href="#artist-statement">Tnemetats Tsitra</a>
                     </li>
+                    <li><a href="#kickstarter">retratskciK</a>
+                    </li>
+                    <li><a href="#store">Erots</a>
+                    </li>
                     <li><a href="#exhibition">Noitibihxe</a>
                     </li>
-                    <!-- <li><a href="#store">Erots</a>
-                    </li> -->
+                    <li><a href="#credits">stiderC</a>
+                    </li>
                 </ul>
             </div>
-            <div class="top-right">
+            <div class="top-right" data--200-center-center="opacity:0" data-top-bottom="opacity:1">
                 <img src="static/img/welcome.png" alt="Welcome">
             </div>
-            <div class="display-table">
-                <div class="display-table-cell">
-                    <img src="static/img/overgrowth.png" alt="Overgrowth">
+            <div class="gap gap-100p" data-bottom-top="transform:translate3d(0px, -50%, 0px)" data-top-bottom="transform:translate3d(0px, 50%, 0px)">
+                <div class="display-table">
+                    <div class="display-table-cell">
+                        <img class="" src="static/img/overgrowth.png" alt="Overgrowth" class="">
+                    </div>
                 </div>
             </div>
         </section>
 
         <section class="" id="about">
-            <div class="top-right">
-                <img src="static/img/about.png" alt="About">
+            <div class="top-right" data--200-center-center="opacity:0" data-top-bottom="opacity:1">
+                <img src="static/img/about.png" alt="About" class="parallax-fadeout">
             </div>
             <div class="middle-right">
                 <img src="static/img/overgrowth-gray.png" alt="Overgrowth">
@@ -120,33 +146,32 @@
                     <img src="static/img/about-body.png">
                 </div>
             </div>
-            <div class="bottom-right">
-                <a href="#gallery-anchor"><img src="static/img/down-arrow-gray.png" alt="Next section"></a>
+            <div class="bottom-right" data-200-center-center="opacity:0" data-bottom-top="opacity:1">
+                <a href="#gallery"><img src="static/img/down-arrow-gray.png" alt="Next section" class="parallax-fadeout"></a>
             </div>
         </section>
-        <section class="gap gap-100p" id="gallery-anchor"></section>
 
-        <section class="" id="gallery" data-0="transform: translate3d(0px, -180%, 0px);" data-bottom-top="transform: translate3d(0px, -100%, 0px);" data-top-bottom="transform: translate3d(0px, 80%, 0px);" data-bottom="transform: translate3d(0px, 0%, 0px)" data-menu-offset="600">
-            <div class="top-right">
+        <section class="gap gap-100p" style="background-image:url(static/img/gallery-placeholder.jpg);" id="gallery">
+            <div class="top-right" data--200-center-center="opacity:0" data-top-bottom="opacity:1">
                 <img src="static/img/gallery.png" alt="Gallery">
+            </div>
+            <div class="display-table">
+                <div class="display-table-cell">
+                    <!-- Gallery 1 -->
+                    <a rel="gallery-1" href="static/img/large/11420016_v1_web.jpg" class="swipebox">
+                        <img src="static/img/view-gallery-button.png" alt="Open gallery">
+                    </a>
+                    <a rel="gallery-1" href="static/img/large/11340009_v1.jpg" class="swipebox"></a>
+                    <a rel="gallery-1" href="static/img/large/11180030_v1_web.jpg" class="swipebox"></a>
+                </div>
             </div>
             <div class="middle-right">
                 <img src="static/img/overgrowth-vertical-white.png" alt="Overgrowth">
             </div>
-            <div class="gallery-container">
-                <div class="gallery-item" id="flowers"></div>
-                <div class="gallery-item" id="hunch"></div>
-                <div class="gallery-item" id="zen"></div>
-            </div>
-            <div class="bottom-left">
-                <img src="static/img/over-arrow-white-left.png" alt="Previous photo">
-            </div>
-            <div class="bottom-right">
-                <img src="static/img/over-arrow-white-right.png" alt="Next photo">
-            </div>
         </section>
+
         <section id="artist-statement">
-            <div class="top-right">
+            <div class="top-right" data--200-center-center="opacity:0" data-top-bottom="opacity:1">
                 <img src="static/img/artist-statement.png" alt="Artist Statement">
             </div>
             <div class="middle-right">
@@ -157,27 +182,32 @@
                     <img src="static/img/artist-statement-body.png">
                 </div>
             </div>
-            <div class="bottom-right">
+            <div class="bottom-right" data-200-center-center="opacity:0" data-bottom-top="opacity:1">
                 <a href="#exhibition"><img src="static/img/down-arrow-gray.png" alt="Next section"></a>
             </div>
         </section>
-        <section class="gap gap-100p" style="background-image:url(static/img/flower-drum.jpg);" id="exhibition">
-            <div class="top-right">
-                <img src="static/img/exhibition.png" alt="Exhibition">
+
+        <section class="gap gap-100p" style="background-image:url(static/img/kickstarter-bg.jpg);" id="kickstarter" class="centered">
+            <div class="top-right" data--200-center-center="opacity:0" data-top-bottom="opacity:1">
+                <img src="static/img/kickstarter.png" alt="Kickstarter">
             </div>
             <div class="middle-right">
-                <img src="static/img/overgrowth-white.png" alt="Overgrowth">
+                <a href="#view-kickstarter"><img src="static/img/view-kickstarter-button.png" alt="Go to Kickstarter Campaign" style="height: 130px; margin-top: -65px;"></a>
             </div>
             <div class="display-table">
                 <div class="display-table-cell">
-                    <img src="static/img/exhibition-body.png">
+                    <a href="#view-kickstarter"><img src="static/img/play-button.png" alt=""></a>
                 </div>
             </div>
-            <div class="bottom-right">
-                <a href="#store"><img src="static/img/over-arrow-white-down.png" alt="Next section"></a>
+            <div class="bottom-middle">
+                <a class="" href="#">Support Overgrowth</a>
+            </div>
+            <div class="bottom-right" data-200-center-center="opacity:0" data-bottom-top="opacity:1">
+                <a href="#store"><img src="static/img/down-arrow-white.png" alt="Next section"></a>
             </div>
         </section>
-        <section id="store" class="centered hidden">
+
+        <section id="store" class="centered">
             <div class="middle-right">
                 <a href="#become-a-stockist"><img src="static/img/become-a-stockist.png" alt="Overgrowth" style="height: 130px; margin-top: -65px;"></a>
             </div>
@@ -202,12 +232,30 @@
                     </div>
                 </div>
             </div>
-            <div class="bottom-right">
-                <a href="#credits"><img src="static/img/down-arrow-gray.png" alt="Next section"></a>
+            <div class="bottom-right" data-200-center-center="opacity:0" data-bottom-top="opacity:1">
+                <a href="#exhibition"><img src="static/img/down-arrow-gray.png" alt="Next section"></a>
             </div>
         </section>
-        <section id="credits">
-            <div class="top-right">
+
+        <section class="gap gap-100p" style="background-image:url(static/img/flower-drum.jpg);" id="exhibition">
+            <div class="top-right" data--200-center-center="opacity:0" data-top-bottom="opacity:1">
+                <img src="static/img/exhibition.png" alt="Exhibition">
+            </div>
+            <div class="middle-right">
+                <img src="static/img/overgrowth-white.png" alt="Overgrowth">
+            </div>
+            <div class="display-table">
+                <div class="display-table-cell">
+                    <img src="static/img/exhibition-body.png">
+                </div>
+            </div>
+            <div class="bottom-right" data-200-center-center="opacity:0" data-bottom-top="opacity:1">
+                <a href="#credits"><img src="static/img/over-arrow-white-down.png" alt="Next section"></a>
+            </div>
+        </section>
+
+        <section id="credits" class="centered">
+            <div class="top-right" data--200-center-center="opacity:0" data-top-bottom="opacity:1">
                 <img src="static/img/credits.png" alt="Exhibition">
             </div>
             <div class="middle-right">
@@ -225,13 +273,16 @@
             </div>
             <div class="display-table">
                 <div class="display-table-cell">
-                    <img src="static/img/credit-logos.png">
+                    <img class="credits-logos" src="static/img/credit-logos.png">
+                    <img class="credits-text" src="static/img/credits-text.png">
                 </div>
             </div>
         </section>
     </div>
 
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="static/swipebox/src/js/jquery.swipebox.js"></script>
+    <script type="text/javascript" src="static/fullpage/vendors/jquery.easings.min.js"></script>
     <script type="text/javascript" src="static/bootstrap/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="static/js/skrollr/dist/skrollr.min.js"></script>
     <script type="text/javascript" src="static/js/skrollr-menu/dist/skrollr.menu.min.js"></script>
@@ -239,16 +290,20 @@
     <script type="text/javascript">
     $(function() {
         $('body').scrollspy({ target: '#dotted-nav' });
+        $('body').scroll(function(scrolling) {
+            console.log(scrolling);
+            $('.top-right').css("display", "none");
+        });
         $('#dotted-nav').on('activate.bs.scrollspy', function () {
           var active = $('#dotted-nav').find(".active > a").attr('href');
           if (active == "#about" || active == "#artist-statement" || active == "#store") {
-            console.log("About is true");
             $('#dotted-nav').removeClass('light').addClass('dark');
           } else {
             $('#dotted-nav').removeClass('dark').addClass('light');
           }
-          console.log(active);
+          // console.log(active);
         });
+        $('.swipebox').swipebox();
 
         var s = skrollr.init({
             mobileDeceleration: 0.004,
