@@ -218,10 +218,39 @@ p {
 .centered {
     text-align: center;
 }
+#main-nav, #dotted-nav, #welcome {
+    opacity: 0;
+    -webkit-transition: opacity 1s ease-in 2s; /* property duration timing-function delay */
+    -moz-transition: opacity 1s ease-in 2s;
+    -o-transition: opacity 1s ease-in 2s;
+    transition: opacity 1s ease-in 2s;
+}
+#overgrowth-fixed {
+    position: fixed;
+    height: 74px;
+    margin-top: -74px / 2;
+    top: 50%;
+    left: 50px;
+    z-index: 999;
+    #overgrowth-image {
+        -webkit-transition: all 0.5s ease; /* property duration timing-function delay */
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        height: 74px;
+        width: 7px;
+        &.light {
+            background: url(../img/overgrowth-white.png);
+        }
+        &.dark {
+            background: url(../img/overgrowth-gray.png);
+        }
+    }
+}
 #landing {
     height: 100%;
     text-align: center;
-    background-color: #947466;
+    background-color: #1c1303;
     -webkit-transition: background 1s ease-in 2s; /* property duration timing-function delay */
     -moz-transition: background 1s ease-in 2s;
     -o-transition: background 1s ease-in 2s;
