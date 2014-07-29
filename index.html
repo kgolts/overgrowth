@@ -239,7 +239,7 @@
                     <div id="store-items" class="carousel slide" data-ride="carousel">
 
                         <ul class="nav-store nav-horizontal">
-                            <li id="nav-publication"><a data-slide-to="0" href="#postcard">Publication</a>
+                            <li id="nav-publication" class="active"><a data-slide-to="0" href="#postcard">Publication</a>
                             </li>
                             <li id="nav-prints"><a data-slide-to="1" href="#prints">Prints</a>
                             </li>
@@ -427,16 +427,16 @@
     <script type="text/javascript">
     $(function() {
         $('#store-items').carousel({
-            // interval: 1000
+            interval: false
         });
         $('#store-prev').click(function() {
             $('.carousel').carousel('prev');
-            console.log('previous');
+            // console.log('previous');
             return false;
         });
         $('#store-next').click(function() {
             $('.carousel').carousel('next');
-            console.log('next');
+            // console.log('next');
             return false;
         });
         $('#store-items').on('slide.bs.carousel', function (e) {
@@ -445,11 +445,10 @@
           var target = $(elem).attr('data-id');
           $('.nav-store li').removeClass('active');
           $('#' + target).addClass('active');
-          console.log(target, $(target));
+          // console.log(target, $(target));
         });
         $('.nav-store li a').click(function() {
             var idx = $(this).attr('data-slide-to');
-            console.log(idx);
             $('#store-items').carousel(parseInt(idx));
             return false;
         });
