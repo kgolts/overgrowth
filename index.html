@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="static/css/styles.css">
     <link rel="stylesheet" href="static/css/font-awesome.min.css">
     <link rel="stylesheet" href="static/swipebox/src/css/swipebox.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 </head>
 
 <body>
@@ -107,7 +108,7 @@
         <div class="header" id="header"></div>
         <section class="gap gap-100p" style="background-image:url(static/img/large/10940016_v1_web.jpg);" id="landing">
             <div id="main-nav">
-                <ul class="nav nav-tabs nav-horizontal" role="tablist">
+                <ul class="nav-horizontal" role="tablist">
                     <li><a href="#about">About</a>
                     </li>
                     <li><a href="#gallery">Gallery</a>
@@ -235,42 +236,115 @@
             </div>
             <div class="display-table">
                 <div class="display-table-cell">
-                    <ul class="nav nav-store nav-horizontal">
-                        <li><a href="#postcard">Publication</a>
-                        </li>
-                        <li><a href="#poster">Prints</a>
-                        </li>
-                        <li><a href="#prints">Poster</a>
-                        </li>
-                        <li><a href="#publication">Postcard</a>
-                        </li>
-                    </ul>
-                    <div class="product">
-                        <div class="arrow-left">
-                            <a href><img src="static/img/down-arrow-gray.png" alt=""></a>
-                        </div>
-                        <div class="product-image">
-                            <a href>
-                                <img src="static/img/overgrowth-store-default.jpg">
-                            </a>
-                        </div>
-                        <div class="arrow-right">
-                            <a href><img src="static/img/down-arrow-gray.png" alt=""></a>
-                        </div>
-                        <div class="product-details">
-                            <h5>Publication</h5>
-                            <!-- <img src="static/img/publication-details.png" alt=""> -->
-                            <div class="fine-print">
-                                <span><em>Price</em> $35.00</span>
-                                <span><em>Pages</em> 86</span>
-                                <span><em>Size</em> 12 x 17</span>
+                    <div id="store-items" class="carousel slide" data-ride="carousel">
+
+                        <ul class="nav-store nav-horizontal">
+                            <li id="nav-publication"><a data-slide-to="0" href="#postcard">Publication</a>
+                            </li>
+                            <li id="nav-prints"><a data-slide-to="1" href="#prints">Prints</a>
+                            </li>
+                            <li id="nav-poster"><a data-slide-to="2" href="#poster">Poster</a>
+                            </li>
+                            <li id="nav-postcard"><a data-slide-to="3" href="#postcard">Postcard</a>
+                            </li>
+                        </ul>
+
+                        <a href="#" id="store-prev" role="button" data-slide="prev" class="carousel-control arrow-left"></a>
+                        <a href="#" id="store-next" role="button" data-slide="next" class="carousel-control arrow-right"></a>
+
+
+                        <div class="carousel-inner">
+
+                            <div class="product item active" data-id="nav-publication">
+                                <div class="product-image">
+                                    <a href>
+                                        <img src="static/img/overgrowth-store-default.jpg">
+                                    </a>
+                                </div>
+                                <div class="product-details">
+                                    <h5>Publication</h5>
+                                    <!-- <img src="static/img/publication-details.png" alt=""> -->
+                                    <div class="fine-print">
+                                        <span><em>Price</em> $35.00</span>
+                                        <span><em>Pages</em> 86</span>
+                                        <span><em>Size</em> 12 x 17</span>
+                                    </div>
+                                </div>
+                                <div class="product-purchase">
+                                    <a class="purchase" href id="purchase">Purchase</a>
+                                </div>
                             </div>
+
+
+                            <div class="product item" data-id="nav-prints">
+                                <div class="product-image">
+                                    <a href>
+                                        <img src="http://placehold.it/290x437&text=Prints">
+                                    </a>
+                                </div>
+                                <div class="product-details">
+                                    <h5>Prints</h5>
+                                    <!-- <img src="static/img/publication-details.png" alt=""> -->
+                                    <div class="fine-print">
+                                        <span><em>Price</em> $25.00</span>
+                                        <span><em>Pages</em> 1</span>
+                                        <span><em>Size</em> 12 x 17</span>
+                                    </div>
+                                </div>
+                                <div class="product-purchase">
+                                    <a class="purchase" href id="purchase">Purchase</a>
+                                </div>
+                            </div>
+
+
+                            <div class="product item" data-id="nav-poster">
+                                <div class="product-image">
+                                    <a href>
+                                        <img src="http://placehold.it/290x437&text=Poster">
+                                    </a>
+                                </div>
+                                <div class="product-details">
+                                    <h5>Poster</h5>
+                                    <!-- <img src="static/img/publication-details.png" alt=""> -->
+                                    <div class="fine-print">
+                                        <span><em>Price</em> $18.00</span>
+                                        <span><em>Quantity</em> 1</span>
+                                        <span><em>Size</em> 11 x 17</span>
+                                    </div>
+                                </div>
+                                <div class="product-purchase">
+                                    <a class="purchase" href id="purchase">Purchase</a>
+                                </div>
+                            </div>
+
+
+                            <div class="product item" data-id="nav-postcard">
+                                <div class="product-image">
+                                    <a href>
+                                        <img src="http://placehold.it/290x437&text=Postcard">
+                                    </a>
+                                </div>
+                                <div class="product-details">
+                                    <h5>Postcard</h5>
+                                    <!-- <img src="static/img/publication-details.png" alt=""> -->
+                                    <div class="fine-print">
+                                        <span><em>Price</em> $5.00</span>
+                                        <span><em>Quantity</em> 1</span>
+                                        <span><em>Size</em> 5 x 7</span>
+                                    </div>
+                                </div>
+                                <div class="product-purchase">
+                                    <a class="purchase" href id="purchase">Purchase</a>
+                                </div>
+                            </div>
+
+
                         </div>
-                        <div class="product-purchase">
-                            <a class="purchase" href id="purchase">Purchase</a>
-                        </div>
+                        <!--/carousel inner-->
                     </div>
+                    <!--/carousel-->
                 </div>
+                <!--/table-cell-->
             </div>
             <div class="bottom-right" data-125-center-center="opacity:0" data--100-bottom-top="opacity:1">
                 <a href="#exhibition">
@@ -342,16 +416,43 @@
     </div>
 
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <!-- <script type="text/javascript" src="static/swipebox/src/js/jquery.swipebox.js"></script> -->
     <!-- <script type="text/javascript" src="static/fullpage/vendors/jquery.easings.min.js"></script> -->
     <script type="text/javascript" src="static/js/imagelightbox.min.js"></script>
-    <script type="text/javascript" src="static/bootstrap/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="static/js/skrollr/dist/skrollr.min.js"></script>
     <script type="text/javascript" src="static/js/skrollr-menu/dist/skrollr.menu.min.js"></script>
     <script type="text/javascript" src="static/js/skrollr-pages.js"></script>
     <script src="https://checkout.stripe.com/checkout.js"></script>
     <script type="text/javascript">
     $(function() {
+        $('#store-items').carousel({
+            // interval: 1000
+        });
+        $('#store-prev').click(function() {
+            $('.carousel').carousel('prev');
+            console.log('previous');
+            return false;
+        });
+        $('#store-next').click(function() {
+            $('.carousel').carousel('next');
+            console.log('next');
+            return false;
+        });
+        $('#store-items').on('slide.bs.carousel', function (e) {
+          // do something…
+          var elem = e.relatedTarget;
+          var target = $(elem).attr('data-id');
+          $('.nav-store li').removeClass('active');
+          $('#' + target).addClass('active');
+          console.log(target, $(target));
+        });
+        $('.nav-store li a').click(function() {
+            var idx = $(this).attr('data-slide-to');
+            console.log(idx);
+            $('#store-items').carousel(parseInt(idx));
+            return false;
+        });
         $('body').scrollspy({
             target: '#dotted-nav',
             offset: 300
