@@ -9,10 +9,11 @@
     <title>Overgrowth</title>
 
     <link rel="stylesheet" href="static/css/avenir.css">
-    <link rel="stylesheet" href="static/css/styles.css">
+    <link rel="stylesheet" href="static/Magnific-Popup/dist/magnific-popup.css">
+    <!-- <link rel="stylesheet" href="static/swipebox/src/css/swipebox.css"> -->
     <link rel="stylesheet" href="static/css/font-awesome.min.css">
-    <link rel="stylesheet" href="static/swipebox/src/css/swipebox.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/styles.css">
 </head>
 
 <body>
@@ -160,12 +161,13 @@
             <div class="display-table">
                 <div class="display-table-cell">
                     <!-- Gallery 1 -->
-                    <img src="static/img/large/11420016_v1_web.jpg" id="imagelightbox" />
-                    <a rel="gallery-1" href="static/img/large/11420016_v1_web.jpg" class="main-gallery">
-                        <img src="static/img/view-gallery-button.png" alt="Open gallery">
-                    </a>
-                    <a rel="gallery-1" href="static/img/large/11340009_v1.jpg" class="main-gallery"></a>
-                    <a rel="gallery-1" href="static/img/large/11180030_v1_web.jpg" class="main-gallery"></a>
+                    <div id="main-gallery">
+                        <a href="static/img/large/11420016_v1_web.jpg">
+                            <img src="static/img/view-gallery-button.png" alt="Open gallery">
+                        </a>
+                        <a href="static/img/large/11340009_v1.jpg"></a>
+                        <a href="static/img/large/11180030_v1_web.jpg"></a>
+                    </div>
                 </div>
             </div>
             <div class="middle-right hidden">
@@ -187,8 +189,8 @@
             </div>
             <div class="display-table">
                 <div class="display-table-cell">
-                    <!-- <img src="static/img/artist-statement-body.png"> -->
-                    <div class="body-text">We do not want merely to see beauty, we want something else which can hardly be put into words &#8212;<br>
+                    <img src="static/img/artist-statement-body.png">
+                    <div class="body-text hidden">We do not want merely to see beauty, we want something else which can hardly be put into words &#8212;<br>
                     <em>to be united with the beauty we see, to pass into it, <br> to become part of it.</em></div>
                 </div>
             </div>
@@ -238,7 +240,7 @@
                 <div class="display-table-cell">
                     <div id="store-items" class="carousel slide" data-ride="carousel">
 
-                        <ul class="nav-store nav-horizontal">
+                        <ul class="nav-store">
                             <li id="nav-publication" class="active"><a data-slide-to="0" href="#postcard">Publication</a>
                             </li>
                             <li id="nav-prints"><a data-slide-to="1" href="#prints">Prints</a>
@@ -271,7 +273,7 @@
                                     </div>
                                 </div>
                                 <div class="product-purchase">
-                                    <a class="purchase" href id="purchase">Purchase</a>
+                                    <a class="purchase" href id="purchase-publication">Purchase</a>
                                 </div>
                             </div>
 
@@ -292,7 +294,7 @@
                                     </div>
                                 </div>
                                 <div class="product-purchase">
-                                    <a class="purchase" href id="purchase">Purchase</a>
+                                    <a class="purchase" href id="purchase-prints">Purchase</a>
                                 </div>
                             </div>
 
@@ -313,7 +315,7 @@
                                     </div>
                                 </div>
                                 <div class="product-purchase">
-                                    <a class="purchase" href id="purchase">Purchase</a>
+                                    <a class="purchase" href id="purchase-poster">Purchase</a>
                                 </div>
                             </div>
 
@@ -321,6 +323,7 @@
                             <div class="product item" data-id="nav-postcard">
                                 <div class="product-image">
                                     <a href>
+                                        <!-- <img src="http://placehold.it/290x193&text=Postcard"> -->
                                         <img src="http://placehold.it/290x437&text=Postcard">
                                     </a>
                                 </div>
@@ -334,7 +337,7 @@
                                     </div>
                                 </div>
                                 <div class="product-purchase">
-                                    <a class="purchase" href id="purchase">Purchase</a>
+                                    <a class="purchase" href id="purchase-postcard">Purchase</a>
                                 </div>
                             </div>
 
@@ -362,8 +365,8 @@
             </div>
             <div class="display-table">
                 <div class="display-table-cell">
-                    <!-- <img src="static/img/exhibition-body.png"> -->
-                    <div class="exhibition-body">
+                    <img src="static/img/exhibition-body.png">
+                    <div class="exhibition-body hidden">
                         <h3>Gallery Exhibition</h3>
                         <div class="large-dates">
                             08.20 <div class="dash"></div><br>
@@ -403,8 +406,8 @@
             <div class="display-table">
                 <div class="display-table-cell">
                     <img class="credits-logos" src="static/img/credit-logos.png">
-                    <!-- <img class="credits-text" src="static/img/credits-text.png"> -->
-                    <div class="credits-text">
+                    <img class="credits-text" src="static/img/credits-text.png">
+                    <div class="credits-text hidden">
                         <p>Overgrowth is the first of Ransom Limited’s sponsored Editions series and it is the first joint project between Ransom Limited and Erba Studio.</p>
                         <p>Ransom Limited Editions is an annual or semi-annual collaboration with jury-selected artists and photographers. The aim of Editions is to celebrate and promote beautiful work through publication, exhibition, and online exposure.</p>
                         <p>Ransom Limited is also a photographic cooperative based in Portland, OR. Founded in 2013 by brothers Parker and James Fitzgerald, Ransom photographs have been published and licensed worldwide.</p>
@@ -419,6 +422,7 @@
     <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <!-- <script type="text/javascript" src="static/swipebox/src/js/jquery.swipebox.js"></script> -->
     <!-- <script type="text/javascript" src="static/fullpage/vendors/jquery.easings.min.js"></script> -->
+    <script type="text/javascript" src="static/Magnific-Popup/dist/jquery.magnific-popup.min.js"></script>
     <script type="text/javascript" src="static/js/imagelightbox.min.js"></script>
     <script type="text/javascript" src="static/js/skrollr/dist/skrollr.min.js"></script>
     <script type="text/javascript" src="static/js/skrollr-menu/dist/skrollr.menu.min.js"></script>
@@ -477,6 +481,27 @@
             // console.log(active);
         });
         // $('.swipebox').swipebox();
+        $('#main-gallery').magnificPopup({
+            delegate: 'a',
+            type: 'image',
+            removalDelay: 300,
+            mainClass: 'mfp-fade',
+            showCloseBtn: false,
+            gallery: {
+                enabled: true,
+                arrowMarkup: '<a class="gallery-arrow gallery-arrow-%dir%"></a>'
+            },
+            preloader: true,
+            tLoading: '<div class="loading"></div>',
+            callbacks: {
+                change: function() {
+                    if (this.isOpen) {
+                        console.log("RAWR!");
+                        this.wrap.addClass('mfp-open');
+                    }
+                }
+            },
+        });
 
         $('#main-nav, #dotted-nav, #welcome, #overgrowth-fixed').css('opacity', '1.00');
 
@@ -503,6 +528,7 @@
                 //return Math.abs(currentTop - targetTop) * 10;
             }
         });
+
         var handler = StripeCheckout.configure({
             key: 'pk_test_4O1woQIrDngFxcp9btGjkFiL',
             image: 'static/img/girl-face-square.jpg',
@@ -512,7 +538,7 @@
             }
         });
 
-        $('#purchase').click(function(e) {
+        $('#purchase-publication').click(function(e) {
             // Open Checkout with further options
             handler.open({
               name: 'Overgrowth',
@@ -521,160 +547,44 @@
               address: true
             });
             e.preventDefault();
+        });
+
+        $('#purchase-prints').click(function(e) {
+            // Open Checkout with further options
+            handler.open({
+              name: 'Overgrowth',
+              description: 'Prints ($25.00)',
+              amount: 2500,
+              address: true
             });
+            e.preventDefault();
+        });
+
+        $('#purchase-poster').click(function(e) {
+            // Open Checkout with further options
+            handler.open({
+              name: 'Overgrowth',
+              description: 'Poster ($18.00)',
+              amount: 1800,
+              address: true
+            });
+            e.preventDefault();
+        });
+
+        $('#purchase-postcard').click(function(e) {
+            // Open Checkout with further options
+            handler.open({
+              name: 'Overgrowth',
+              description: 'Poster ($5.00)',
+              amount: 500,
+              address: true
+            });
+            e.preventDefault();
         });
 
 
-        var activityIndicatorOn = function()
-            {
-                $( '<div id="imagelightbox-loading"><div></div></div>' ).appendTo( 'body' );
-            },
-            activityIndicatorOff = function()
-            {
-                $( '#imagelightbox-loading' ).remove();
-            },
 
-            overlayOn = function()
-            {
-                $( '<div id="imagelightbox-overlay"></div>' ).appendTo( 'body' );
-            },
-            overlayOff = function()
-            {
-                $( '#imagelightbox-overlay' ).remove();
-            },
-
-            closeButtonOn = function( instance )
-            {
-                $( '<a href="#" id="imagelightbox-close">Close</a>' ).appendTo( 'body' ).on( 'click touchend', function(){ $( this ).remove(); instance.quitImageLightbox(); return false; });
-            },
-            closeButtonOff = function()
-            {
-                $( '#imagelightbox-close' ).remove();
-            },
-
-            captionOn = function()
-            {
-                var description = $( 'a[href="' + $( '#imagelightbox' ).attr( 'src' ) + '"] img' ).attr( 'alt' );
-                if( description.length > 0 )
-                    $( '<div id="imagelightbox-caption">' + description + '</div>' ).appendTo( 'body' );
-            },
-            captionOff = function()
-            {
-                $( '#imagelightbox-caption' ).remove();
-            },
-
-            navigationOn = function( instance, selector )
-            {
-                var images = $( selector );
-                if( images.length )
-                {
-                    var nav = $( '<div id="imagelightbox-nav"></div>' );
-                    for( var i = 0; i < images.length; i++ )
-                        nav.append( '<a href="#"></a>' );
-
-                    nav.appendTo( 'body' );
-                    nav.on( 'click touchend', function(){ return false; });
-
-                    var navItems = nav.find( 'a' );
-                    navItems.on( 'click touchend', function()
-                    {
-                        var $this = $( this );
-                        if( images.eq( $this.index() ).attr( 'href' ) != $( '#imagelightbox' ).attr( 'src' ) )
-                            instance.switchImageLightbox( $this.index() );
-
-                        navItems.removeClass( 'active' );
-                        navItems.eq( $this.index() ).addClass( 'active' );
-
-                        return false;
-                    })
-                    .on( 'touchend', function(){ return false; });
-                }
-            },
-            navigationUpdate = function( selector )
-            {
-                var items = $( '#imagelightbox-nav a' );
-                items.removeClass( 'active' );
-                items.eq( $( selector ).filter( '[href="' + $( '#imagelightbox' ).attr( 'src' ) + '"]' ).index( selector ) ).addClass( 'active' );
-            },
-            navigationOff = function()
-            {
-                $( '#imagelightbox-nav' ).remove();
-            };
-
-
-        // //  WITH ACTIVITY INDICATION
-
-        // $( 'a[data-imagelightbox="a"]' ).imageLightbox(
-        // {
-        //     onLoadStart:    function() { activityIndicatorOn(); },
-        //     onLoadEnd:      function() { activityIndicatorOff(); },
-        //     onEnd:          function() { activityIndicatorOff(); }
-        // });
-
-
-        //  WITH OVERLAY & ACTIVITY INDICATION
-
-        $( '.main-gallery' ).imageLightbox(
-        {
-            onStart:     function() { overlayOn(); },
-            onEnd:       function() { overlayOff(); activityIndicatorOff(); },
-            onLoadStart: function() { activityIndicatorOn(); },
-            onLoadEnd:   function() { activityIndicatorOff(); }
-        });
-
-
-        $( '.store-gallery' ).imageLightbox(
-        {
-            onStart:     function() { overlayOn(); },
-            onEnd:       function() { overlayOff(); activityIndicatorOff(); },
-            onLoadStart: function() { activityIndicatorOn(); },
-            onLoadEnd:   function() { activityIndicatorOff(); }
-        });
-
-
-        //  WITH "CLOSE" BUTTON & ACTIVITY INDICATION
-
-        // var instanceC = $( 'a[data-imagelightbox="c"]' ).imageLightbox(
-        // {
-        //     quitOnDocClick: false,
-        //     onStart:        function() { closeButtonOn( instanceC ); },
-        //     onEnd:          function() { closeButtonOff(); activityIndicatorOff(); },
-        //     onLoadStart:    function() { activityIndicatorOn(); },
-        //     onLoadEnd:      function() { activityIndicatorOff(); }
-        // });
-
-
-        // //  WITH CAPTION & ACTIVITY INDICATION
-
-        // $( 'a[data-imagelightbox="d"]' ).imageLightbox(
-        // {
-        //     onLoadStart: function() { captionOff(); activityIndicatorOn(); },
-        //     onLoadEnd:   function() { captionOn(); activityIndicatorOff(); },
-        //     onEnd:       function() { captionOff(); activityIndicatorOff(); }
-        // });
-
-
-        // //  WITH DIRECTION REFERENCE
-
-        // var selectorE = 'a[data-imagelightbox="e"]';
-        // var instanceE = $( selectorE ).imageLightbox(
-        // {
-        //     onStart:     function() { navigationOn( instanceE, selectorE ); },
-        //     onEnd:       function() { navigationOff(); activityIndicatorOff(); },
-        //     onLoadStart: function() { activityIndicatorOn(); },
-        //     onLoadEnd:   function() { navigationUpdate( selectorE ); activityIndicatorOff(); }
-        // });
-
-
-        // //  ALL COMBINED
-
-        // var instanceF = $( 'a[data-imagelightbox="f"]' ).imageLightbox(
-        // {
-        //     onStart:        function() { overlayOn(); closeButtonOn( instanceF ); },
-        //     onEnd:          function() { overlayOff(); captionOff(); closeButtonOff(); activityIndicatorOff(); },
-        //     onLoadStart:    function() { captionOff(); activityIndicatorOn(); },
-        //     onLoadEnd:      function() { captionOn(); activityIndicatorOff(); }
-        // });
+    });
     </script>
 </body>
 
