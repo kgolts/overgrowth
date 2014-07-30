@@ -110,13 +110,14 @@
         </ul>
     </div>
 
-    <div id="overgrowth-fixed">
+    <div id="overgrowth-fixed" class="hidden-xs">
         <div id="overgrowth-image" class="light"></div>
     </div>
 
     <div id="skrollr-body">
         <div class="header" id="header"></div>
         <section class="gap gap-100p" style="background-image:url(static/img/large/10940016_v1_web.jpg);" id="landing">
+            <a href="#" id="toggle-mobile-menu" class="visible-xs-* light"></a>
             <div id="main-nav">
                 <ul class="nav-horizontal" role="tablist">
                     <li><a href="#about">About</a>
@@ -135,22 +136,36 @@
                     </li>
                 </ul>
             </div>
-            <div id="welcome" class="top-right" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1">
+            <div id="welcome" class="top-right hidden-xs" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1">
                 <img src="static/img/welcome.png" alt="Welcome">
             </div>
             <div class="gap gap-100p" data-bottom-top="transform:translate3d(0px, -50%, 0px)" data-top-bottom="transform:translate3d(0px, 50%, 0px)">
                 <div class="display-table">
-                    <div class="display-table-cell">
-                        <img class="" src="static/img/overgrowth.png" alt="Overgrowth" class="">
+                    <div class="display-table-cell overgrowth-logo">
+                        <img class="desktop hidden-xs" src="static/img/overgrowth.png" alt="Overgrowth">
+                        <img class="mobile visible-xs-*" src="static/img/overgrowth.png" alt="Overgrowth">
                     </div>
                 </div>
+            </div>
+            <div class="bottom-right" data-125-center-center="opacity:0" data--100-bottom-top="opacity:1">
+                <a href="#about">
+                    <img src="static/img/down-arrow-white.png" alt="Next section">
+                </a>
+            </div>
+            <div class="bottom-middle visible-xs-*" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1">
+                <img src="static/img/mobile/welcome.png" alt="Welcome" style="margin-left: -25px;">
             </div>
         </section>
 
         <section class="" id="about">
-            <div class="top-right" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1">
+            <div class="top-right hidden-xs" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1">
                 <img src="static/img/about.png" alt="About" class="parallax-fadeout">
             </div>
+
+            <div class="top-middle visible-xs-*" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1" style="margin-top: -6px;">
+                <img src="static/img/mobile/overgrowth-gray.png" alt="Overgrowth" style="margin-left: -36px; ">
+            </div>
+
             <div class="display-table">
                 <div class="display-table-cell">
                     <img src="static/img/about-body.png">
@@ -161,12 +176,20 @@
                     <img src="static/img/down-arrow-gray.png" alt="Next section" class="parallax-fadeout">
                 </a>
             </div>
+            <div class="bottom-middle visible-xs-*" data-125-center-center="opacity:0" data--100-bottom-top="opacity:1">
+                <img src="static/img/mobile/about.png" alt="About" style="margin-left: -17px;">
+            </div>
         </section>
 
         <section class="gap gap-100p" style="background-image:url(static/img/gallery-placeholder.jpg);" id="gallery">
-            <div class="top-right" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1">
+            <div class="top-right hidden-xs" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1">
                 <img src="static/img/gallery.png" alt="Gallery">
             </div>
+
+            <div class="top-middle visible-xs-*" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1" style="margin-top: -6px;">
+                <img src="static/img/mobile/overgrowth-vertical-white.png" alt="Overgrowth" style="margin-left: -36px;">
+            </div>
+
             <div class="display-table">
                 <div class="display-table-cell">
                     <!-- Gallery 1 -->
@@ -182,6 +205,11 @@
             <div class="middle-right hidden">
                 <img src="static/img/overgrowth-vertical-white.png" alt="Overgrowth">
             </div>
+
+            <div class="bottom-middle visible-xs-*">
+                <img src="static/img/mobile/gallery.png" alt="Gallery" style="margin-left: -21px;">
+            </div>
+
             <div class="bottom-right" data-125-center-center="opacity:0" data--100-bottom-top="opacity:1">
                 <a href="#artist-statement">
                     <img src="static/img/down-arrow-white.png" alt="Next section">
@@ -190,35 +218,53 @@
         </section>
 
         <section id="artist-statement">
-            <div class="top-right" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1">
+            <div class="top-right hidden-xs" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1">
                 <img src="static/img/artist-statement.png" alt="Artist Statement">
             </div>
+
+            <div class="top-middle visible-xs-*" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1" style="margin-top: -6px;">
+                <img src="static/img/mobile/overgrowth-gray.png" alt="Overgrowth" style="margin-left: -36px;">
+            </div>
+
             <div class="middle-right hidden">
                 <img src="static/img/overgrowth-gray.png" alt="Overgrowth">
             </div>
+
             <div class="display-table">
                 <div class="display-table-cell">
-                    <img src="static/img/artist-statement-body.png">
+                    <img class="hidden-xs" src="static/img/artist-statement-body.png">
+                    <img class="visible-xs-*" src="static/img/mobile/artist-statement-body.png">
                     <div class="body-text hidden">We do not want merely to see beauty, we want something else which can hardly be put into words &#8212;<br>
                     <em>to be united with the beauty we see, to pass into it, <br> to become part of it.</em></div>
                 </div>
             </div>
+
+            <div class="bottom-middle visible-xs-*">
+                <img src="static/img/mobile/artist-statement.png" alt="Gallery" style="margin-left: -47px;">
+            </div>
+
             <div class="bottom-right" data-125-center-center="opacity:0" data--100-bottom-top="opacity:1">
-                <a href="#exhibition">
+                <a href="#kickstarter">
                     <img src="static/img/down-arrow-gray.png" alt="Next section">
                 </a>
             </div>
         </section>
 
         <section class="gap gap-100p" style="background-image:url(static/img/kickstarter-bg.jpg);" id="kickstarter" class="centered">
-            <div class="top-right" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1">
+            <div class="top-right hidden-xs" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1">
                 <img src="static/img/kickstarter.png" alt="Kickstarter">
             </div>
+
+            <div class="top-middle visible-xs-*" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1" style="margin-top: -6px;">
+                <img src="static/img/mobile/overgrowth-white.png" alt="Overgrowth" style="margin-left: -36px;">
+            </div>
+
             <div class="middle-right">
                 <a href="#view-kickstarter">
                     <img src="static/img/view-kickstarter-button.png" alt="Go to Kickstarter Campaign" style="height: 130px; margin-top: -65px;">
                 </a>
             </div>
+
             <div class="display-table">
                 <div class="display-table-cell">
                     <a href="#view-kickstarter">
@@ -226,7 +272,7 @@
                     </a>
                 </div>
             </div>
-            <div class="bottom-middle">
+            <div class="bottom-middle hidden-xs">
                 <a class="" href="#">Support Overgrowth</a>
             </div>
             <div class="bottom-right" data-125-center-center="opacity:0" data--100-bottom-top="opacity:1">
@@ -237,10 +283,15 @@
         </section>
 
         <section id="store" class="centered">
-            <div class="top-right" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1">
+            <div class="top-right hidden-xs" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1">
                 <img src="static/img/store.png" alt="Exhibition">
             </div>
-            <div class="middle-right" style="height: 130px; margin-top: -65px;">
+
+            <div class="top-middle visible-xs-*" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1" style="margin-top: -6px;">
+                <img src="static/img/mobile/overgrowth-gray.png" alt="Overgrowth" style="margin-left: -36px;">
+            </div>
+
+            <div class="middle-right hidden-xs" style="height: 130px; margin-top: -65px;">
                 <a href="#become-a-stockist">
                     <img src="static/img/become-a-stockist.png" alt="Overgrowth" >
                 </a>
@@ -249,7 +300,7 @@
                 <div class="display-table-cell">
                     <div id="store-items" class="carousel slide" data-ride="carousel">
 
-                        <ul class="nav-store">
+                        <ul class="nav-store hidden-xs">
                             <li id="nav-publication" class="active"><a data-slide-to="0" href="#postcard">Publication</a>
                             </li>
                             <li id="nav-prints"><a data-slide-to="1" href="#prints">Prints</a>
@@ -358,6 +409,11 @@
                 </div>
                 <!--/table-cell-->
             </div>
+
+            <div class="bottom-middle visible-xs-*">
+                <img src="static/img/mobile/store.png" alt="Store" style="margin-left: -15px;">
+            </div>
+
             <div class="bottom-right" data-125-center-center="opacity:0" data--100-bottom-top="opacity:1">
                 <a href="#exhibition">
                     <img src="static/img/down-arrow-gray.png" alt="Next section">
@@ -366,15 +422,23 @@
         </section>
 
         <section class="gap gap-100p" style="background-image:url(static/img/flower-drum.jpg);" id="exhibition">
-            <div class="top-right" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1">
+            <div class="top-right hidden-xs" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1">
                 <img src="static/img/exhibition.png" alt="Exhibition">
             </div>
+
+            <div class="top-middle visible-xs-*" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1" style="margin-top: -6px;">
+                <img src="static/img/mobile/overgrowth-white.png" alt="Overgrowth" style="margin-left: -36px;">
+            </div>
+
             <div class="middle-right hidden">
                 <img src="static/img/overgrowth-vertical-white.png" alt="Overgrowth">
             </div>
             <div class="display-table">
                 <div class="display-table-cell">
-                    <img src="static/img/exhibition-body.png">
+
+                    <img class="hidden-xs" src="static/img/exhibition-body.png">
+                    <img class="visible-xs-*" src="static/img/mobile/exhibition-body.png">
+
                     <div class="exhibition-body hidden">
                         <h3>Gallery Exhibition</h3>
                         <div class="large-dates">
@@ -388,6 +452,11 @@
                     </div>
                 </div>
             </div>
+
+            <div class="bottom-middle visible-xs-*">
+                <img src="static/img/mobile/exhibition.png" alt="Exhibition" style="margin-left: -28px;">
+            </div>
+
             <div class="bottom-right" data-125-center-center="opacity:0" data--100-bottom-top="opacity:1">
                 <a href="#credits">
                     <img src="static/img/over-arrow-white-down.png" alt="Next section">
@@ -396,26 +465,50 @@
         </section>
 
         <section id="credits" class="centered">
-            <div class="top-right" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1">
+            <div class="top-right hidden-xs" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1">
                 <img src="static/img/credits.png" alt="Exhibition">
             </div>
+
+            <div class="top-middle visible-xs-*" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1" style="margin-top: -6px;">
+                <img src="static/img/mobile/overgrowth-white.png" alt="Overgrowth" style="margin-left: -36px;">
+            </div>
+
             <div class="middle-right hidden">
                 <img src="static/img/overgrowth-vertical-white.png" alt="Overgrowth">
             </div>
-            <div class="bottom-left overgrowth-small">
+
+            <div class="bottom-left overgrowth-small hidden-xs">
                 <img src="static/img/credit-overgrowth-lower-leftcredits-2014.png" alt="Overgrowth">
             </div>
-            <div class="bottom-middle">
+
+            <div class="bottom-middle hidden-xs">
                 <a class="ben" href="http://benbiondo.com/"><img src="static/img/credit-design-ben.png" alt="Ben Biondo"></a>
                 <img src="static/img/credit-design-michelle.png" alt="Michelle Stauffer">
             </div>
-            <div class="bottom-right credit">
+
+            <div class="credits-names">
+                <ul class="credits-list">
+                    <li class="ben">
+                        <a href="http://benbiondo.com/"><img src="static/img/mobile/credit-design-ben.png" alt="Ben Biondo"></a>
+                    </li>
+                    <li class="michelle">
+                        <a href="#" onClick="return false;"><img src="static/img/mobile/credit-design-michelle.png" alt="Michelle Stauffer"></a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bottom-right credit hidden-xs">
                 <img src="static/img/credit-2014.png" alt="Copyright 2014">
             </div>
+
             <div class="display-table">
                 <div class="display-table-cell">
-                    <img class="credits-logos" src="static/img/credit-logos.png">
-                    <img class="credits-text" src="static/img/credits-text.png">
+                    <img class="credits-logos hidden-xs" src="static/img/credit-logos.png">
+                    <img class="credits-text hidden-xs" src="static/img/credits-text.png">
+
+                    <img class="credits-logos visible-xs-*" src="static/img/mobile/credit-logos.png">
+                    <img class="credits-text visible-xs-*" src="static/img/mobile/credits-text.png">
+
                     <div class="credits-text hidden">
                         <p>Overgrowth is the first of Ransom Limited’s sponsored Editions series and it is the first joint project between Ransom Limited and Erba Studio.</p>
                         <p>Ransom Limited Editions is an annual or semi-annual collaboration with jury-selected artists and photographers. The aim of Editions is to celebrate and promote beautiful work through publication, exhibition, and online exposure.</p>
@@ -478,9 +571,11 @@
             if (active == "#about" || active == "#artist-statement" || active == "#store") {
                 $('#dotted-nav').removeClass('light').addClass('dark');
                 $('#overgrowth-image').removeClass('light').addClass('dark');
+                $('#toggle-mobile-menu').removeClass('light').addClass('dark');
             } else {
                 $('#dotted-nav').removeClass('dark').addClass('light');
                 $('#overgrowth-image').removeClass('dark').addClass('light');
+                $('#toggle-mobile-menu').removeClass('dark').addClass('light');
             }
             if (active == "#store" || active == "#kickstarter") {
                 $('#overgrowth-image').css('opacity', 0);
@@ -654,6 +749,11 @@
               address: true
             });
             e.preventDefault();
+        });
+
+        $('#toggle-mobile-menu').click(function() {
+            $('#main-nav').toggle();
+            return false;
         });
 
 

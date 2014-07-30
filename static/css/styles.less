@@ -510,7 +510,7 @@ animation: fade-in .25s linear;
     z-index: 9999;
 }
 #main-nav, #dotted-nav, #welcome, #overgrowth-fixed {
-    opacity: 0;
+    opacity: 1;
     -webkit-transition: opacity 1s ease-in 2s; /* property duration timing-function delay */
     -moz-transition: opacity 1s ease-in 2s;
     -o-transition: opacity 1s ease-in 2s;
@@ -683,13 +683,13 @@ animation: fade-in .25s linear;
         background-repeat: no-repeat;
         background-position: center center;
         position: absolute;
-        left: 50%;
+        right: 50%;
         top: 50%;
         height: 14px;
         width: 14px;
         margin-top: -24px / 2;
         margin-left: 250px;
-        padding: 10px;
+        padding: 15px;
         z-index: 999;
         opacity: 1;
     }
@@ -733,7 +733,7 @@ animation: fade-in .25s linear;
 }
 .bottom-middle {
     position: absolute;
-    width: 500px;
+    max-width: 500px;
     margin-left: -500px / 2;
     left: 50%;
     bottom: 50px;
@@ -743,7 +743,7 @@ animation: fade-in .25s linear;
 #credits {
     background: @green;
     .bottom-middle {
-        width: 384px;
+        max-width: 384px;
         margin-left: -384px / 2;
         .ben {
             margin-right: 13px;
@@ -797,7 +797,7 @@ section {
 }
 .carousel {
     .carousel-inner {
-        width: 450px;
+        max-width: 450px;
         margin: 0 auto;
     }
 }
@@ -903,6 +903,184 @@ section {
 #open-gallery-button {
     transition: all 0.5s ease;
 }
+
+
+
+
+@media (max-width: 400px) {
+    #toggle-mobile-menu {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        width: 16px;
+        height: 12px;
+        z-index: 10000;
+        &.light {
+            background: url(../img/mobile/menu-lines.png);
+        }
+        &.dark {
+            background: url(../img/mobile/menu-lines-grey.png);
+        }
+    }
+    #main-nav {
+        display: none;
+        height: 100%;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.85);
+        position: fixed;
+        z-index: 9999;
+        top: 48px;
+        left: 0;
+
+        .nav-horizontal {
+            top: 8px;
+            left: 20px;
+            text-align: left;
+
+            li {
+                display: block;
+                line-height: 34px;
+                border: none;
+                margin: 0;
+                a {
+                    color: @dark-grey;
+                    font-weight: 600;
+                }
+                &:hover {
+                    // border: none;
+                }
+            }
+        }
+    }
+    .nav.dots {
+        display: none;
+    }
+    .overgrowth-logo {
+        .mobile {
+            width: 281px;
+        }
+    }
+    .top-right {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    .middle-right {
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        height: 72px;
+        margin-top: -72px / 2;
+    }
+    .bottom-right {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+    }
+    .bottom-left {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+    }
+    .top-middle {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        width: 20px;
+        margin-left: -10px;
+    }
+    .bottom-middle {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        width: 20px;
+        margin-left: -10px;
+    }
+    #store {
+        .arrow-right {
+            right: 5px;
+            left: inherit;
+            margin: 0;
+        }
+        .arrow-left {
+            left: 5px;
+            margin: 0;
+        }
+    }
+    #credits {
+        .credits-names {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+
+            .credits-list {
+                position: relative;
+                padding-bottom: 4px;
+            }
+
+            .ben {
+                position: absolute;
+                left: 20px;
+            }
+            .michelle {
+                position: absolute;
+                right: 20px;
+            }
+
+            li {
+                list-style-type: none;
+                display: inline-block;
+            }
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
