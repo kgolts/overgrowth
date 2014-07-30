@@ -690,7 +690,7 @@ animation: fade-in .25s linear;
         background-repeat: no-repeat;
         background-position: center center;
         position: absolute;
-        right: 50%;
+        left: 50%;
         top: 50%;
         height: 30px;
         width: 30px;
@@ -791,15 +791,21 @@ section {
     background-size:cover;
 }
 #kickstarter {
-    .bottom-middle a {
-        text-transform: uppercase;
-        color: #FFF;
-        border-bottom: 1px solid #FFF;
-        text-decoration: none;
-        font-size: 13px;
-        letter-spacing: 3px;
-        padding-bottom: 1px;
-        font-weight: 400;
+    .bottom-middle {
+        width: 208px;
+        margin-left: -208px / 2;
+
+        a {
+            text-transform: uppercase;
+            color: #FFF;
+            border-bottom: 1px solid #FFF;
+            text-decoration: none;
+            font-size: 13px;
+            letter-spacing: 3px;
+            padding-bottom: 1px;
+            font-weight: 400;
+        }
+
     }
 }
 .carousel {
