@@ -553,6 +553,8 @@ animation: fade-in .25s linear;
 }
 #gallery {
     height: 100%;
+    background: url(../img/gallery-placeholder.jpg);
+
     // z-index: 9999;
     background-color: @light-tan;
 
@@ -640,6 +642,11 @@ animation: fade-in .25s linear;
     background: @light-tan;
     .product {
         padding: 115px 0 50px;
+        .purchase {
+            &:hover {
+                text-decoration: none;
+            }
+        }
         .product-details {
             padding-top: 20px;
             h5 {
@@ -674,7 +681,7 @@ animation: fade-in .25s linear;
                 font-size: 13px;
                 letter-spacing: 3px;
                 padding-bottom: 1px;
-                margin-right: -1px;
+                margin-right: -3px;
             }
         }
     }
@@ -685,9 +692,9 @@ animation: fade-in .25s linear;
         position: absolute;
         right: 50%;
         top: 50%;
-        height: 14px;
-        width: 14px;
-        margin-top: -24px / 2;
+        height: 30px;
+        width: 30px;
+        margin-top: -30px / 2;
         margin-left: 250px;
         padding: 15px;
         z-index: 999;
@@ -700,9 +707,9 @@ animation: fade-in .25s linear;
         position: absolute;
         left: 50%;
         top: 50%;
-        height: 14px;
-        width: 14px;
-        margin-top: -24px / 2;
+        height: 30px;
+        width: 30px;
+        margin-top: -30px / 2;
         margin-left: -250px;
         padding: 15px;
         z-index: 999;
@@ -908,19 +915,33 @@ section {
 
 
 @media (max-width: 400px) {
+    // body {
+    //     height: 120%;
+    // }
     #toggle-mobile-menu {
         position: fixed;
-        top: 20px;
-        left: 20px;
         width: 16px;
         height: 12px;
         z-index: 10000;
+
+        top: 0;
+        left: 0;
+        padding: 20px;
+
         &.light {
             background: url(../img/mobile/menu-lines.png);
+            background-position: 20px 20px;
+            background-repeat: no-repeat;
         }
         &.dark {
             background: url(../img/mobile/menu-lines-grey.png);
+            background-position: 20px 20px;
+            background-repeat: no-repeat;
         }
+    }
+    #artist-statement {
+        position: relative;
+        z-index: 100;
     }
     #main-nav {
         display: none;
@@ -928,8 +949,11 @@ section {
         width: 100%;
         background: rgba(255, 255, 255, 0.85);
         position: fixed;
-        z-index: 9999;
-        top: 48px;
+        z-index: 99;
+        margin-top: 48px;
+        margin-bottom: -48px;
+        top: 0;
+        bottom: 0;
         left: 0;
 
         .nav-horizontal {
@@ -956,6 +980,9 @@ section {
         display: none;
     }
     .overgrowth-logo {
+        .desktop {
+            display: none;
+        }
         .mobile {
             width: 281px;
         }
@@ -971,11 +998,20 @@ section {
         top: 50%;
         height: 72px;
         margin-top: -72px / 2;
+
+        &.kickstarter {
+            a {
+                display: block;
+            }
+        }
     }
     .bottom-right {
         position: absolute;
         bottom: 20px;
-        right: 20px;
+        right: 0;
+        a {
+            padding: 20px;
+        }
     }
     .bottom-left {
         position: absolute;
@@ -1000,11 +1036,19 @@ section {
         .arrow-right {
             right: 5px;
             left: inherit;
-            margin: 0;
+            margin-left: 0;
+            margin-right: 0;
         }
         .arrow-left {
             left: 5px;
-            margin: 0;
+            margin-left: 0;
+            margin-right: 0;
+        }
+        .product {
+            padding: 0;
+            img {
+                max-height: 300px;
+            }
         }
     }
     #credits {
@@ -1032,6 +1076,9 @@ section {
                 display: inline-block;
             }
         }
+    }
+    #gallery {
+        background: url(../img/mobile/gallery-placeholder.jpg);
     }
 
 }

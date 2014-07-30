@@ -3,8 +3,9 @@
 
 <head>
     <meta charset="utf-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <title>Overgrowth</title>
 
@@ -20,7 +21,7 @@
     <link rel="stylesheet" href="static/css/avenir.css">
     <link rel="stylesheet" href="static/css/styles.css">
     <link rel="stylesheet" href="static/Magnific-Popup/dist/magnific-popup.css">
-    <!-- <link rel="stylesheet" href="static/swipebox/src/css/swipebox.css"> -->
+    <link rel="stylesheet" href="static/swipebox/src/css/swipebox.css">
     <link rel="stylesheet" href="static/css/font-awesome.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 </head>
@@ -38,11 +39,19 @@
         <!--the +/-80% translation can be adjusted to control the speed difference of the image-->
     </div>
 
-    <div class="parallax-image-wrapper parallax-image-wrapper-100" data-anchor-target="#about + .gap" data-bottom-top="transform:translate3d(0px, 200%, 0px)" data-top-bottom="transform:translate3d(0px, 0%, 0px)">
+    <div class="parallax-image-wrapper parallax-image-wrapper-100 hidden-xs" data-anchor-target="#about + .gap" data-bottom-top="transform:translate3d(0px, 200%, 0px)" data-top-bottom="transform:translate3d(0px, 0%, 0px)">
 
         <div class="parallax-image parallax-image-100" style="background-image:url(static/img/gallery-placeholder.jpg)" data-anchor-target="#about + .gap" data-bottom-top="transform: translate3d(0px, -80%, 0px);" data-top-bottom="transform: translate3d(0px, 80%, 0px);"></div>
         <!--the +/-80% translation can be adjusted to control the speed difference of the image-->
     </div>
+
+
+    <div class="parallax-image-wrapper parallax-image-wrapper-100 visible-xs-*" data-anchor-target="#about + .gap" data-bottom-top="transform:translate3d(0px, 200%, 0px)" data-top-bottom="transform:translate3d(0px, 0%, 0px)">
+
+        <div class="parallax-image parallax-image-100" style="background-image:url(static/img/mobile/gallery-placeholder.jpg)" data-anchor-target="#about + .gap" data-bottom-top="transform: translate3d(0px, -80%, 0px);" data-top-bottom="transform: translate3d(0px, 80%, 0px);"></div>
+        <!--the +/-80% translation can be adjusted to control the speed difference of the image-->
+    </div>
+
 
     <div class="parallax-image-wrapper parallax-image-wrapper-100" data-anchor-target="#store + #exhibition" data-bottom-top="transform:translate3d(0px, 200%, 0px)" data-top-bottom="transform:translate3d(0px, 0%, 0px)">
 
@@ -139,6 +148,7 @@
             <div id="welcome" class="top-right hidden-xs" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1">
                 <img src="static/img/welcome.png" alt="Welcome">
             </div>
+
             <div class="gap gap-100p" data-bottom-top="transform:translate3d(0px, -50%, 0px)" data-top-bottom="transform:translate3d(0px, 50%, 0px)">
                 <div class="display-table">
                     <div class="display-table-cell overgrowth-logo">
@@ -147,13 +157,25 @@
                     </div>
                 </div>
             </div>
-            <div class="bottom-right" data-125-center-center="opacity:0" data--100-bottom-top="opacity:1">
+
+            <div class="bottom-right hidden-xs" data-125-center-center="opacity:0" data--100-bottom-top="opacity:1">
                 <a href="#about">
                     <img src="static/img/down-arrow-white.png" alt="Next section">
                 </a>
             </div>
-            <div class="bottom-middle visible-xs-*" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1">
-                <img src="static/img/mobile/welcome.png" alt="Welcome" style="margin-left: -25px;">
+
+            <div class="bottom-right visible-xs-*" data-bottom="opacity:1" data-center-center="opacity:0">
+                <a href="#about">
+                    <img src="static/img/down-arrow-white.png" alt="Next section">
+                </a>
+            </div>
+
+            <div class="bottom-middle hidden-xs" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1" style="width: 49px; margin-left: -24px;">
+                <img src="static/img/mobile/welcome.png" alt="Welcome">
+            </div>
+
+            <div class="bottom-middle visible-xs-*" data-bottom="opacity:1" data-center-center="opacity:0" style="width: 49px; margin-left: -24px;">
+                <img src="static/img/mobile/welcome.png" alt="Welcome">
             </div>
         </section>
 
@@ -162,55 +184,78 @@
                 <img src="static/img/about.png" alt="About" class="parallax-fadeout">
             </div>
 
-            <div class="top-middle visible-xs-*" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1" style="margin-top: -6px;">
-                <img src="static/img/mobile/overgrowth-gray.png" alt="Overgrowth" style="margin-left: -36px; ">
+            <div class="top-middle visible-xs-*" data-bottom="opacity:0" data-center-center="opacity:1" style="margin-top: -6px; margin-left: -36px;">
+                <img src="static/img/mobile/overgrowth-gray.png" alt="Overgrowth">
             </div>
 
             <div class="display-table">
                 <div class="display-table-cell">
-                    <img src="static/img/about-body.png">
+                    <img src="static/img/mobile/about-body.png">
                 </div>
             </div>
-            <div class="bottom-right" data-125-center-center="opacity:0" data--100-bottom-top="opacity:1">
+
+            <div class="bottom-right hidden-xs" data-125-center-center="opacity:0" data--100-bottom-top="opacity:1">
                 <a href="#gallery">
                     <img src="static/img/down-arrow-gray.png" alt="Next section" class="parallax-fadeout">
                 </a>
             </div>
-            <div class="bottom-middle visible-xs-*" data-125-center-center="opacity:0" data--100-bottom-top="opacity:1">
-                <img src="static/img/mobile/about.png" alt="About" style="margin-left: -17px;">
+
+            <div class="bottom-right visible-xs-*" data-bottom="opacity:1" data-center-center="opacity:0">
+                <a href="#gallery">
+                    <img src="static/img/down-arrow-gray.png" alt="Next section" class="parallax-fadeout">
+                </a>
+            </div>
+
+            <div class="bottom-middle visible-xs-*" data-bottom="opacity:1" data-center-center="opacity:0" style="width: 34px; margin-left: -17px;">
+                <img src="static/img/mobile/about.png" alt="About">
             </div>
         </section>
 
-        <section class="gap gap-100p" style="background-image:url(static/img/gallery-placeholder.jpg);" id="gallery">
+        <section class="gap gap-100p" id="gallery">
             <div class="top-right hidden-xs" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1">
                 <img src="static/img/gallery.png" alt="Gallery">
             </div>
 
-            <div class="top-middle visible-xs-*" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1" style="margin-top: -6px;">
-                <img src="static/img/mobile/overgrowth-vertical-white.png" alt="Overgrowth" style="margin-left: -36px;">
+            <div class="top-middle visible-xs-*" data-bottom="opacity:0" data-center-center="opacity:1" style="margin-top: -6px; margin-left: -36px;">
+                <img src="static/img/mobile/overgrowth-vertical-white.png" alt="Overgrowth">
             </div>
 
             <div class="display-table">
                 <div class="display-table-cell">
                     <!-- Gallery 1 -->
-                    <div id="main-gallery">
+                    <div id="main-gallery" class="hidden-xs">
                         <a href="static/img/large/11420016_v1_web.jpg" id="open-gallery-button">
-                            <img src="static/img/view-gallery-button.png" alt="Open gallery">
+                            <img src="static/img/mobile/view-gallery-button.png" alt="Open gallery">
                         </a>
                         <a href="static/img/large/11340009_v1.jpg"></a>
                         <a href="static/img/large/11180030_v1_web.jpg"></a>
                     </div>
+
+                    <div id="main-gallery-touch" class="visible-xs-*">
+                        <a class="swipebox" href="static/img/large/11420016_v1_web.jpg">
+                            <img src="static/img/mobile/view-gallery-button.png" alt="Open gallery">
+                        </a>
+                        <a class="swipebox" href="static/img/large/11340009_v1.jpg"></a>
+                        <a class="swipebox" href="static/img/large/11180030_v1_web.jpg"></a>
+                    </div>
+
                 </div>
             </div>
             <div class="middle-right hidden">
                 <img src="static/img/overgrowth-vertical-white.png" alt="Overgrowth">
             </div>
 
-            <div class="bottom-middle visible-xs-*">
-                <img src="static/img/mobile/gallery.png" alt="Gallery" style="margin-left: -21px;">
+            <div class="bottom-middle visible-xs-*" data-bottom="opacity:1" data-center-center="opacity:0" style="width: 42px; margin-left: -21px;">
+                <img src="static/img/mobile/gallery.png" alt="Gallery">
             </div>
 
-            <div class="bottom-right" data-125-center-center="opacity:0" data--100-bottom-top="opacity:1">
+            <div class="bottom-right hidden-xs" data-125-center-center="opacity:0" data--100-bottom-top="opacity:1">
+                <a href="#artist-statement">
+                    <img src="static/img/down-arrow-white.png" alt="Next section">
+                </a>
+            </div>
+
+            <div class="bottom-right visible-xs-*" data-bottom="opacity:1" data-center-center="opacity:0">
                 <a href="#artist-statement">
                     <img src="static/img/down-arrow-white.png" alt="Next section">
                 </a>
@@ -222,8 +267,8 @@
                 <img src="static/img/artist-statement.png" alt="Artist Statement">
             </div>
 
-            <div class="top-middle visible-xs-*" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1" style="margin-top: -6px;">
-                <img src="static/img/mobile/overgrowth-gray.png" alt="Overgrowth" style="margin-left: -36px;">
+            <div class="top-middle visible-xs-*" data-bottom="opacity:0" data-center-center="opacity:1" style="margin-top: -6px; margin-left: -36px;">
+                <img src="static/img/mobile/overgrowth-gray.png" alt="Overgrowth" style="">
             </div>
 
             <div class="middle-right hidden">
@@ -239,11 +284,17 @@
                 </div>
             </div>
 
-            <div class="bottom-middle visible-xs-*">
-                <img src="static/img/mobile/artist-statement.png" alt="Gallery" style="margin-left: -47px;">
+            <div class="bottom-middle visible-xs-*" data-bottom="opacity:1" data-center-center="opacity:0" style="width: 94px; margin-left: -47px;">
+                <img src="static/img/mobile/artist-statement.png" alt="Gallery">
             </div>
 
-            <div class="bottom-right" data-125-center-center="opacity:0" data--100-bottom-top="opacity:1">
+            <div class="bottom-right hidden-xs" data-125-center-center="opacity:0" data--100-bottom-top="opacity:1">
+                <a href="#kickstarter">
+                    <img src="static/img/down-arrow-gray.png" alt="Next section">
+                </a>
+            </div>
+
+            <div class="bottom-right visible-xs-*" data-bottom="opacity:1" data-center-center="opacity:0">
                 <a href="#kickstarter">
                     <img src="static/img/down-arrow-gray.png" alt="Next section">
                 </a>
@@ -255,13 +306,13 @@
                 <img src="static/img/kickstarter.png" alt="Kickstarter">
             </div>
 
-            <div class="top-middle visible-xs-*" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1" style="margin-top: -6px;">
-                <img src="static/img/mobile/overgrowth-white.png" alt="Overgrowth" style="margin-left: -36px;">
+            <div class="top-middle visible-xs-*" data-bottom="opacity:0" data-center-center="opacity:1" style="margin-left: -36px; margin-top: -6px;">
+                <img src="static/img/mobile/overgrowth-white.png" alt="Overgrowth">
             </div>
 
-            <div class="middle-right">
+            <div class="middle-right kickstarter" style="height: 158px; margin-top: -79px;">
                 <a href="#view-kickstarter">
-                    <img src="static/img/view-kickstarter-button.png" alt="Go to Kickstarter Campaign" style="height: 130px; margin-top: -65px;">
+                    <img src="static/img/view-kickstarter-button.png" alt="Go to Kickstarter Campaign">
                 </a>
             </div>
 
@@ -275,7 +326,18 @@
             <div class="bottom-middle hidden-xs">
                 <a class="" href="#">Support Overgrowth</a>
             </div>
-            <div class="bottom-right" data-125-center-center="opacity:0" data--100-bottom-top="opacity:1">
+
+            <div class="bottom-middle visible-xs-*" data-bottom="opacity:1" data-center-center="opacity:0" style="width: 64px; margin-left: -32px;">
+                <img src="static/img/mobile/kickstarter.png" alt="Kickstarter">
+            </div>
+
+            <div class="bottom-right hidden-xs" data-125-center-center="opacity:0" data--100-bottom-top="opacity:1">
+                <a href="#store">
+                    <img src="static/img/down-arrow-white.png" alt="Next section">
+                </a>
+            </div>
+
+            <div class="bottom-right visible-xs-*" data-bottom="opacity:1" data-center-center="opacity:0">
                 <a href="#store">
                     <img src="static/img/down-arrow-white.png" alt="Next section">
                 </a>
@@ -287,8 +349,8 @@
                 <img src="static/img/store.png" alt="Exhibition">
             </div>
 
-            <div class="top-middle visible-xs-*" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1" style="margin-top: -6px;">
-                <img src="static/img/mobile/overgrowth-gray.png" alt="Overgrowth" style="margin-left: -36px;">
+            <div class="top-middle visible-xs-*" data-bottom="opacity:0" data-center-center="opacity:1" style="margin-left: -36px; margin-top: -6px;">
+                <img src="static/img/mobile/overgrowth-gray.png" alt="Overgrowth">
             </div>
 
             <div class="middle-right hidden-xs" style="height: 130px; margin-top: -65px;">
@@ -296,7 +358,14 @@
                     <img src="static/img/become-a-stockist.png" alt="Overgrowth" >
                 </a>
             </div>
-            <div class="display-table">
+
+
+                        <a href="#" id="store-prev" role="button" data-slide="prev" class="carousel-control arrow-left"></a>
+                        <a href="#" id="store-next" role="button" data-slide="next" class="carousel-control arrow-right"></a>
+
+
+
+            <div class="display-table clearfix">
                 <div class="display-table-cell">
                     <div id="store-items" class="carousel slide" data-ride="carousel">
 
@@ -311,29 +380,28 @@
                             </li>
                         </ul>
 
-                        <a href="#" id="store-prev" role="button" data-slide="prev" class="carousel-control arrow-left"></a>
-                        <a href="#" id="store-next" role="button" data-slide="next" class="carousel-control arrow-right"></a>
-
-
                         <div class="carousel-inner">
 
                             <div class="product item active" data-id="nav-publication">
                                 <div class="product-image">
                                     <a href="http://placehold.it/800x600&text=Publication+Large" id="publication-popup">
-                                        <img src="static/img/overgrowth-store-default.jpg">
+                                        <img src="static/img/overgrowth-store-default.jpg" class="hidden-xs">
+                                        <img src="static/img/overgrowth-store-default.jpg" class="visible-xs-*">
                                     </a>
                                 </div>
-                                <div class="product-details">
-                                    <h5>Publication</h5>
-                                    <!-- <img src="static/img/publication-details.png" alt=""> -->
-                                    <div class="fine-print">
-                                        <span><em>Price</em> $35.00</span>
-                                        <span><em>Pages</em> 86</span>
-                                        <span><em>Size</em> 12 x 17</span>
+                                <a href="#" class="purchase purchase-publication">
+                                    <div class="product-details">
+                                        <h5>Publication</h5>
+                                        <!-- <img src="static/img/publication-details.png" alt=""> -->
+                                        <div class="fine-print">
+                                            <span><em>Price</em> $35.00</span>
+                                            <span><em>Pages</em> 86</span>
+                                            <span><em>Size</em> 12 x 17</span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="product-purchase">
-                                    <a class="purchase" href id="purchase-publication">Purchase</a>
+                                </a>
+                                <div class="product-purchase hidden-xs">
+                                    <a class="purchase" href="#" class="purchase-publication">Purchase</a>
                                 </div>
                             </div>
 
@@ -344,17 +412,19 @@
                                         <img src="http://placehold.it/290x437&text=Prints">
                                     </a>
                                 </div>
-                                <div class="product-details">
-                                    <h5>Prints</h5>
-                                    <!-- <img src="static/img/publication-details.png" alt=""> -->
-                                    <div class="fine-print">
-                                        <span><em>Price</em> $25.00</span>
-                                        <span><em>Pages</em> 1</span>
-                                        <span><em>Size</em> 12 x 17</span>
+                                <a href="#" class="purchase purchase-prints">
+                                    <div class="product-details">
+                                        <h5>Prints</h5>
+                                        <!-- <img src="static/img/publication-details.png" alt=""> -->
+                                        <div class="fine-print">
+                                            <span><em>Price</em> $25.00</span>
+                                            <span><em>Pages</em> 1</span>
+                                            <span><em>Size</em> 12 x 17</span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="product-purchase">
-                                    <a class="purchase" href id="purchase-prints">Purchase</a>
+                                </a>
+                                <div class="product-purchase hidden-xs">
+                                    <a class="purchase" href="" class="purchase-prints">Purchase</a>
                                 </div>
                             </div>
 
@@ -365,17 +435,19 @@
                                         <img src="http://placehold.it/290x437&text=Poster">
                                     </a>
                                 </div>
-                                <div class="product-details">
-                                    <h5>Poster</h5>
-                                    <!-- <img src="static/img/publication-details.png" alt=""> -->
-                                    <div class="fine-print">
-                                        <span><em>Price</em> $18.00</span>
-                                        <span><em>Quantity</em> 1</span>
-                                        <span><em>Size</em> 11 x 17</span>
+                                <a href="#" class="purchase purchase-poster">
+                                    <div class="product-details">
+                                        <h5>Poster</h5>
+                                        <!-- <img src="static/img/publication-details.png" alt=""> -->
+                                        <div class="fine-print">
+                                            <span><em>Price</em> $18.00</span>
+                                            <span><em>Quantity</em> 1</span>
+                                            <span><em>Size</em> 11 x 17</span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="product-purchase">
-                                    <a class="purchase" href id="purchase-poster">Purchase</a>
+                                </a>
+                                <div class="product-purchase hidden-xs">
+                                    <a class="purchase" href="#" class="purchase-poster">Purchase</a>
                                 </div>
                             </div>
 
@@ -387,17 +459,19 @@
                                         <img src="http://placehold.it/290x437&text=Postcard">
                                     </a>
                                 </div>
-                                <div class="product-details">
-                                    <h5>Postcard</h5>
-                                    <!-- <img src="static/img/publication-details.png" alt=""> -->
-                                    <div class="fine-print">
-                                        <span><em>Price</em> $5.00</span>
-                                        <span><em>Quantity</em> 1</span>
-                                        <span><em>Size</em> 5 x 7</span>
+                                <a href="#" class="purchase-postcard">
+                                    <div class="product-details">
+                                        <h5>Postcard</h5>
+                                        <!-- <img src="static/img/publication-details.png" alt=""> -->
+                                        <div class="fine-print">
+                                            <span><em>Price</em> $5.00</span>
+                                            <span><em>Quantity</em> 1</span>
+                                            <span><em>Size</em> 5 x 7</span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="product-purchase">
-                                    <a class="purchase" href id="purchase-postcard">Purchase</a>
+                                </a>
+                                <div class="product-purchase hidden-xs">
+                                    <a class="purchase" href="#" class="purchase-postcard">Purchase</a>
                                 </div>
                             </div>
 
@@ -410,8 +484,8 @@
                 <!--/table-cell-->
             </div>
 
-            <div class="bottom-middle visible-xs-*">
-                <img src="static/img/mobile/store.png" alt="Store" style="margin-left: -15px;">
+            <div class="bottom-middle visible-xs-*" data-bottom="opacity:1" data-center-center="opacity:0" style="width: 31px; margin-left: -15px;">
+                <img src="static/img/mobile/store.png" alt="Store">
             </div>
 
             <div class="bottom-right" data-125-center-center="opacity:0" data--100-bottom-top="opacity:1">
@@ -426,8 +500,8 @@
                 <img src="static/img/exhibition.png" alt="Exhibition">
             </div>
 
-            <div class="top-middle visible-xs-*" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1" style="margin-top: -6px;">
-                <img src="static/img/mobile/overgrowth-white.png" alt="Overgrowth" style="margin-left: -36px;">
+            <div class="top-middle visible-xs-*" data-bottom="opacity:0" data-center-center="opacity:1" style="margin-left: -36px; margin-top: -6px;">
+                <img src="static/img/mobile/overgrowth-white.png" alt="Overgrowth">
             </div>
 
             <div class="middle-right hidden">
@@ -454,10 +528,16 @@
             </div>
 
             <div class="bottom-middle visible-xs-*">
-                <img src="static/img/mobile/exhibition.png" alt="Exhibition" style="margin-left: -28px;">
+                <img src="static/img/mobile/exhibition.png" data-bottom="opacity:1" data-center-center="opacity:0" alt="Exhibition" style="margin-left: -28px;">
             </div>
 
-            <div class="bottom-right" data-125-center-center="opacity:0" data--100-bottom-top="opacity:1">
+            <div class="bottom-right hidden-xs" data-125-center-center="opacity:0" data--100-bottom-top="opacity:1">
+                <a href="#credits">
+                    <img src="static/img/over-arrow-white-down.png" alt="Next section">
+                </a>
+            </div>
+
+            <div class="bottom-right visible-xs-*" data-bottom="opacity:1" data-center-center="opacity:0">
                 <a href="#credits">
                     <img src="static/img/over-arrow-white-down.png" alt="Next section">
                 </a>
@@ -469,7 +549,7 @@
                 <img src="static/img/credits.png" alt="Exhibition">
             </div>
 
-            <div class="top-middle visible-xs-*" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1" style="margin-top: -6px;">
+            <div class="top-middle visible-xs-*" data-bottom="opacity:0" data-center-center="opacity:1" style="margin-top: -6px;">
                 <img src="static/img/mobile/overgrowth-white.png" alt="Overgrowth" style="margin-left: -36px;">
             </div>
 
@@ -521,15 +601,44 @@
     </div>
 
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="static/fullpage/vendors/jquery.easings.min.js"></script>
+    <script src="static/js/jquery.ui.touch-punch.min.js"></script>
+    <script src="static/jquery.tap/jquery.tap.min.js"></script>
     <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <!-- <script type="text/javascript" src="static/swipebox/src/js/jquery.swipebox.js"></script> -->
-    <!-- <script type="text/javascript" src="static/fullpage/vendors/jquery.easings.min.js"></script> -->
+    <script type="text/javascript" src="static/swipebox/src/js/jquery.swipebox.js"></script>
+    <script type="text/javascript" src="static/TouchSwipe-Jquery-Plugin/jquery.touchSwipe.min.js"></script>
     <script type="text/javascript" src="static/Magnific-Popup/dist/jquery.magnific-popup.min.js"></script>
-    <script type="text/javascript" src="static/js/imagelightbox.min.js"></script>
+    <!-- <script type="text/javascript" src="static/js/imagelightbox.min.js"></script> -->
     <script type="text/javascript" src="static/js/skrollr/dist/skrollr.min.js"></script>
     <script type="text/javascript" src="static/js/skrollr-menu/dist/skrollr.menu.min.js"></script>
-    <script type="text/javascript" src="static/js/skrollr-pages.js"></script>
+    <!-- <script type="text/javascript" src="static/js/skrollr-pages.js"></script> -->
     <script src="https://checkout.stripe.com/checkout.js"></script>
+    <script>
+        var s = skrollr.init({
+            mobileDeceleration: 0.004,
+            smoothScrolling: false
+        });
+        skrollr.menu.init(s, {
+            //skrollr will smoothly animate to the new position using `animateTo`.
+            animate: true,
+
+            //The easing function to use.
+            easing: 'sqrt',
+
+            //Multiply your data-[offset] values so they match those set in skrollr.init
+            scale: 2,
+
+            //How long the animation should take in ms.
+            duration: function(currentTop, targetTop) {
+                //By default, the duration is hardcoded at 500ms.
+                return 500;
+
+                //But you could calculate a value based on the current scroll position (`currentTop`) and the target scroll position (`targetTop`).
+                //return Math.abs(currentTop - targetTop) * 10;
+            }
+        });
+    </script>
     <script type="text/javascript">
     $(function() {
         $('#store-items').carousel({
@@ -545,6 +654,7 @@
             // console.log('next');
             return false;
         });
+
         $('#store-items').on('slide.bs.carousel', function (e) {
           // do something…
           var elem = e.relatedTarget;
@@ -553,6 +663,26 @@
           $('#' + target).addClass('active');
           // console.log(target, $(target));
         });
+        $(".product-image").swipe( {
+            //Generic swipe handler for all directions
+            swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+                console.log("You swiped " + direction);
+                // console.log("event", event);
+                // console.log("distance", distance);
+                // console.log("duration", duration);
+                // console.log("fingerCount", fingerCount);
+                // console.log("fingerData", fingerData);
+                if (direction == "left") {
+                    $('.carousel').carousel('next');
+                }
+                if (direction == "right") {
+                    $('.carousel').carousel('prev');
+                }
+            },
+            threshold:75
+        });
+
+
         $('.nav-store li a').click(function() {
             var idx = $(this).attr('data-slide-to');
             $('#store-items').carousel(parseInt(idx));
@@ -584,7 +714,9 @@
             }
             // console.log(active);
         });
-        // $('.swipebox').swipebox();
+
+        $('.swipebox').swipebox();
+
         $('#main-gallery').magnificPopup({
             delegate: 'a',
             type: 'image',
@@ -650,32 +782,7 @@
 
         $('#main-nav, #dotted-nav, #welcome, #overgrowth-fixed').css('opacity', '1.00');
 
-        var s = skrollr.init({
-            mobileDeceleration: 0.004,
-            smoothScrolling: false
-        });
-        skrollr.menu.init(s, {
-            //skrollr will smoothly animate to the new position using `animateTo`.
-            animate: true,
-
-            //The easing function to use.
-            easing: 'sqrt',
-
-            //Multiply your data-[offset] values so they match those set in skrollr.init
-            scale: 2,
-
-            //How long the animation should take in ms.
-            duration: function(currentTop, targetTop) {
-                //By default, the duration is hardcoded at 500ms.
-                return 500;
-
-                //But you could calculate a value based on the current scroll position (`currentTop`) and the target scroll position (`targetTop`).
-                //return Math.abs(currentTop - targetTop) * 10;
-            }
-        });
-
-
-        $('#purchase-publication').click(function(e) {
+        $('.purchase-publication').click(function(e) {
             // Open Checkout with further options
             var handler = StripeCheckout.configure({
                 key: 'pk_test_4O1woQIrDngFxcp9btGjkFiL',
@@ -755,8 +862,6 @@
             $('#main-nav').toggle();
             return false;
         });
-
-
 
     });
     </script>
