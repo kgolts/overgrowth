@@ -9,11 +9,11 @@
     <title>Overgrowth</title>
 
     <link rel="stylesheet" href="static/css/avenir.css">
+    <link rel="stylesheet" href="static/css/styles.css">
     <link rel="stylesheet" href="static/Magnific-Popup/dist/magnific-popup.css">
     <!-- <link rel="stylesheet" href="static/swipebox/src/css/swipebox.css"> -->
     <link rel="stylesheet" href="static/css/font-awesome.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="static/css/styles.css">
 </head>
 
 <body>
@@ -162,7 +162,7 @@
                 <div class="display-table-cell">
                     <!-- Gallery 1 -->
                     <div id="main-gallery">
-                        <a href="static/img/large/11420016_v1_web.jpg">
+                        <a href="static/img/large/11420016_v1_web.jpg" id="open-gallery-button">
                             <img src="static/img/view-gallery-button.png" alt="Open gallery">
                         </a>
                         <a href="static/img/large/11340009_v1.jpg"></a>
@@ -259,7 +259,7 @@
 
                             <div class="product item active" data-id="nav-publication">
                                 <div class="product-image">
-                                    <a href>
+                                    <a href="http://placehold.it/800x600&text=Publication+Large" id="publication-popup">
                                         <img src="static/img/overgrowth-store-default.jpg">
                                     </a>
                                 </div>
@@ -280,7 +280,7 @@
 
                             <div class="product item" data-id="nav-prints">
                                 <div class="product-image">
-                                    <a href>
+                                    <a href="http://placehold.it/800x600&text=Prints+Large" id="prints-popup">
                                         <img src="http://placehold.it/290x437&text=Prints">
                                     </a>
                                 </div>
@@ -301,7 +301,7 @@
 
                             <div class="product item" data-id="nav-poster">
                                 <div class="product-image">
-                                    <a href>
+                                    <a href="http://placehold.it/800x600&text=Poster+Large" id="poster-popup">
                                         <img src="http://placehold.it/290x437&text=Poster">
                                     </a>
                                 </div>
@@ -322,7 +322,7 @@
 
                             <div class="product item" data-id="nav-postcard">
                                 <div class="product-image">
-                                    <a href>
+                                    <a href="http://placehold.it/800x600&text=Postcard+Large" id="postcard-popup">
                                         <!-- <img src="http://placehold.it/290x193&text=Postcard"> -->
                                         <img src="http://placehold.it/290x437&text=Postcard">
                                     </a>
@@ -484,7 +484,7 @@
         $('#main-gallery').magnificPopup({
             delegate: 'a',
             type: 'image',
-            removalDelay: 300,
+            removalDelay: 0,
             mainClass: 'mfp-fade',
             showCloseBtn: false,
             gallery: {
@@ -496,11 +496,52 @@
             callbacks: {
                 change: function() {
                     if (this.isOpen) {
-                        console.log("RAWR!");
                         this.wrap.addClass('mfp-open');
                     }
-                }
+                },
+                open: function() {
+                    $('#open-gallery-button').css('opacity', '0');
+                },
+                close: function() {
+                    $('#open-gallery-button').css('opacity', '1');
+                },
             },
+        });
+
+        $('#publication-popup').magnificPopup({
+            type: 'image',
+            mainClass: 'mfp-fade',
+            showCloseBtn: false,
+            preloader: true,
+            tLoading: '<div class="loading"></div>',
+            callbacks: {},
+        });
+
+        $('#prints-popup').magnificPopup({
+            type: 'image',
+            mainClass: 'mfp-fade',
+            showCloseBtn: false,
+            preloader: true,
+            tLoading: '<div class="loading"></div>',
+            callbacks: {},
+        });
+
+        $('#poster-popup').magnificPopup({
+            type: 'image',
+            mainClass: 'mfp-fade',
+            showCloseBtn: false,
+            preloader: true,
+            tLoading: '<div class="loading"></div>',
+            callbacks: {},
+        });
+
+        $('#postcard-popup').magnificPopup({
+            type: 'image',
+            mainClass: 'mfp-fade',
+            showCloseBtn: false,
+            preloader: true,
+            tLoading: '<div class="loading"></div>',
+            callbacks: {},
         });
 
         $('#main-nav, #dotted-nav, #welcome, #overgrowth-fixed').css('opacity', '1.00');
@@ -529,17 +570,17 @@
             }
         });
 
-        var handler = StripeCheckout.configure({
-            key: 'pk_test_4O1woQIrDngFxcp9btGjkFiL',
-            image: 'static/img/girl-face-square.jpg',
-            token: function(token) {
-            // Use the token to create the charge with a server-side script.
-            // You can access the token ID with `token.id`
-            }
-        });
 
         $('#purchase-publication').click(function(e) {
             // Open Checkout with further options
+            var handler = StripeCheckout.configure({
+                key: 'pk_test_4O1woQIrDngFxcp9btGjkFiL',
+                image: 'static/img/girl-face-square.jpg',
+                token: function(token) {
+                // Use the token to create the charge with a server-side script.
+                // You can access the token ID with `token.id`
+                }
+            });
             handler.open({
               name: 'Overgrowth',
               description: 'Publication ($35.00)',
@@ -551,6 +592,14 @@
 
         $('#purchase-prints').click(function(e) {
             // Open Checkout with further options
+            var handler = StripeCheckout.configure({
+                key: 'pk_test_4O1woQIrDngFxcp9btGjkFiL',
+                image: 'static/img/girl-face-square.jpg',
+                token: function(token) {
+                // Use the token to create the charge with a server-side script.
+                // You can access the token ID with `token.id`
+                }
+            });
             handler.open({
               name: 'Overgrowth',
               description: 'Prints ($25.00)',
@@ -562,6 +611,14 @@
 
         $('#purchase-poster').click(function(e) {
             // Open Checkout with further options
+            var handler = StripeCheckout.configure({
+                key: 'pk_test_4O1woQIrDngFxcp9btGjkFiL',
+                image: 'static/img/girl-face-square.jpg',
+                token: function(token) {
+                // Use the token to create the charge with a server-side script.
+                // You can access the token ID with `token.id`
+                }
+            });
             handler.open({
               name: 'Overgrowth',
               description: 'Poster ($18.00)',
@@ -573,6 +630,14 @@
 
         $('#purchase-postcard').click(function(e) {
             // Open Checkout with further options
+            var handler = StripeCheckout.configure({
+                key: 'pk_test_4O1woQIrDngFxcp9btGjkFiL',
+                image: 'static/img/girl-face-square.jpg',
+                token: function(token) {
+                // Use the token to create the charge with a server-side script.
+                // You can access the token ID with `token.id`
+                }
+            });
             handler.open({
               name: 'Overgrowth',
               description: 'Poster ($5.00)',
