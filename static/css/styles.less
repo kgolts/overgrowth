@@ -725,9 +725,15 @@ animation: fade-in .25s linear;
         z-index: 1040;
     }
 
+    // .purchase-overlay {
+    //     display: block;
+    // }
+
     .product {
         padding: 85px 0 50px;
         .purchase {
+            display: block;
+
             &:hover {
                 text-decoration: none;
             }
@@ -1221,6 +1227,10 @@ section {
         margin-left: -10px;
     }
     #store {
+        .checkout-overlay {
+            position: relative;
+            z-index: 9999999;
+        }
         .arrow-right {
             right: 5px;
             left: inherit;
@@ -1293,6 +1303,13 @@ section {
     z-index: 99999;
     background: @tan;
     overflow: hidden;
+    img {
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
 }
 
 
