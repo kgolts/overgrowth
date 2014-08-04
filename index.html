@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-skrollr">
+<html class="no-skrollr" ng-app="overgrowthApp">
 
 <head>
     <meta charset="utf-8">
@@ -35,8 +35,7 @@
 <body>
     <div id="change-portrait-prompt" class="display-table" style="display: none;">
         <div class="display-table-cell">
-            <img src="static/img/change-orientation.png" alt="">
-            <h2>Please turn your device for the best viewing experience.</h2>
+            <img src="static/img/mobile/rotation-graphic.png" alt="">
         </div>
     </div>
 
@@ -51,10 +50,10 @@
                 </li>
                 <li><a href="#artist-statement">Artist Statement</a>
                 </li>
-<!--                 <li><a href="#kickstarter">Kickstarter</a>
+                <li><a href="#kickstarter">Kickstarter</a>
                 </li>
                 <li><a href="#store">Store</a>
-                </li> -->
+                </li>
                 <li><a href="#exhibition">Exhibition</a>
                 </li>
                 <li><a href="#credits">Credits</a>
@@ -94,6 +93,11 @@
         <!--the +/-80% translation can be adjusted to control the speed difference of the image-->
     </div>
 
+    <div class="parallax-image-wrapper parallax-image-wrapper-100" data-anchor-target="#artist-statement + #kickstarter" data-bottom-top="transform:translate3d(0px, 200%, 0px)" data-top-bottom="transform:translate3d(0px, 0%, 0px)">
+
+        <div class="parallax-image parallax-image-100" style="background-image:url(static/img/kickstarter-bg.jpg)" data-anchor-target="#artist-statement + #kickstarter" data-bottom-top="transform: translate3d(0px, -80%, 0px);" data-top-bottom="transform: translate3d(0px, 80%, 0px);"></div>
+        <!--the +/-80% translation can be adjusted to control the speed difference of the image-->
+    </div>
 
     <div id="dotted-nav" class="light">
         <ul class="nav dots">
@@ -121,7 +125,7 @@
                     <i class="fa fa-circle"></i>
                 </a>
             </li>
-<!--             <li class="dot" class="kickstarter-element">
+            <li class="dot" class="kickstarter-element">
                 <a href="#kickstarter">
                     <i class="fa fa-circle-o"></i>
                     <i class="fa fa-circle"></i>
@@ -132,7 +136,7 @@
                     <i class="fa fa-circle-o"></i>
                     <i class="fa fa-circle"></i>
                 </a>
-            </li> -->
+            </li>
             <li class="dot">
                 <a href="#exhibition">
                     <i class="fa fa-circle-o"></i>
@@ -163,10 +167,10 @@
                     </li>
                     <li><a href="#artist-statement">Artist Statement</a>
                     </li>
-<!--                     <li class="kickstarter-element"><a href="#kickstarter">Kickstarter</a>
+                    <li class="kickstarter-element"><a href="#kickstarter">Kickstarter</a>
                     </li>
                     <li><a href="#store">Store</a>
-                    </li> -->
+                    </li>
                     <li><a href="#exhibition">Exhibition</a>
                     </li>
                     <li><a href="#credits">Credits</a>
@@ -317,19 +321,19 @@
             </div>
 
             <div class="bottom-right hidden-xs" data-125-center-center="opacity:0" data--100-bottom-top="opacity:1">
-                <a href="#exhibition" class="alternative-next-section">
+                <a href="#kickstarter" class="alternative-next-section">
                     <img src="static/img/down-arrow-gray.png" alt="Next section">
                 </a>
             </div>
 
             <div class="bottom-right visible-xs-inline" data-bottom="opacity:1" data-center-center="opacity:0">
-                <a href="#exhibition" class="alternative-next-section">
+                <a href="#kickstarter" class="alternative-next-section">
                     <img src="static/img/down-arrow-gray.png" alt="Next section">
                 </a>
             </div>
         </section>
 
-        <section class="gap gap-100p kickstarter-element hidden" style="background-image:url(static/img/kickstarter-bg.jpg);" id="kickstarter">
+        <section class="gap gap-100p kickstarter-element" style="background-image:url(static/img/kickstarter-bg.jpg);" id="kickstarter">
             <div class="top-right hidden-xs" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1">
                 <img src="static/img/kickstarter.png" alt="Kickstarter">
             </div>
@@ -372,18 +376,62 @@
             </div>
         </section>
 
-        <section id="store" class="centered hidden">
+        <section id="store" class="centered" ng-controller="priceController">
+            <div class="checkout-overlay" style="">
+                <div class="display-table" style="">
+                    <div class="display-table-cell">
+                        <h5>{{current_product.section}}</h5>
+                        <div class="fine-print">
+                            <div class="inline-contents">
+                                <div class="inline-block">
+                                    <em>Price</em> $<span id="total-price" ng-model="price">{{current_variation.selected_size.price}}</span>
+                                </div>
+                                <div class="inline-block"ng-if="current_variation.page_count"><em>Page Count</em> {{current_variation.page_count}}</div>
+                            </div>
+                            <div class="variation" ng-class="{disabled: current_product.products.length < 2}">
+                                <a href class="checkout-arrow-left" ng-click="previousProduct()"></a>
+                                <em>{{current_variation.name}}</em>
+                                <a href class="checkout-arrow-right" ng-click="nextProduct()"></a>
+                            </div>
+                            <div>
+                                <div class="quantity">
+                                    <a href class="checkout-arrow-left" ng-click="deincrementQuantity()"></a>
+                                    <em>Quantity</em> {{current_variation.selected_quantity}}
+                                    <a href class="checkout-arrow-right" ng-click="incrementQuantity()"></a>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="variation" ng-if="current_variation.selected_size" ng-class="{disabled: current_variation.sizes.length < 2}">
+                                    <a href class="checkout-arrow-left" ng-click="nextSize()"></a>
+                                    <em>Size</em> {{current_variation.selected_size.sized}}
+                                    <a href class="checkout-arrow-right" ng-click="previousSize()"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="checkout" href>
+                            <img src="static/img/mobile/checkout.png" alt="Checkout">
+                        </a>
+                        <div class="continue-shopping">
+                            <a href="#" id="continue-shopping">Continue Shopping</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
             <div class="top-right hidden-xs" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1">
                 <img src="static/img/store.png" alt="Exhibition">
             </div>
-
             <div class="top-middle visible-xs-inline" data-bottom="opacity:0" data-center-center="opacity:1" style="margin-left: -36px; margin-top: -6px;">
                 <img src="static/img/mobile/overgrowth-gray.png" alt="Overgrowth">
             </div>
 
-            <div class="middle-right hidden-xs" style="height: 159px; margin-top: -80px;">
-                <a href="#become-a-stockist">
-                    <img src="static/img/become-a-stockist.png" alt="Overgrowth" >
+            <div class="middle-right hidden-xs become-a-stockist">
+                <a href="mailto:hello@parkerfitzgerald.com?subject=Become a Stockist" style="">
+                    <img src="static/img/become-a-stockist.png" alt="Overgrowth">
                 </a>
             </div>
 
@@ -392,43 +440,46 @@
 
 
 
-            <div class="display-table clearfix">
+            <div class="display-table clearfix" ng-controller="carouselContentController">
                 <div class="display-table-cell">
                     <div id="store-items" class="carousel slide" data-ride="carousel">
 
                         <ul class="nav-store hidden-xs">
-                            <li id="nav-publication" class="active"><a data-slide-to="0" href="#postcard">Publication</a>
+                            <li id="nav-publications" class="active"><a data-slide-to="0" ng-click="changeProduct('publications')">Publications</a>
                             </li>
-                            <li id="nav-prints"><a data-slide-to="1" href="#prints">Prints</a>
+                            <li id="nav-prints"><a data-slide-to="1" ng-click="changeProduct('prints')">Prints</a>
                             </li>
-                            <li id="nav-poster"><a data-slide-to="2" href="#poster">Poster</a>
+                            <li id="nav-posters"><a data-slide-to="2" ng-click="changeProduct('posters')">Posters</a>
                             </li>
-                            <li id="nav-postcard"><a data-slide-to="3" href="#postcard">Postcard</a>
+                            <li id="nav-postcards"><a data-slide-to="3" ng-click="changeProduct('postcards')">Postcards</a>
                             </li>
                         </ul>
 
                         <div class="carousel-inner">
 
-                            <div class="product item active" data-id="nav-publication">
+                            <div class="product item active" data-id="nav-publications">
                                 <div class="product-image">
                                     <a href="http://placehold.it/800x600&text=Publication+Large" id="publication-popup">
                                         <img src="static/img/overgrowth-store-default.jpg" class="hidden-xs">
                                         <img src="static/img/overgrowth-store-default.jpg" class="visible-xs-inline">
                                     </a>
                                 </div>
-                                <a href="#" class="purchase purchase-publication">
+                                <a href="#" class="purchase purchase-publication-overlay">
                                     <div class="product-details">
-                                        <h5>Publication</h5>
+                                        <h5>{{store.publications.section}}</h5>
                                         <!-- <img src="static/img/publication-details.png" alt=""> -->
                                         <div class="fine-print">
-                                            <span><em>Price</em> $35.00</span>
-                                            <span><em>Pages</em> 86</span>
-                                            <span><em>Size</em> 12 x 17</span>
+                                            <div class="inline-block">
+                                                <em>Price</em>
+                                                <div class="inline-block" ng-if="priceRange('publications').min">${{priceRange('publications').min}}</div>
+                                                <div class="inline-block" ng-if="priceRange('publications').min != priceRange('publications').max">- {{priceRange('publications').max}}</div>
+                                            </div>
+                                            <div class="inline-block"><em>Sizes</em> ({{store.publications.products[0].sizes.length}})</div>
                                         </div>
                                     </div>
                                 </a>
                                 <div class="product-purchase hidden-xs">
-                                    <a href="#" class="purchase-publication">Purchase</a>
+                                    <a href="#" class="purchase-publication-overlay">Purchase</a>
                                 </div>
                             </div>
 
@@ -439,66 +490,75 @@
                                         <img src="http://placehold.it/290x437&text=Prints">
                                     </a>
                                 </div>
-                                <a href="#" class="purchase purchase-prints">
+                                <a href="#" class="purchase purchase-prints-overlay">
                                     <div class="product-details">
-                                        <h5>Prints</h5>
+                                        <h5>{{store.prints.section}}</h5>
                                         <!-- <img src="static/img/publication-details.png" alt=""> -->
                                         <div class="fine-print">
-                                            <span><em>Price</em> $25.00</span>
-                                            <span><em>Pages</em> 1</span>
-                                            <span><em>Size</em> 12 x 17</span>
+                                            <div class="inline-block">
+                                                <em>Price</em>
+                                                <div class="inline-block" ng-if="priceRange('prints').min">${{priceRange('prints').min}}</div>
+                                                <div class="inline-block" ng-if="priceRange('prints').min != priceRange('prints').max">- {{priceRange('prints').max}}</div>
+                                            </div>
+                                            <div class="inline-block"><em>Sizes</em> ({{store.prints.products[0].sizes.length}})</div>
                                         </div>
                                     </div>
                                 </a>
                                 <div class="product-purchase hidden-xs">
-                                    <a href="#" class="purchase-prints">Purchase</a>
+                                    <a href="#" class="purchase-prints-overlay">Purchase</a>
                                 </div>
                             </div>
 
 
-                            <div class="product item" data-id="nav-poster">
+                            <div class="product item" data-id="nav-posters">
                                 <div class="product-image">
                                     <a href="http://placehold.it/800x600&text=Poster+Large" id="poster-popup">
                                         <img src="http://placehold.it/290x437&text=Poster">
                                     </a>
                                 </div>
-                                <a href="#" class="purchase purchase-poster">
+                                <a href="#" class="purchase purchase-poster-overlay">
                                     <div class="product-details">
-                                        <h5>Poster</h5>
+                                        <h5>{{store.posters.section}}</h5>
                                         <!-- <img src="static/img/publication-details.png" alt=""> -->
                                         <div class="fine-print">
-                                            <span><em>Price</em> $18.00</span>
-                                            <span><em>Quantity</em> 1</span>
-                                            <span><em>Size</em> 11 x 17</span>
+                                            <div class="inline-block">
+                                                <em>Price</em>
+                                                <div class="inline-block" ng-if="priceRange('posters').min">${{priceRange('posters').min}}</div>
+                                                <div class="inline-block" ng-if="priceRange('posters').min != priceRange('posters').max">- {{priceRange('posters').max}}</div>
+                                            </div>
+                                            <div class="inline-block"><em>Sizes</em> ({{store.posters.products[0].sizes.length}})</div>
                                         </div>
                                     </div>
                                 </a>
                                 <div class="product-purchase hidden-xs">
-                                    <a href="#" class="purchase-poster">Purchase</a>
+                                    <a href="#" class="purchase-poster-overlay">Purchase</a>
                                 </div>
                             </div>
 
 
-                            <div class="product item" data-id="nav-postcard">
+                            <div class="product item" data-id="nav-postcards">
                                 <div class="product-image">
                                     <a href="http://placehold.it/800x600&text=Postcard+Large" id="postcard-popup">
                                         <!-- <img src="http://placehold.it/290x193&text=Postcard"> -->
                                         <img src="http://placehold.it/290x437&text=Postcard">
                                     </a>
                                 </div>
-                                <a href="#" class="purchase-postcard">
+                                <a href="#" class="purchase-postcard-overlay">
                                     <div class="product-details">
-                                        <h5>Postcard</h5>
+                                        <h5>{{store.postcards.section}}</h5>
                                         <!-- <img src="static/img/publication-details.png" alt=""> -->
                                         <div class="fine-print">
-                                            <span><em>Price</em> $5.00</span>
-                                            <span><em>Quantity</em> 1</span>
-                                            <span><em>Size</em> 5 x 7</span>
+                                            <div class="inline-block">
+                                                <em>Price</em>
+                                                <div class="inline-block" ng-if="priceRange('postcards').min">${{priceRange('postcards').min}}</div>
+                                                <div class="inline-block" ng-if="priceRange('postcards').min != priceRange('postcards').max">- {{priceRange('postcards').max}}</div>
+                                            </div>
+                                            <div class="inline-block"><em>Sizes</em> ({{store.postcards.products[0].sizes.length}})</div>
                                         </div>
                                     </div>
                                 </a>
                                 <div class="product-purchase hidden-xs">
-                                    <a href="#" class="purchase-postcard">Purchase</a>
+                                    <a href="#" class="purchase-postcard-overlay">Purchase</a>
                                 </div>
                             </div>
 
@@ -634,6 +694,9 @@
 
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="//code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.underscore.min.js"></script>
+    <script src="static/js/app.js"></script>
     <script type="text/javascript" src="static/fullpage/vendors/jquery.easings.min.js"></script>
     <script src="static/js/jquery.ui.touch-punch.min.js"></script>
     <script src="static/jquery.tap/jquery.tap.min.js"></script>
@@ -888,6 +951,28 @@
               address: true
             });
             e.preventDefault();
+        });
+
+        $('.purchase-publication-overlay').click(function() {
+            $('.checkout-overlay').fadeIn();
+            return false;
+        });
+        $('.purchase-prints-overlay').click(function() {
+            $('.checkout-overlay').fadeIn();
+            return false;
+        });
+        $('.purchase-poster-overlay').click(function() {
+            $('.checkout-overlay').fadeIn();
+            return false;
+        });
+        $('.purchase-postcard-overlay').click(function() {
+            $('.checkout-overlay').fadeIn();
+            return false;
+        });
+
+        $('#continue-shopping').click(function() {
+            $('.checkout-overlay').fadeOut();
+            return false;
         });
 
         $('#toggle-mobile-menu').click(function() {
