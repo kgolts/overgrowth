@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-skrollr" ng-app="overgrowthApp">
+<html class="no-skrollr" ng-app="overgrowthApp" ng-controller="overgrowthController">
 
 <head>
     <meta charset="utf-8">
@@ -376,7 +376,7 @@
             </div>
         </section>
 
-        <section id="store" class="centered" ng-controller="priceController">
+        <section id="store" class="centered">
             <div class="checkout-overlay" style="">
                 <div class="display-table" style="">
                     <div class="display-table-cell">
@@ -402,13 +402,20 @@
                             </div>
                             <div>
                                 <div class="variation" ng-if="current_variation.selected_size" ng-class="{disabled: current_variation.sizes.length < 2}">
-                                    <a href class="checkout-arrow-left" ng-click="nextSize()"></a>
+                                    <a href class="checkout-arrow-left" ng-click="previousSize()"></a>
                                     <em>Size</em> {{current_variation.selected_size.sized}}
-                                    <a href class="checkout-arrow-right" ng-click="previousSize()"></a>
+                                    <a href class="checkout-arrow-right" ng-click="nextSize()"></a>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="variation" ng-if="current_variation.numbers">
+                                    <a href class="checkout-arrow-left" ng-click="previousNumber()"></a>
+                                    <em>Photo No.</em> {{current_variation.selected_number}}
+                                    <a href class="checkout-arrow-right" ng-click="nextNumber()"></a>
                                 </div>
                             </div>
                         </div>
-                        <a class="checkout" href>
+                        <a class="checkout" href ng-click="stripeCheckout()">
                             <img src="static/img/mobile/checkout.png" alt="Checkout">
                         </a>
                         <div class="continue-shopping">
@@ -440,7 +447,7 @@
 
 
 
-            <div class="display-table clearfix" ng-controller="carouselContentController">
+            <div class="display-table clearfix">
                 <div class="display-table-cell">
                     <div id="store-items" class="carousel slide" data-ride="carousel">
 
@@ -464,7 +471,7 @@
                                         <img src="static/img/overgrowth-store-default.jpg" class="visible-xs-inline">
                                     </a>
                                 </div>
-                                <a href="#" class="purchase purchase-publication-overlay">
+                                <a href="#" class="purchase purchase-overlay">
                                     <div class="product-details">
                                         <h5>{{store.publications.section}}</h5>
                                         <!-- <img src="static/img/publication-details.png" alt=""> -->
@@ -479,7 +486,7 @@
                                     </div>
                                 </a>
                                 <div class="product-purchase hidden-xs">
-                                    <a href="#" class="purchase-publication-overlay">Purchase</a>
+                                    <a href="#" class="purchase-overlay">Purchase</a>
                                 </div>
                             </div>
 
@@ -490,7 +497,7 @@
                                         <img src="http://placehold.it/290x437&text=Prints">
                                     </a>
                                 </div>
-                                <a href="#" class="purchase purchase-prints-overlay">
+                                <a href="#" class="purchase purchase-overlay">
                                     <div class="product-details">
                                         <h5>{{store.prints.section}}</h5>
                                         <!-- <img src="static/img/publication-details.png" alt=""> -->
@@ -505,7 +512,7 @@
                                     </div>
                                 </a>
                                 <div class="product-purchase hidden-xs">
-                                    <a href="#" class="purchase-prints-overlay">Purchase</a>
+                                    <a href="#" class="purchase-overlay">Purchase</a>
                                 </div>
                             </div>
 
@@ -516,7 +523,7 @@
                                         <img src="http://placehold.it/290x437&text=Poster">
                                     </a>
                                 </div>
-                                <a href="#" class="purchase purchase-poster-overlay">
+                                <a href="#" class="purchase purchase-overlay">
                                     <div class="product-details">
                                         <h5>{{store.posters.section}}</h5>
                                         <!-- <img src="static/img/publication-details.png" alt=""> -->
@@ -531,7 +538,7 @@
                                     </div>
                                 </a>
                                 <div class="product-purchase hidden-xs">
-                                    <a href="#" class="purchase-poster-overlay">Purchase</a>
+                                    <a href="#" class="purchase-overlay">Purchase</a>
                                 </div>
                             </div>
 
@@ -543,7 +550,7 @@
                                         <img src="http://placehold.it/290x437&text=Postcard">
                                     </a>
                                 </div>
-                                <a href="#" class="purchase-postcard-overlay">
+                                <a href="#" class="purchase-overlay">
                                     <div class="product-details">
                                         <h5>{{store.postcards.section}}</h5>
                                         <!-- <img src="static/img/publication-details.png" alt=""> -->
@@ -558,7 +565,7 @@
                                     </div>
                                 </a>
                                 <div class="product-purchase hidden-xs">
-                                    <a href="#" class="purchase-postcard-overlay">Purchase</a>
+                                    <a href="#" class="purchase-overlay">Purchase</a>
                                 </div>
                             </div>
 
@@ -877,95 +884,8 @@
 
         $('#main-nav, #dotted-nav, #welcome, #overgrowth-fixed').css('opacity', '1.00');
 
-        $('.purchase-publication').click(function(e) {
-            // Open Checkout with further options
-            var handler = StripeCheckout.configure({
-                key: 'pk_test_4O1woQIrDngFxcp9btGjkFiL',
-                image: 'static/img/girl-face-square.jpg',
-                token: function(token) {
-                // Use the token to create the charge with a server-side script.
-                // You can access the token ID with `token.id`
-                }
-            });
-            handler.open({
-              name: 'Overgrowth',
-              description: 'Publication ($35.00)',
-              amount: 3500,
-              address: true
-            });
-            e.preventDefault();
-        });
 
-        $('.purchase-prints').click(function(e) {
-            // Open Checkout with further options
-            var handler = StripeCheckout.configure({
-                key: 'pk_test_4O1woQIrDngFxcp9btGjkFiL',
-                image: 'static/img/girl-face-square.jpg',
-                token: function(token) {
-                // Use the token to create the charge with a server-side script.
-                // You can access the token ID with `token.id`
-                }
-            });
-            handler.open({
-              name: 'Overgrowth',
-              description: 'Prints ($25.00)',
-              amount: 2500,
-              address: true
-            });
-            e.preventDefault();
-        });
-
-        $('.purchase-poster').click(function(e) {
-            // Open Checkout with further options
-            var handler = StripeCheckout.configure({
-                key: 'pk_test_4O1woQIrDngFxcp9btGjkFiL',
-                image: 'static/img/girl-face-square.jpg',
-                token: function(token) {
-                // Use the token to create the charge with a server-side script.
-                // You can access the token ID with `token.id`
-                }
-            });
-            handler.open({
-              name: 'Overgrowth',
-              description: 'Poster ($18.00)',
-              amount: 1800,
-              address: true
-            });
-            e.preventDefault();
-        });
-
-        $('.purchase-postcard').click(function(e) {
-            // Open Checkout with further options
-            var handler = StripeCheckout.configure({
-                key: 'pk_test_4O1woQIrDngFxcp9btGjkFiL',
-                image: 'static/img/girl-face-square.jpg',
-                token: function(token) {
-                // Use the token to create the charge with a server-side script.
-                // You can access the token ID with `token.id`
-                }
-            });
-            handler.open({
-              name: 'Overgrowth',
-              description: 'Poster ($5.00)',
-              amount: 500,
-              address: true
-            });
-            e.preventDefault();
-        });
-
-        $('.purchase-publication-overlay').click(function() {
-            $('.checkout-overlay').fadeIn();
-            return false;
-        });
-        $('.purchase-prints-overlay').click(function() {
-            $('.checkout-overlay').fadeIn();
-            return false;
-        });
-        $('.purchase-poster-overlay').click(function() {
-            $('.checkout-overlay').fadeIn();
-            return false;
-        });
-        $('.purchase-postcard-overlay').click(function() {
+        $('.purchase-overlay').click(function() {
             $('.checkout-overlay').fadeIn();
             return false;
         });
