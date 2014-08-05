@@ -59,10 +59,21 @@ overgrowthApp.controller('overgrowthController', function($scope) {
                 'sizes': [{
                     'sized': '8" x 12"',
                     'price': 125,
-                }, {
-                    'sized': '11" x 17"',
-                    'price': 200,
                 }],
+                'images': [
+                    {
+                        'small': 'http://placehold.it/290x435&text=Prints+Thumb+1',
+                        'large': 'http://placehold.it/800x600&text=Prints+Thumb+1',
+                    },
+                    {
+                        'small': 'http://placehold.it/290x435&text=Prints+Thumb+2',
+                        'large': 'http://placehold.it/800x600&text=Prints+Thumb+2',
+                    },
+                    {
+                        'small': 'http://placehold.it/290x435&text=Prints+Thumb+3',
+                        'large': 'http://placehold.it/800x600&text=Prints+Thumb+3',
+                    },
+                ],
                 'numbers': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
             }]
         },
@@ -75,6 +86,20 @@ overgrowthApp.controller('overgrowthController', function($scope) {
                     'sized': '11" x 14"',
                     'price': 10,
                 }],
+                'images': [
+                    {
+                        'small': 'http://placehold.it/290x435&text=Posters+Thumb+1',
+                        'large': 'http://placehold.it/800x600&text=Posters+Thumb+1',
+                    },
+                    {
+                        'small': 'http://placehold.it/290x435&text=Posters+Thumb+2',
+                        'large': 'http://placehold.it/800x600&text=Posters+Thumb+2',
+                    },
+                    {
+                        'small': 'http://placehold.it/290x435&text=Posters+Thumb+3',
+                        'large': 'http://placehold.it/800x600&text=Posters+Thumb+3',
+                    },
+                ],
                 'numbers': [1, 2, 3, 4]
             }]
         },
@@ -87,6 +112,20 @@ overgrowthApp.controller('overgrowthController', function($scope) {
                     'sized': '4" x 6"',
                     'price': 15,
                 }],
+                'images': [
+                    {
+                        'small': 'http://placehold.it/290x435&text=Postcards+Thumb+1',
+                        'large': 'http://placehold.it/800x600&text=Postcards+Thumb+1',
+                    },
+                    {
+                        'small': 'http://placehold.it/290x435&text=Postcards+Thumb+2',
+                        'large': 'http://placehold.it/800x600&text=Postcards+Thumb+2',
+                    },
+                    {
+                        'small': 'http://placehold.it/290x435&text=Postcards+Thumb+3',
+                        'large': 'http://placehold.it/800x600&text=Postcards+Thumb+3',
+                    },
+                ],
             }, {
                 'name': 'Postcard set (25)',
                 'price_range': "$30",
@@ -94,18 +133,45 @@ overgrowthApp.controller('overgrowthController', function($scope) {
                     'sized': '4" x 6"',
                     'price': 30,
                 }],
+                'images': [
+                    {
+                        'small': 'http://placehold.it/290x435&text=Postcard+(Set+25)+Thumb+1',
+                        'large': 'http://placehold.it/800x600&text=Postcard+(Set+25)+Thumb+1',
+                    },
+                    {
+                        'small': 'http://placehold.it/290x435&text=Postcard+(Set+25)+Thumb+2',
+                        'large': 'http://placehold.it/800x600&text=Postcard+(Set+25)+Thumb+2',
+                    },
+                    {
+                        'small': 'http://placehold.it/290x435&text=Postcard+(Set+25)+Thumb+3',
+                        'large': 'http://placehold.it/800x600&text=Postcard+(Set+25)+Thumb+3',
+                    },
+                ],
             }]
         }
     };
 
     $scope.switchSection = function(product_type) {
         $scope.current_section = $scope.store[product_type];
+        console.log($scope.current_section);
+
         $scope.current_variation = $scope.current_section.products[0];
         $scope.current_variation.selected_size = $scope.current_variation.sizes[0];
         $scope.current_variation.selected_quantity = 1;
         if (_.has($scope.current_variation, 'numbers')) {
             $scope.current_variation.selected_number = 1;
         }
+
+        console.log($scope.current_section);
+        // $('#store-items').on('slide.bs.carousel', function (e) {
+        //   // do something…
+        //   var elem = e.relatedTarget;
+        //   var target = $(elem).attr('data-id');
+        //   $('.nav-store li').removeClass('active');
+        //   $('#' + target).addClass('active');
+        //   console.log(target, $(target));
+        // });
+
         return false;
     };
 
