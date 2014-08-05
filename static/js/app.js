@@ -7,24 +7,55 @@ overgrowthApp.controller('overgrowthController', function($scope) {
             'section': 'Publications',
             'products': [{
                 'name': 'Original Edition',
+                'price_range': "$20",
                 'sizes': [{
                     'sized': '10.5" x 4.25"',
                     'price': 20
                 }],
                 'page_count': '38',
+                'images': [
+                    {
+                        'small': 'http://placehold.it/290x435&text=Publications+Thumb+1',
+                        'large': 'http://placehold.it/800x600&text=Publications+Thumb+1',
+                    },
+                    {
+                        'small': 'http://placehold.it/290x435&text=Publications+Thumb+2',
+                        'large': 'http://placehold.it/800x600&text=Publications+Thumb+2',
+                    },
+                    {
+                        'small': 'http://placehold.it/290x435&text=Publications+Thumb+3',
+                        'large': 'http://placehold.it/800x600&text=Publications+Thumb+3',
+                    },
+                ]
             }, {
                 'name': 'Overgrowth Book (Pre-Order)',
+                'price_range': "$40",
                 'sizes': [{
                     'sized': '11" x 14"',
                     'price': 40
                 }],
                 'page_count': '75-150',
+                'images': [
+                    {
+                        'small': 'http://placehold.it/290x435&text=Publications+Thumb+1',
+                        'large': 'http://placehold.it/800x600&text=Publications+Thumb+1',
+                    },
+                    {
+                        'small': 'http://placehold.it/290x435&text=Publications+Thumb+2',
+                        'large': 'http://placehold.it/800x600&text=Publications+Thumb+2',
+                    },
+                    {
+                        'small': 'http://placehold.it/290x435&text=Publications+Thumb+3',
+                        'large': 'http://placehold.it/800x600&text=Publications+Thumb+3',
+                    },
+                ]
             }]
         },
         'prints': {
             'section': 'Prints',
             'products': [{
                 'name': 'Archival Print',
+                'price_range': "$125 - 200",
                 'sizes': [{
                     'sized': '8" x 12"',
                     'price': 125,
@@ -39,6 +70,7 @@ overgrowthApp.controller('overgrowthController', function($scope) {
             'section': 'Posters',
             'products': [{
                 'name': 'Poster',
+                'price_range': "$10",
                 'sizes': [{
                     'sized': '11" x 14"',
                     'price': 10,
@@ -50,12 +82,14 @@ overgrowthApp.controller('overgrowthController', function($scope) {
             'section': 'Postcards',
             'products': [{
                 'name': 'Postcard set (10)',
+                'price_range': "$15",
                 'sizes': [{
                     'sized': '4" x 6"',
                     'price': 15,
                 }],
             }, {
                 'name': 'Postcard set (25)',
+                'price_range': "$30",
                 'sizes': [{
                     'sized': '4" x 6"',
                     'price': 30,
@@ -64,9 +98,9 @@ overgrowthApp.controller('overgrowthController', function($scope) {
         }
     };
 
-    $scope.changeProduct = function(product_type) {
-        $scope.current_product = $scope.store[product_type];
-        $scope.current_variation = $scope.current_product.products[0];
+    $scope.switchSection = function(product_type) {
+        $scope.current_section = $scope.store[product_type];
+        $scope.current_variation = $scope.current_section.products[0];
         $scope.current_variation.selected_size = $scope.current_variation.sizes[0];
         $scope.current_variation.selected_quantity = 1;
         if (_.has($scope.current_variation, 'numbers')) {
@@ -76,42 +110,44 @@ overgrowthApp.controller('overgrowthController', function($scope) {
     };
 
     $scope.nextProduct = function() {
-        var idx = _.indexOf($scope.current_product.products, $scope.current_variation) + 1;
-        if (_.has($scope.current_product.products, idx)) {
-            $scope.current_variation = $scope.current_product.products[idx];
+        var idx = _.indexOf($scope.current_section.products, $scope.current_variation) + 1;
+        if (_.has($scope.current_section.products, idx)) {
+            $scope.current_variation = $scope.current_section.products[idx];
             $scope.current_variation.selected_size = $scope.current_variation.sizes[0];
             $scope.current_variation.selected_quantity = 1;
             if (_.has($scope.current_variation, 'numbers')) {
                 $scope.current_variation.selected_number = 1;
             }
         } else {
-            $scope.current_variation = _.first($scope.current_product.products);
+            $scope.current_variation = _.first($scope.current_section.products);
             $scope.current_variation.selected_size = $scope.current_variation.sizes[0];
             $scope.current_variation.selected_quantity = 1;
             if (_.has($scope.current_variation, 'numbers')) {
                 $scope.current_variation.selected_number = 1;
             }
         }
+        console.log($scope.current_variation);
         return false;
     };
 
     $scope.previousProduct = function() {
-        var idx = _.indexOf($scope.current_product.products, $scope.current_variation) - 1;
-        if (_.has($scope.current_product.products, idx)) {
-            $scope.current_variation = $scope.current_product.products[idx];
+        var idx = _.indexOf($scope.current_section.products, $scope.current_variation) - 1;
+        if (_.has($scope.current_section.products, idx)) {
+            $scope.current_variation = $scope.current_section.products[idx];
             $scope.current_variation.selected_size = $scope.current_variation.sizes[0];
             $scope.current_variation.selected_quantity = 1;
             if (_.has($scope.current_variation, 'numbers')) {
                 $scope.current_variation.selected_number = 1;
             }
         } else {
-            $scope.current_variation = _.last($scope.current_product.products);
+            $scope.current_variation = _.last($scope.current_section.products);
             $scope.current_variation.selected_size = $scope.current_variation.sizes[0];
             $scope.current_variation.selected_quantity = 1;
             if (_.has($scope.current_variation, 'numbers')) {
                 $scope.current_variation.selected_number = 1;
             }
         }
+        console.log($scope.current_variation);
         return false;
     };
 
@@ -192,15 +228,15 @@ overgrowthApp.controller('overgrowthController', function($scope) {
         }
         description = description + " ($" + total + ")";
         handler.open({
-          name: $scope.current_product.section,
+          name: $scope.current_section.section,
           description: description,
           amount: total * 100,
           address: true
         });
     };
 
-    $scope.current_product = $scope.store.publications;
-    $scope.current_variation = $scope.current_product.products[0];
+    $scope.current_section = $scope.store.publications;
+    $scope.current_variation = $scope.current_section.products[0];
     $scope.current_variation.selected_size = $scope.current_variation.sizes[0];
     $scope.current_variation.selected_quantity = 1;
     if (_.has($scope.current_variation, 'numbers')) {

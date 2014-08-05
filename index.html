@@ -380,7 +380,7 @@
             <div class="checkout-overlay" style="">
                 <div class="display-table" style="">
                     <div class="display-table-cell">
-                        <h5>{{current_product.section}}</h5>
+                        <h5>{{current_section.section}}</h5>
                         <div class="fine-print">
                             <div class="inline-contents">
                                 <div class="inline-block">
@@ -388,34 +388,29 @@
                                 </div>
                                 <div class="inline-block"ng-if="current_variation.page_count"><em>Page Count</em> {{current_variation.page_count}}</div>
                             </div>
-                            <div class="variation" ng-class="{disabled: current_product.products.length < 2}">
-                                <a href class="checkout-arrow-left" ng-click="previousProduct()"></a>
-                                <em>{{current_variation.name}}</em>
-                                <a href class="checkout-arrow-right" ng-click="nextProduct()"></a>
-                            </div>
                             <div>
                                 <div class="quantity">
-                                    <a href class="checkout-arrow-left" ng-click="deincrementQuantity()"></a>
+                                    <a href class="checkout-arrow-left" ng-click="deincrementQuantity(); $event.stopPropagation();"></a>
                                     <em>Quantity</em> {{current_variation.selected_quantity}}
-                                    <a href class="checkout-arrow-right" ng-click="incrementQuantity()"></a>
+                                    <a href class="checkout-arrow-right" ng-click="incrementQuantity(); $event.stopPropagation();"></a>
                                 </div>
                             </div>
                             <div>
                                 <div class="variation" ng-if="current_variation.selected_size" ng-class="{disabled: current_variation.sizes.length < 2}">
-                                    <a href class="checkout-arrow-left" ng-click="previousSize()"></a>
+                                    <a href class="checkout-arrow-left" ng-click="previousSize(); $event.stopPropagation();"></a>
                                     <em>Size</em> {{current_variation.selected_size.sized}}
-                                    <a href class="checkout-arrow-right" ng-click="nextSize()"></a>
+                                    <a href class="checkout-arrow-right" ng-click="nextSize(); $event.stopPropagation();"></a>
                                 </div>
                             </div>
                             <div>
                                 <div class="variation" ng-if="current_variation.numbers">
-                                    <a href class="checkout-arrow-left" ng-click="previousNumber()"></a>
+                                    <a href class="checkout-arrow-left" ng-click="previousNumber(); $event.stopPropagation();"></a>
                                     <em>Photo No.</em> {{current_variation.selected_number}}
-                                    <a href class="checkout-arrow-right" ng-click="nextNumber()"></a>
+                                    <a href class="checkout-arrow-right" ng-click="nextNumber(); $event.stopPropagation();"></a>
                                 </div>
                             </div>
                         </div>
-                        <a class="checkout" href ng-click="stripeCheckout()">
+                        <a class="checkout" href ng-click="stripeCheckout(); ; $event.stopPropagation();">
                             <img src="static/img/mobile/checkout.png" alt="Checkout">
                         </a>
                         <div class="continue-shopping">
@@ -425,9 +420,8 @@
                 </div>
             </div>
 
-
-
-
+            <a href class="carousel-control arrow-left" ng-click="previousProduct(); $event.stopPropagation();"></a>
+            <a href class="carousel-control arrow-right" ng-click="nextProduct(); $event.stopPropagation();"></a>
 
             <div class="top-right hidden-xs" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1">
                 <img src="static/img/store.png" alt="Exhibition">
@@ -442,132 +436,54 @@
                 </a>
             </div>
 
-            <a href="#" id="store-prev" role="button" data-slide="prev" class="carousel-control arrow-left"></a>
-            <a href="#" id="store-next" role="button" data-slide="next" class="carousel-control arrow-right"></a>
-
 
 
             <div class="display-table clearfix">
                 <div class="display-table-cell">
+
                     <div id="store-items" class="carousel slide" data-ride="carousel">
 
-                        <ul class="nav-store hidden-xs">
-                            <li id="nav-publications" class="active"><a data-slide-to="0" ng-click="changeProduct('publications')">Publications</a>
+                        <ul class="nav-store">
+                            <li id="nav-publications" class="active"><a data-slide-to="0" ng-click="switchSection('publications')">Publications</a>
                             </li>
-                            <li id="nav-prints"><a data-slide-to="1" ng-click="changeProduct('prints')">Prints</a>
+                            <li id="nav-prints"><a data-slide-to="1" ng-click="switchSection('prints')">Prints</a>
                             </li>
-                            <li id="nav-posters"><a data-slide-to="2" ng-click="changeProduct('posters')">Posters</a>
+                            <li id="nav-posters"><a data-slide-to="2" ng-click="switchSection('posters')">Posters</a>
                             </li>
-                            <li id="nav-postcards"><a data-slide-to="3" ng-click="changeProduct('postcards')">Postcards</a>
+                            <li id="nav-postcards"><a data-slide-to="3" ng-click="switchSection('postcards')">Postcards</a>
                             </li>
                         </ul>
 
                         <div class="carousel-inner">
 
-                            <div class="product item active" data-id="nav-publications">
+                            <div class="product item active">
                                 <div class="product-image">
-                                    <a href="http://placehold.it/800x600&text=Publication+Large" id="publication-popup">
-                                        <img src="static/img/overgrowth-store-default.jpg" class="hidden-xs">
-                                        <img src="static/img/overgrowth-store-default.jpg" class="visible-xs-inline">
+                                    <a ng-href="{{current_variation.images[0].large}}">
+                                        <img ng-src="{{current_variation.images[0].small}}">
+<!--                                         <img src="static/img/overgrowth-store-default.jpg" class="hidden-xs">
+                                        <img src="static/img/overgrowth-store-default.jpg" class="visible-xs-inline"> -->
                                     </a>
                                 </div>
-                                <a href="#" class="purchase purchase-overlay">
+                                <a class="purchase">
                                     <div class="product-details">
-                                        <h5>{{store.publications.section}}</h5>
+                                        <h5>{{current_variation.name}}</h5>
                                         <!-- <img src="static/img/publication-details.png" alt=""> -->
                                         <div class="fine-print">
                                             <div class="inline-block">
                                                 <em>Price</em>
-                                                <div class="inline-block" ng-if="priceRange('publications').min">${{priceRange('publications').min}}</div>
-                                                <div class="inline-block" ng-if="priceRange('publications').min != priceRange('publications').max">- {{priceRange('publications').max}}</div>
+                                                <div class="inline-block" ng-if="current_variation.price_range">{{current_variation.price_range}}</div>
                                             </div>
                                             <div class="inline-block"><em>Sizes</em> ({{store.publications.products[0].sizes.length}})</div>
                                         </div>
                                     </div>
                                 </a>
-                                <div class="product-purchase hidden-xs">
+                                <div class="product-purchase">
                                     <a href="#" class="purchase-overlay">Purchase</a>
                                 </div>
                             </div>
 
 
-                            <div class="product item" data-id="nav-prints">
-                                <div class="product-image">
-                                    <a href="http://placehold.it/800x600&text=Prints+Large" id="prints-popup">
-                                        <img src="http://placehold.it/290x437&text=Prints">
-                                    </a>
-                                </div>
-                                <a href="#" class="purchase purchase-overlay">
-                                    <div class="product-details">
-                                        <h5>{{store.prints.section}}</h5>
-                                        <!-- <img src="static/img/publication-details.png" alt=""> -->
-                                        <div class="fine-print">
-                                            <div class="inline-block">
-                                                <em>Price</em>
-                                                <div class="inline-block" ng-if="priceRange('prints').min">${{priceRange('prints').min}}</div>
-                                                <div class="inline-block" ng-if="priceRange('prints').min != priceRange('prints').max">- {{priceRange('prints').max}}</div>
-                                            </div>
-                                            <div class="inline-block"><em>Sizes</em> ({{store.prints.products[0].sizes.length}})</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <div class="product-purchase hidden-xs">
-                                    <a href="#" class="purchase-overlay">Purchase</a>
-                                </div>
-                            </div>
 
-
-                            <div class="product item" data-id="nav-posters">
-                                <div class="product-image">
-                                    <a href="http://placehold.it/800x600&text=Poster+Large" id="poster-popup">
-                                        <img src="http://placehold.it/290x437&text=Poster">
-                                    </a>
-                                </div>
-                                <a href="#" class="purchase purchase-overlay">
-                                    <div class="product-details">
-                                        <h5>{{store.posters.section}}</h5>
-                                        <!-- <img src="static/img/publication-details.png" alt=""> -->
-                                        <div class="fine-print">
-                                            <div class="inline-block">
-                                                <em>Price</em>
-                                                <div class="inline-block" ng-if="priceRange('posters').min">${{priceRange('posters').min}}</div>
-                                                <div class="inline-block" ng-if="priceRange('posters').min != priceRange('posters').max">- {{priceRange('posters').max}}</div>
-                                            </div>
-                                            <div class="inline-block"><em>Sizes</em> ({{store.posters.products[0].sizes.length}})</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <div class="product-purchase hidden-xs">
-                                    <a href="#" class="purchase-overlay">Purchase</a>
-                                </div>
-                            </div>
-
-
-                            <div class="product item" data-id="nav-postcards">
-                                <div class="product-image">
-                                    <a href="http://placehold.it/800x600&text=Postcard+Large" id="postcard-popup">
-                                        <!-- <img src="http://placehold.it/290x193&text=Postcard"> -->
-                                        <img src="http://placehold.it/290x437&text=Postcard">
-                                    </a>
-                                </div>
-                                <a href="#" class="purchase-overlay">
-                                    <div class="product-details">
-                                        <h5>{{store.postcards.section}}</h5>
-                                        <!-- <img src="static/img/publication-details.png" alt=""> -->
-                                        <div class="fine-print">
-                                            <div class="inline-block">
-                                                <em>Price</em>
-                                                <div class="inline-block" ng-if="priceRange('postcards').min">${{priceRange('postcards').min}}</div>
-                                                <div class="inline-block" ng-if="priceRange('postcards').min != priceRange('postcards').max">- {{priceRange('postcards').max}}</div>
-                                            </div>
-                                            <div class="inline-block"><em>Sizes</em> ({{store.postcards.products[0].sizes.length}})</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <div class="product-purchase hidden-xs">
-                                    <a href="#" class="purchase-overlay">Purchase</a>
-                                </div>
-                            </div>
 
 
                         </div>
@@ -890,7 +806,7 @@
             return false;
         });
 
-        $('#continue-shopping').click(function() {
+        $('#continue-shopping, .checkout-overlay').click(function() {
             $('.checkout-overlay').fadeOut();
             return false;
         });
