@@ -849,31 +849,33 @@ animation: fade-in .25s linear;
 .gallery-arrow {
     position: absolute;
     top: 50%;
-    // right: 50%;
-    // left: 50%;
     height: 50px;
     width: 50px;
     margin-top: -25px;
     cursor: pointer;
     background: #FE0000;
-    z-index: 9999;
+    z-index: 99999;
     opacity: 1;
 }
 .gallery-arrow-left {
-    // left: 0;
-    left: 10%;
+    left: 0;
     background: url(../img/gallery-nav-left.png);
     background-repeat: no-repeat;
     background-position: center center;
+    &.hug {
+        left: 5%;
+    }
 }
 .gallery-arrow-right {
-    // right: 0;
-    right: 10%;
+    right: 0;
     background: url(../img/gallery-nav-right.png);
     background-repeat: no-repeat;
     background-position: center center;
-
+    &.hug {
+        right: 5%;
+    }
 }
+
 .bottom-middle {
     position: absolute;
     max-width: 500px;
@@ -1087,6 +1089,7 @@ section {
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility:    hidden;
     -ms-backface-visibility:     hidden;
+
 }
 .mfp-counter {
     display: none;

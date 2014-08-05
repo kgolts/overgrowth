@@ -380,12 +380,14 @@
             <div class="checkout-overlay" style="">
                 <div class="display-table" style="">
                     <div class="display-table-cell">
-                        <h5>{{current_section.section}}</h5>
+                        <h5>{{current_variation.name}}</h5>
                         <div class="fine-print">
                             <div class="inline-contents">
                                 <div class="inline-block">
                                     <em>Price</em> $<span id="total-price" ng-model="price">{{current_variation.selected_size.price}}</span>
                                 </div>
+                                <div class="inline-block" ng-if="current_variation.sizes.length == 1"><em>Size</em> {{current_variation.sizes[0].sized}}</div>
+                                <div class="inline-block" ng-if="current_variation.sizes.length > 1"><em>Sizes</em> ({{current_variation.sizes.length}})</div>
                                 <div class="inline-block"ng-if="current_variation.page_count"><em>Page Count</em> {{current_variation.page_count}}</div>
                             </div>
                             <div>
@@ -396,7 +398,7 @@
                                 </div>
                             </div>
                             <div>
-                                <div class="variation" ng-if="current_variation.selected_size" ng-class="{disabled: current_variation.sizes.length < 2}">
+                                <div class="variation" ng-if="current_variation.sizes.length > 1" ng-class="{disabled: current_variation.sizes.length < 2}">
                                     <a href class="checkout-arrow-left" ng-click="previousSize(); $event.stopPropagation();"></a>
                                     <em>Size</em> {{current_variation.selected_size.sized}}
                                     <a href class="checkout-arrow-right" ng-click="nextSize(); $event.stopPropagation();"></a>
@@ -444,36 +446,36 @@
                     <div id="store-items" class="carousel slide" data-ride="carousel">
 
                         <ul class="nav-store">
-                            <li id="nav-publications" class="active"><a data-slide-to="0" ng-click="switchSection('publications')">Publications</a>
+                            <li id="nav-publications" ng-class="{active: current_section.section == 'Publications'}"><a data-slide-to="0" ng-click="switchSection('publications')">Publications</a>
                             </li>
-                            <li id="nav-prints"><a data-slide-to="1" ng-click="switchSection('prints')">Prints</a>
+                            <li id="nav-prints" ng-class="{active: current_section.section == 'Prints'}"><a data-slide-to="1" ng-click="switchSection('prints')">Prints</a>
                             </li>
-                            <li id="nav-posters"><a data-slide-to="2" ng-click="switchSection('posters')">Posters</a>
+                            <li id="nav-posters" ng-class="{active: current_section.section == 'Posters'}"><a data-slide-to="2" ng-click="switchSection('posters')">Posters</a>
                             </li>
-                            <li id="nav-postcards"><a data-slide-to="3" ng-click="switchSection('postcards')">Postcards</a>
+                            <li id="nav-postcards" ng-class="{active: current_section.section == 'Postcards'}"><a data-slide-to="3" ng-click="switchSection('postcards')">Postcards</a>
                             </li>
                         </ul>
 
                         <div class="carousel-inner">
 
                             <div class="product item active">
-                                <div class="product-image">
-                                    <a ng-href="{{current_variation.images[0].large}}">
-                                        <img ng-src="{{current_variation.images[0].small}}">
-<!--                                         <img src="static/img/overgrowth-store-default.jpg" class="hidden-xs">
-                                        <img src="static/img/overgrowth-store-default.jpg" class="visible-xs-inline"> -->
+                                <div class="product-image gallery">
+                                    <a ng-href="{{i.large}}" ng-repeat="i in current_variation.images" class="gallery-item">
+                                        <img ng-if="$first" ng-src="{{i.small}}">
                                     </a>
                                 </div>
+
                                 <a class="purchase">
                                     <div class="product-details">
                                         <h5>{{current_variation.name}}</h5>
-                                        <!-- <img src="static/img/publication-details.png" alt=""> -->
                                         <div class="fine-print">
                                             <div class="inline-block">
                                                 <em>Price</em>
                                                 <div class="inline-block" ng-if="current_variation.price_range">{{current_variation.price_range}}</div>
                                             </div>
-                                            <div class="inline-block"><em>Sizes</em> ({{store.publications.products[0].sizes.length}})</div>
+                                            <div class="inline-block" ng-if="current_variation.sizes.length == 1"><em>Size</em> {{current_variation.sizes[0].sized}}</div>
+                                            <div class="inline-block" ng-if="current_variation.sizes.length > 1"><em>Sizes</em> ({{current_variation.sizes.length}})</div>
+                                            <div class="inline-block"ng-if="current_variation.page_count"><em>Page Count</em> {{current_variation.page_count}}</div>
                                         </div>
                                     </div>
                                 </a>
@@ -481,6 +483,87 @@
                                     <a href="#" class="purchase-overlay">Purchase</a>
                                 </div>
                             </div>
+
+                            <div class="product item active">
+                                <div class="product-image gallery">
+                                    <a ng-href="{{i.large}}" ng-repeat="i in current_variation.images" class="gallery-item">
+                                        <img ng-if="$first" ng-src="{{i.small}}">
+                                    </a>
+                                </div>
+
+                                <a class="purchase">
+                                    <div class="product-details">
+                                        <h5>{{current_variation.name}}</h5>
+                                        <div class="fine-print">
+                                            <div class="inline-block">
+                                                <em>Price</em>
+                                                <div class="inline-block" ng-if="current_variation.price_range">{{current_variation.price_range}}</div>
+                                            </div>
+                                            <div class="inline-block" ng-if="current_variation.sizes.length == 1"><em>Size</em> {{current_variation.sizes[0].sized}}</div>
+                                            <div class="inline-block" ng-if="current_variation.sizes.length > 1"><em>Sizes</em> ({{current_variation.sizes.length}})</div>
+                                            <div class="inline-block"ng-if="current_variation.page_count"><em>Page Count</em> {{current_variation.page_count}}</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="product-purchase">
+                                    <a href="#" class="purchase-overlay">Purchase</a>
+                                </div>
+                            </div>
+
+
+                            <div class="product item active">
+                                <div class="product-image gallery">
+                                    <a ng-href="{{i.large}}" ng-repeat="i in current_variation.images" class="gallery-item">
+                                        <img ng-if="$first" ng-src="{{i.small}}">
+                                    </a>
+                                </div>
+
+                                <a class="purchase">
+                                    <div class="product-details">
+                                        <h5>{{current_variation.name}}</h5>
+                                        <div class="fine-print">
+                                            <div class="inline-block">
+                                                <em>Price</em>
+                                                <div class="inline-block" ng-if="current_variation.price_range">{{current_variation.price_range}}</div>
+                                            </div>
+                                            <div class="inline-block" ng-if="current_variation.sizes.length == 1"><em>Size</em> {{current_variation.sizes[0].sized}}</div>
+                                            <div class="inline-block" ng-if="current_variation.sizes.length > 1"><em>Sizes</em> ({{current_variation.sizes.length}})</div>
+                                            <div class="inline-block"ng-if="current_variation.page_count"><em>Page Count</em> {{current_variation.page_count}}</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="product-purchase">
+                                    <a href="#" class="purchase-overlay">Purchase</a>
+                                </div>
+                            </div>
+
+                            <div class="product item active">
+                                <div class="product-image gallery">
+                                    <a ng-href="{{i.large}}" ng-repeat="i in current_variation.images" class="gallery-item">
+                                        <img ng-if="$first" ng-src="{{i.small}}">
+                                    </a>
+                                </div>
+
+                                <a class="purchase">
+                                    <div class="product-details">
+                                        <h5>{{current_variation.name}}</h5>
+                                        <div class="fine-print">
+                                            <div class="inline-block">
+                                                <em>Price</em>
+                                                <div class="inline-block" ng-if="current_variation.price_range">{{current_variation.price_range}}</div>
+                                            </div>
+                                            <div class="inline-block" ng-if="current_variation.sizes.length == 1"><em>Size</em> {{current_variation.sizes[0].sized}}</div>
+                                            <div class="inline-block" ng-if="current_variation.sizes.length > 1"><em>Sizes</em> ({{current_variation.sizes.length}})</div>
+                                            <div class="inline-block"ng-if="current_variation.page_count"><em>Page Count</em> {{current_variation.page_count}}</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="product-purchase">
+                                    <a href="#" class="purchase-overlay">Purchase</a>
+                                </div>
+                            </div>
+
+
 
 
 
@@ -743,7 +826,7 @@
             showCloseBtn: false,
             gallery: {
                 enabled: true,
-                arrowMarkup: '<a class="gallery-arrow gallery-arrow-%dir%"></a>'
+                arrowMarkup: '<a class="gallery-arrow gallery-arrow-%dir% hug"></a>'
             },
             preloader: true,
             tLoading: '<div class="loading"></div>',
@@ -762,41 +845,58 @@
             },
         });
 
-        $('#publication-popup').magnificPopup({
-            type: 'image',
-            mainClass: 'mfp-fade',
-            showCloseBtn: false,
-            preloader: true,
-            tLoading: '<div class="loading"></div>',
-            callbacks: {},
+
+        $('.gallery').each(function() { // the containers for all your galleries
+            $(this).magnificPopup({
+                delegate: 'a', // the selector for gallery item
+                type: 'image',
+                mainClass: 'mfp-fade',
+                preloader: true,
+                tLoading: '<div class="loading"></div>',
+                gallery: {
+                  enabled:true,
+                  arrowMarkup: '<a class="gallery-arrow gallery-arrow-%dir% hug"></a>'
+                },
+                callbacks: {},
+            });
         });
 
-        $('#prints-popup').magnificPopup({
-            type: 'image',
-            mainClass: 'mfp-fade',
-            showCloseBtn: false,
-            preloader: true,
-            tLoading: '<div class="loading"></div>',
-            callbacks: {},
-        });
 
-        $('#poster-popup').magnificPopup({
-            type: 'image',
-            mainClass: 'mfp-fade',
-            showCloseBtn: false,
-            preloader: true,
-            tLoading: '<div class="loading"></div>',
-            callbacks: {},
-        });
+        // $('#publication-popup').magnificPopup({
+        //     type: 'image',
+        //     mainClass: 'mfp-fade',
+        //     showCloseBtn: false,
+        //     preloader: true,
+        //     tLoading: '<div class="loading"></div>',
+        //     callbacks: {},
+        // });
 
-        $('#postcard-popup').magnificPopup({
-            type: 'image',
-            mainClass: 'mfp-fade',
-            showCloseBtn: false,
-            preloader: true,
-            tLoading: '<div class="loading"></div>',
-            callbacks: {},
-        });
+        // $('#prints-popup').magnificPopup({
+        //     type: 'image',
+        //     mainClass: 'mfp-fade',
+        //     showCloseBtn: false,
+        //     preloader: true,
+        //     tLoading: '<div class="loading"></div>',
+        //     callbacks: {},
+        // });
+
+        // $('#poster-popup').magnificPopup({
+        //     type: 'image',
+        //     mainClass: 'mfp-fade',
+        //     showCloseBtn: false,
+        //     preloader: true,
+        //     tLoading: '<div class="loading"></div>',
+        //     callbacks: {},
+        // });
+
+        // $('#postcard-popup').magnificPopup({
+        //     type: 'image',
+        //     mainClass: 'mfp-fade',
+        //     showCloseBtn: false,
+        //     preloader: true,
+        //     tLoading: '<div class="loading"></div>',
+        //     callbacks: {},
+        // });
 
         $('#main-nav, #dotted-nav, #welcome, #overgrowth-fixed').css('opacity', '1.00');
 

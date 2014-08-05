@@ -37,16 +37,16 @@ overgrowthApp.controller('overgrowthController', function($scope) {
                 'page_count': '75-150',
                 'images': [
                     {
-                        'small': 'http://placehold.it/290x435&text=Publications+Thumb+1',
-                        'large': 'http://placehold.it/800x600&text=Publications+Thumb+1',
+                        'small': 'http://placehold.it/290x435&text=Publications+2+Thumb+1',
+                        'large': 'http://placehold.it/800x600&text=Publications+2+Thumb+1',
                     },
                     {
-                        'small': 'http://placehold.it/290x435&text=Publications+Thumb+2',
-                        'large': 'http://placehold.it/800x600&text=Publications+Thumb+2',
+                        'small': 'http://placehold.it/290x435&text=Publications+2+Thumb+2',
+                        'large': 'http://placehold.it/800x600&text=Publications+2+Thumb+2',
                     },
                     {
-                        'small': 'http://placehold.it/290x435&text=Publications+Thumb+3',
-                        'large': 'http://placehold.it/800x600&text=Publications+Thumb+3',
+                        'small': 'http://placehold.it/290x435&text=Publications+2+Thumb+3',
+                        'large': 'http://placehold.it/800x600&text=Publications+2+Thumb+3',
                     },
                 ]
             }]
