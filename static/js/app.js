@@ -1,4 +1,4 @@
-var overgrowthApp = angular.module('overgrowthApp', []);
+var overgrowthApp = angular.module('overgrowthApp', ['ui.bootstrap', 'ngAnimate']);
 
 overgrowthApp.controller('overgrowthController', function($scope) {
 
@@ -15,16 +15,16 @@ overgrowthApp.controller('overgrowthController', function($scope) {
                 'page_count': '38',
                 'images': [
                     {
-                        'small': 'http://placehold.it/290x435&text=Publications+Thumb+1',
-                        'large': 'http://placehold.it/800x600&text=Publications+Thumb+1',
+                        'small': 'http://lorempixel.com/g/290/435/people/1/Original-Edition-Thumb-1',
+                        'large': 'http://lorempixel.com/g/800/600/people/1/Original-Edition-Large-1',
                     },
                     {
-                        'small': 'http://placehold.it/290x435&text=Publications+Thumb+2',
-                        'large': 'http://placehold.it/800x600&text=Publications+Thumb+2',
+                        'small': 'http://lorempixel.com/g/290/435/people/2/Original-Edition-Thumb-2',
+                        'large': 'http://lorempixel.com/g/800/600/people/2/Original-Edition-Large-2',
                     },
                     {
-                        'small': 'http://placehold.it/290x435&text=Publications+Thumb+3',
-                        'large': 'http://placehold.it/800x600&text=Publications+Thumb+3',
+                        'small': 'http://lorempixel.com/g/290/435/people/3/Original-Edition-Thumb-3',
+                        'large': 'http://lorempixel.com/g/800/600/people/3/Original-Edition-Large-3',
                     },
                 ]
             }, {
@@ -37,16 +37,16 @@ overgrowthApp.controller('overgrowthController', function($scope) {
                 'page_count': '75-150',
                 'images': [
                     {
-                        'small': 'http://placehold.it/290x435&text=Publications+2+Thumb+1',
-                        'large': 'http://placehold.it/800x600&text=Publications+2+Thumb+1',
+                        'small': 'http://lorempixel.com/g/290/435/people/4/Overgrowth-Book-1',
+                        'large': 'http://lorempixel.com/g/290/435/people/4/Overgrowth-Book-1',
                     },
                     {
-                        'small': 'http://placehold.it/290x435&text=Publications+2+Thumb+2',
-                        'large': 'http://placehold.it/800x600&text=Publications+2+Thumb+2',
+                        'small': 'http://lorempixel.com/g/290/435/people/5/Overgrowth-Book-2',
+                        'large': 'http://lorempixel.com/g/290/435/people/5/Overgrowth-Book-2',
                     },
                     {
-                        'small': 'http://placehold.it/290x435&text=Publications+2+Thumb+3',
-                        'large': 'http://placehold.it/800x600&text=Publications+2+Thumb+3',
+                        'small': 'http://lorempixel.com/g/290/435/people/6/Overgrowth-Book-3',
+                        'large': 'http://lorempixel.com/g/290/435/people/6/Overgrowth-Book-3',
                     },
                 ]
             }]
@@ -54,33 +54,234 @@ overgrowthApp.controller('overgrowthController', function($scope) {
         'prints': {
             'section': 'Prints',
             'products': [{
-                'name': 'Archival Print',
-                'price_range': "$125 - 200",
+                'name': 'Archival Print No. 1',
+                'price_range': "$125",
                 'sizes': [{
                     'sized': '8" x 12"',
                     'price': 125,
                 }],
                 'images': [
                     {
-                        'small': 'http://placehold.it/290x435&text=Prints+Thumb+1',
-                        'large': 'http://placehold.it/800x600&text=Prints+Thumb+1',
-                    },
+                        'small': 'http://placehold.it/290x435&text=No+1.',
+                        'large': 'http://placehold.it/800x600&text=No+1.',
+                    }
+                ]
+            },
+            {
+                'name': 'Archival Print No. 2',
+                'price_range': "$125",
+                'sizes': [{
+                    'sized': '8" x 12"',
+                    'price': 125,
+                }],
+                'images': [
                     {
-                        'small': 'http://placehold.it/290x435&text=Prints+Thumb+2',
-                        'large': 'http://placehold.it/800x600&text=Prints+Thumb+2',
-                    },
+                        'small': 'http://placehold.it/290x435&text=No. 2',
+                        'large': 'http://placehold.it/800x600&text=No. 2',
+                    }
+                ]
+            },
+            {
+                'name': 'Archival Print No. 2',
+                'price_range': "$125",
+                'sizes': [{
+                    'sized': '8" x 12"',
+                    'price': 125,
+                }],
+                'images': [
                     {
-                        'small': 'http://placehold.it/290x435&text=Prints+Thumb+3',
-                        'large': 'http://placehold.it/800x600&text=Prints+Thumb+3',
-                    },
-                ],
-                'numbers': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+                        'small': 'http://placehold.it/290x435&text=No. 2',
+                        'large': 'http://placehold.it/800x600&text=No. 2',
+                    }
+                ]
+            },
+            {
+                'name': 'Archival Print No. 3',
+                'price_range': "$125",
+                'sizes': [{
+                    'sized': '8" x 12"',
+                    'price': 125,
+                }],
+                'images': [
+                    {
+                        'small': 'http://placehold.it/290x435&text=No. 3',
+                        'large': 'http://placehold.it/800x600&text=No. 3',
+                    }
+                ]
+            },
+            {
+                'name': 'Archival Print No. 4',
+                'price_range': "$125",
+                'sizes': [{
+                    'sized': '8" x 12"',
+                    'price': 125,
+                }],
+                'images': [
+                    {
+                        'small': 'http://placehold.it/290x435&text=No. 4',
+                        'large': 'http://placehold.it/800x600&text=No. 4',
+                    }
+                ]
+            },
+            {
+                'name': 'Archival Print No. 5',
+                'price_range': "$125",
+                'sizes': [{
+                    'sized': '8" x 12"',
+                    'price': 125,
+                }],
+                'images': [
+                    {
+                        'small': 'http://placehold.it/290x435&text=No. 5',
+                        'large': 'http://placehold.it/800x600&text=No. 5',
+                    }
+                ]
+            },
+            {
+                'name': 'Archival Print No. 6',
+                'price_range': "$125",
+                'sizes': [{
+                    'sized': '8" x 12"',
+                    'price': 125,
+                }],
+                'images': [
+                    {
+                        'small': 'http://placehold.it/290x435&text=No. 6',
+                        'large': 'http://placehold.it/800x600&text=No. 6',
+                    }
+                ]
+            },
+            {
+                'name': 'Archival Print No. 7',
+                'price_range': "$125",
+                'sizes': [{
+                    'sized': '8" x 12"',
+                    'price': 125,
+                }],
+                'images': [
+                    {
+                        'small': 'http://placehold.it/290x435&text=No. 7',
+                        'large': 'http://placehold.it/800x600&text=No. 7',
+                    }
+                ]
+            },
+            {
+                'name': 'Archival Print No. 8',
+                'price_range': "$125",
+                'sizes': [{
+                    'sized': '8" x 12"',
+                    'price': 125,
+                }],
+                'images': [
+                    {
+                        'small': 'http://placehold.it/290x435&text=No. 8',
+                        'large': 'http://placehold.it/800x600&text=No. 8',
+                    }
+                ]
+            },
+            {
+                'name': 'Archival Print No. 9',
+                'price_range': "$125",
+                'sizes': [{
+                    'sized': '8" x 12"',
+                    'price': 125,
+                }],
+                'images': [
+                    {
+                        'small': 'http://placehold.it/290x435&text=No. 9',
+                        'large': 'http://placehold.it/800x600&text=No. 9',
+                    }
+                ]
+            },
+            {
+                'name': 'Archival Print No. 10',
+                'price_range': "$125",
+                'sizes': [{
+                    'sized': '8" x 12"',
+                    'price': 125,
+                }],
+                'images': [
+                    {
+                        'small': 'http://placehold.it/290x435&text=No. 10',
+                        'large': 'http://placehold.it/800x600&text=No. 10',
+                    }
+                ]
+            },
+            {
+                'name': 'Archival Print No. 11',
+                'price_range': "$125",
+                'sizes': [{
+                    'sized': '8" x 12"',
+                    'price': 125,
+                }],
+                'images': [
+                    {
+                        'small': 'http://placehold.it/290x435&text=No. 11',
+                        'large': 'http://placehold.it/800x600&text=No. 11',
+                    }
+                ]
+            },
+            {
+                'name': 'Archival Print No. 12',
+                'price_range': "$125",
+                'sizes': [{
+                    'sized': '8" x 12"',
+                    'price': 125,
+                }],
+                'images': [
+                    {
+                        'small': 'http://placehold.it/290x435&text=No. 12',
+                        'large': 'http://placehold.it/800x600&text=No. 12',
+                    }
+                ]
+            },
+            {
+                'name': 'Archival Print No. 13',
+                'price_range': "$125",
+                'sizes': [{
+                    'sized': '8" x 12"',
+                    'price': 125,
+                }],
+                'images': [
+                    {
+                        'small': 'http://placehold.it/290x435&text=No. 13',
+                        'large': 'http://placehold.it/800x600&text=No. 13',
+                    }
+                ]
+            },
+            {
+                'name': 'Archival Print No. 14',
+                'price_range': "$125",
+                'sizes': [{
+                    'sized': '8" x 12"',
+                    'price': 125,
+                }],
+                'images': [
+                    {
+                        'small': 'http://placehold.it/290x435&text=No. 14',
+                        'large': 'http://placehold.it/800x600&text=No. 14',
+                    }
+                ]
+            },
+            {
+                'name': 'Archival Print No. 15',
+                'price_range': "$125",
+                'sizes': [{
+                    'sized': '8" x 12"',
+                    'price': 125,
+                }],
+                'images': [
+                    {
+                        'small': 'http://placehold.it/290x435&text=No. 15',
+                        'large': 'http://placehold.it/800x600&text=No. 15',
+                    }
+                ]
             }]
         },
         'posters': {
             'section': 'Posters',
             'products': [{
-                'name': 'Poster',
+                'name': 'Poster No. 1',
                 'price_range': "$10",
                 'sizes': [{
                     'sized': '11" x 14"',
@@ -88,19 +289,52 @@ overgrowthApp.controller('overgrowthController', function($scope) {
                 }],
                 'images': [
                     {
-                        'small': 'http://placehold.it/290x435&text=Posters+Thumb+1',
-                        'large': 'http://placehold.it/800x600&text=Posters+Thumb+1',
-                    },
+                        'small': 'http://placehold.it/290x435&text=No.+1',
+                        'large': 'http://placehold.it/800x600&text=No.+1',
+                    }
+                ]
+            },
+            {
+                'name': 'Poster No. 2',
+                'price_range': "$10",
+                'sizes': [{
+                    'sized': '11" x 14"',
+                    'price': 10,
+                }],
+                'images': [
                     {
-                        'small': 'http://placehold.it/290x435&text=Posters+Thumb+2',
-                        'large': 'http://placehold.it/800x600&text=Posters+Thumb+2',
-                    },
+                        'small': 'http://placehold.it/290x435&text=No.+2',
+                        'large': 'http://placehold.it/800x600&text=No.+2',
+                    }
+                ]
+            },
+            {
+                'name': 'Poster No. 3',
+                'price_range': "$10",
+                'sizes': [{
+                    'sized': '11" x 14"',
+                    'price': 10,
+                }],
+                'images': [
                     {
-                        'small': 'http://placehold.it/290x435&text=Posters+Thumb+3',
-                        'large': 'http://placehold.it/800x600&text=Posters+Thumb+3',
-                    },
-                ],
-                'numbers': [1, 2, 3, 4]
+                        'small': 'http://placehold.it/290x435&text=No.+3',
+                        'large': 'http://placehold.it/800x600&text=No.+3',
+                    }
+                ]
+            },
+            {
+                'name': 'Poster No. 4',
+                'price_range': "$10",
+                'sizes': [{
+                    'sized': '11" x 14"',
+                    'price': 10,
+                }],
+                'images': [
+                    {
+                        'small': 'http://placehold.it/290x435&text=No.+4',
+                        'large': 'http://placehold.it/800x600&text=No.+4',
+                    }
+                ]
             }]
         },
         'postcards': {
@@ -114,16 +348,16 @@ overgrowthApp.controller('overgrowthController', function($scope) {
                 }],
                 'images': [
                     {
-                        'small': 'http://placehold.it/290x435&text=Postcards+Thumb+1',
-                        'large': 'http://placehold.it/800x600&text=Postcards+Thumb+1',
+                        'small': 'http://placehold.it/290x435&text=Postcards+Set+(10)+1',
+                        'large': 'http://placehold.it/800x600&text=Postcards+Set+(10)+1',
                     },
                     {
-                        'small': 'http://placehold.it/290x435&text=Postcards+Thumb+2',
-                        'large': 'http://placehold.it/800x600&text=Postcards+Thumb+2',
+                        'small': 'http://placehold.it/290x435&text=Postcards+Set+(10)+2',
+                        'large': 'http://placehold.it/800x600&text=Postcards+Set+(10)+2',
                     },
                     {
-                        'small': 'http://placehold.it/290x435&text=Postcards+Thumb+3',
-                        'large': 'http://placehold.it/800x600&text=Postcards+Thumb+3',
+                        'small': 'http://placehold.it/290x435&text=Postcards+Set+(10)+3',
+                        'large': 'http://placehold.it/800x600&text=Postcards+Set+(10)+3',
                     },
                 ],
             }, {
@@ -135,16 +369,16 @@ overgrowthApp.controller('overgrowthController', function($scope) {
                 }],
                 'images': [
                     {
-                        'small': 'http://placehold.it/290x435&text=Postcard+(Set+25)+Thumb+1',
-                        'large': 'http://placehold.it/800x600&text=Postcard+(Set+25)+Thumb+1',
+                        'small': 'http://placehold.it/290x435&text=Postcard+Set+(25)+1',
+                        'large': 'http://placehold.it/800x600&text=Postcard+Set+(25)+1',
                     },
                     {
-                        'small': 'http://placehold.it/290x435&text=Postcard+(Set+25)+Thumb+2',
-                        'large': 'http://placehold.it/800x600&text=Postcard+(Set+25)+Thumb+2',
+                        'small': 'http://placehold.it/290x435&text=Postcard+Set+(25)+2',
+                        'large': 'http://placehold.it/800x600&text=Postcard+Set+(25)+2',
                     },
                     {
-                        'small': 'http://placehold.it/290x435&text=Postcard+(Set+25)+Thumb+3',
-                        'large': 'http://placehold.it/800x600&text=Postcard+(Set+25)+Thumb+3',
+                        'small': 'http://placehold.it/290x435&text=Postcard+Set+(25)+3',
+                        'large': 'http://placehold.it/800x600&text=Postcard+Set+(25)+3',
                     },
                 ],
             }]
@@ -176,6 +410,8 @@ overgrowthApp.controller('overgrowthController', function($scope) {
     };
 
     $scope.nextProduct = function() {
+        $scope.current_variation.animate = true;
+
         var idx = _.indexOf($scope.current_section.products, $scope.current_variation) + 1;
         if (_.has($scope.current_section.products, idx)) {
             $scope.current_variation = $scope.current_section.products[idx];
@@ -197,6 +433,8 @@ overgrowthApp.controller('overgrowthController', function($scope) {
     };
 
     $scope.previousProduct = function() {
+        $scope.current_variation.animate = true;
+
         var idx = _.indexOf($scope.current_section.products, $scope.current_variation) - 1;
         if (_.has($scope.current_section.products, idx)) {
             $scope.current_variation = $scope.current_section.products[idx];

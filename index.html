@@ -446,36 +446,36 @@
                     <div id="store-items" class="carousel slide" data-ride="carousel">
 
                         <ul class="nav-store">
-                            <li id="nav-publications" ng-class="{active: current_section.section == 'Publications'}"><a data-slide-to="0" ng-click="switchSection('publications')">Publications</a>
+                            <li ng-class="{active: current_section.section == 'Publications'}"><a ng-click="switchSection('publications')">Publications</a>
                             </li>
-                            <li id="nav-prints" ng-class="{active: current_section.section == 'Prints'}"><a data-slide-to="1" ng-click="switchSection('prints')">Prints</a>
+                            <li ng-class="{active: current_section.section == 'Prints'}"><a ng-click="switchSection('prints')">Prints</a>
                             </li>
-                            <li id="nav-posters" ng-class="{active: current_section.section == 'Posters'}"><a data-slide-to="2" ng-click="switchSection('posters')">Posters</a>
+                            <li ng-class="{active: current_section.section == 'Posters'}"><a ng-click="switchSection('posters')">Posters</a>
                             </li>
-                            <li id="nav-postcards" ng-class="{active: current_section.section == 'Postcards'}"><a data-slide-to="3" ng-click="switchSection('postcards')">Postcards</a>
+                            <li ng-class="{active: current_section.section == 'Postcards'}"><a ng-click="switchSection('postcards')">Postcards</a>
                             </li>
                         </ul>
 
-                        <div class="carousel-inner">
+                        <div class="carousel-inner-container">
 
-                            <div class="product item active">
+                            <div class="product item" ng-repeat="p in current_section.products" ng-show="current_variation.name == p.name" ng-class="{animate: current_variation.animate}">
                                 <div class="product-image gallery">
-                                    <a ng-href="{{i.large}}" ng-repeat="i in current_variation.images" class="gallery-item">
+                                    <a href="{{i.large}}" ng-repeat="i in current_variation.images" class="gallery-item">
                                         <img ng-if="$first" ng-src="{{i.small}}">
                                     </a>
                                 </div>
 
                                 <a class="purchase">
                                     <div class="product-details">
-                                        <h5>{{current_variation.name}}</h5>
+                                        <h5>{{p.name}}</h5>
                                         <div class="fine-print">
                                             <div class="inline-block">
                                                 <em>Price</em>
-                                                <div class="inline-block" ng-if="current_variation.price_range">{{current_variation.price_range}}</div>
+                                                <div class="inline-block" ng-if="p.price_range">{{p.price_range}}</div>
                                             </div>
-                                            <div class="inline-block" ng-if="current_variation.sizes.length == 1"><em>Size</em> {{current_variation.sizes[0].sized}}</div>
-                                            <div class="inline-block" ng-if="current_variation.sizes.length > 1"><em>Sizes</em> ({{current_variation.sizes.length}})</div>
-                                            <div class="inline-block"ng-if="current_variation.page_count"><em>Page Count</em> {{current_variation.page_count}}</div>
+                                            <div class="inline-block" ng-if="p.sizes.length == 1"><em>Size</em> {{p.sizes[0].sized}}</div>
+                                            <div class="inline-block" ng-if="p.sizes.length > 1"><em>Sizes</em> ({{p.sizes.length}})</div>
+                                            <div class="inline-block"ng-if="p.page_count"><em>Page Count</em> {{current_variation.page_count}}</div>
                                         </div>
                                     </div>
                                 </a>
@@ -614,22 +614,29 @@
         </section>
     </div>
 
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="//code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.underscore.min.js"></script>
+
+    <!-- Angular scripts -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-animate.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-touch.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap.min.js"></script>
+
+    <!-- Application scripts -->
     <script src="static/js/app.js"></script>
-    <script type="text/javascript" src="static/fullpage/vendors/jquery.easings.min.js"></script>
+
+    <!-- Helpers -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.underscore.min.js"></script>
+    <script src="static/fullpage/vendors/jquery.easings.min.js"></script>
     <script src="static/js/jquery.ui.touch-punch.min.js"></script>
     <script src="static/jquery.tap/jquery.tap.min.js"></script>
-    <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="static/swipebox/src/js/jquery.swipebox.js"></script>
-    <script type="text/javascript" src="static/TouchSwipe-Jquery-Plugin/jquery.touchSwipe.min.js"></script>
-    <script type="text/javascript" src="static/Magnific-Popup/dist/jquery.magnific-popup.min.js"></script>
-    <!-- <script type="text/javascript" src="static/js/imagelightbox.min.js"></script> -->
-    <script type="text/javascript" src="static/js/skrollr/dist/skrollr.min.js"></script>
-    <script type="text/javascript" src="static/js/skrollr-menu/dist/skrollr.menu.min.js"></script>
-    <!-- <script type="text/javascript" src="static/js/skrollr-pages.js"></script> -->
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="static/swipebox/src/js/jquery.swipebox.js"></script>
+    <script src="static/TouchSwipe-Jquery-Plugin/jquery.touchSwipe.min.js"></script>
+    <script src="static/Magnific-Popup/dist/jquery.magnific-popup.min.js"></script>
+    <script src="static/js/skrollr/dist/skrollr.min.js"></script>
+    <script src="static/js/skrollr-menu/dist/skrollr.menu.min.js"></script>
     <script src="https://checkout.stripe.com/checkout.js"></script>
     <script>
         var s = skrollr.init({
@@ -661,16 +668,16 @@
         $('#store-items').carousel({
             interval: false
         });
-        $('#store-prev').click(function() {
-            $('.carousel').carousel('prev');
-            // console.log('previous');
-            return false;
-        });
-        $('#store-next').click(function() {
-            $('.carousel').carousel('next');
-            // console.log('next');
-            return false;
-        });
+        // $('#store-prev').click(function() {
+        //     $('.carousel').carousel('prev');
+        //     // console.log('previous');
+        //     return false;
+        // });
+        // $('#store-next').click(function() {
+        //     $('.carousel').carousel('next');
+        //     // console.log('next');
+        //     return false;
+        // });
 
         $('#store-items').on('slide.bs.carousel', function (e) {
           // do something…
@@ -680,31 +687,31 @@
           $('#' + target).addClass('active');
           // console.log(target, $(target));
         });
-        $(".product-image").swipe( {
-            //Generic swipe handler for all directions
-            swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
-                console.log("You swiped " + direction);
-                // console.log("event", event);
-                // console.log("distance", distance);
-                // console.log("duration", duration);
-                // console.log("fingerCount", fingerCount);
-                // console.log("fingerData", fingerData);
-                if (direction == "left") {
-                    $('.carousel').carousel('next');
-                }
-                if (direction == "right") {
-                    $('.carousel').carousel('prev');
-                }
-            },
-            threshold: 40
-        });
+        // $(".product-image").swipe( {
+        //     //Generic swipe handler for all directions
+        //     swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+        //         console.log("You swiped " + direction);
+        //         // console.log("event", event);
+        //         // console.log("distance", distance);
+        //         // console.log("duration", duration);
+        //         // console.log("fingerCount", fingerCount);
+        //         // console.log("fingerData", fingerData);
+        //         if (direction == "left") {
+        //             $('.carousel').carousel('next');
+        //         }
+        //         if (direction == "right") {
+        //             $('.carousel').carousel('prev');
+        //         }
+        //     },
+        //     threshold: 40
+        // });
 
 
-        $('.nav-store li a').click(function() {
-            var idx = $(this).attr('data-slide-to');
-            $('#store-items').carousel(parseInt(idx));
-            return false;
-        });
+        // $('.nav-store li a').click(function() {
+        //     var idx = $(this).attr('data-slide-to');
+        //     $('#store-items').carousel(parseInt(idx));
+        //     return false;
+        // });
         $('body').scrollspy({
             target: '#dotted-nav',
             offset: 300
@@ -777,42 +784,6 @@
             });
         });
 
-
-        // $('#publication-popup').magnificPopup({
-        //     type: 'image',
-        //     mainClass: 'mfp-fade',
-        //     showCloseBtn: false,
-        //     preloader: true,
-        //     tLoading: '<div class="loading"></div>',
-        //     callbacks: {},
-        // });
-
-        // $('#prints-popup').magnificPopup({
-        //     type: 'image',
-        //     mainClass: 'mfp-fade',
-        //     showCloseBtn: false,
-        //     preloader: true,
-        //     tLoading: '<div class="loading"></div>',
-        //     callbacks: {},
-        // });
-
-        // $('#poster-popup').magnificPopup({
-        //     type: 'image',
-        //     mainClass: 'mfp-fade',
-        //     showCloseBtn: false,
-        //     preloader: true,
-        //     tLoading: '<div class="loading"></div>',
-        //     callbacks: {},
-        // });
-
-        // $('#postcard-popup').magnificPopup({
-        //     type: 'image',
-        //     mainClass: 'mfp-fade',
-        //     showCloseBtn: false,
-        //     preloader: true,
-        //     tLoading: '<div class="loading"></div>',
-        //     callbacks: {},
-        // });
 
         $('#main-nav, #dotted-nav, #welcome, #overgrowth-fixed').css('opacity', '1.00');
 
