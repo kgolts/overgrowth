@@ -669,53 +669,6 @@
     </script>
     <script type="text/javascript">
     $(function() {
-        $('#store-items').carousel({
-            interval: false
-        });
-        // $('#store-prev').click(function() {
-        //     $('.carousel').carousel('prev');
-        //     // console.log('previous');
-        //     return false;
-        // });
-        // $('#store-next').click(function() {
-        //     $('.carousel').carousel('next');
-        //     // console.log('next');
-        //     return false;
-        // });
-
-        $('#store-items').on('slide.bs.carousel', function (e) {
-          // do something…
-          var elem = e.relatedTarget;
-          var target = $(elem).attr('data-id');
-          $('.nav-store li').removeClass('active');
-          $('#' + target).addClass('active');
-          // console.log(target, $(target));
-        });
-        // $(".product-image").swipe( {
-        //     //Generic swipe handler for all directions
-        //     swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
-        //         console.log("You swiped " + direction);
-        //         // console.log("event", event);
-        //         // console.log("distance", distance);
-        //         // console.log("duration", duration);
-        //         // console.log("fingerCount", fingerCount);
-        //         // console.log("fingerData", fingerData);
-        //         if (direction == "left") {
-        //             $('.carousel').carousel('next');
-        //         }
-        //         if (direction == "right") {
-        //             $('.carousel').carousel('prev');
-        //         }
-        //     },
-        //     threshold: 40
-        // });
-
-
-        // $('.nav-store li a').click(function() {
-        //     var idx = $(this).attr('data-slide-to');
-        //     $('#store-items').carousel(parseInt(idx));
-        //     return false;
-        // });
         $('body').scrollspy({
             target: '#dotted-nav',
             offset: 300
