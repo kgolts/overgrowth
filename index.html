@@ -440,7 +440,7 @@
 
 
 
-            <div class="display-table clearfix">
+            <div class="display-table">
                 <div class="display-table-cell">
 
                     <div id="store-items" class="carousel slide" data-ride="carousel">
@@ -456,31 +456,35 @@
                             </li>
                         </ul>
 
-                        <div class="carousel-inner-container">
+                        <div class="carousel-inner-container" ng-animate="'fadein'">
 
-                            <div class="product item" ng-repeat="p in current_section.products" ng-show="current_variation.name == p.name" ng-class="{animate: current_variation.animate}">
-                                <div class="product-image gallery">
-                                    <a href="{{i.large}}" ng-repeat="i in current_variation.images" class="gallery-item">
-                                        <img ng-if="$first" ng-src="{{i.small}}">
-                                    </a>
-                                </div>
 
-                                <a class="purchase">
-                                    <div class="product-details">
-                                        <h5>{{p.name}}</h5>
-                                        <div class="fine-print">
-                                            <div class="inline-block">
-                                                <em>Price</em>
-                                                <div class="inline-block" ng-if="p.price_range">{{p.price_range}}</div>
-                                            </div>
-                                            <div class="inline-block" ng-if="p.sizes.length == 1"><em>Size</em> {{p.sizes[0].sized}}</div>
-                                            <div class="inline-block" ng-if="p.sizes.length > 1"><em>Sizes</em> ({{p.sizes.length}})</div>
-                                            <div class="inline-block"ng-if="p.page_count"><em>Page Count</em> {{current_variation.page_count}}</div>
-                                        </div>
+
+                            <div ng-repeat="s in store">
+                                <div class="product item" ng-repeat="p in s.products" ng-show="(s == current_section && current_variation.name == p.name)" ng-animate>
+                                    <div class="product-image gallery">
+                                        <a href="{{i.large}}" ng-repeat="i in p.images" class="gallery-item">
+                                            <img ng-if="$first" ng-src="{{i.small}}">
+                                        </a>
                                     </div>
-                                </a>
-                                <div class="product-purchase">
-                                    <a href="#" class="purchase-overlay">Purchase</a>
+
+                                    <a class="purchase">
+                                        <div class="product-details">
+                                            <h5>{{p.name}}</h5>
+                                            <div class="fine-print">
+                                                <div class="inline-block">
+                                                    <em>Price</em>
+                                                    <div class="inline-block" ng-if="p.price_range">{{p.price_range}}</div>
+                                                </div>
+                                                <div class="inline-block" ng-if="p.sizes.length == 1"><em>Size</em> {{p.sizes[0].sized}}</div>
+                                                <div class="inline-block" ng-if="p.sizes.length > 1"><em>Sizes</em> ({{p.sizes.length}})</div>
+                                                <div class="inline-block"ng-if="p.page_count"><em>Page Count</em> {{p.page_count}}</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="product-purchase">
+                                        <a href="#" class="purchase-overlay">Purchase</a>
+                                    </div>
                                 </div>
                             </div>
 

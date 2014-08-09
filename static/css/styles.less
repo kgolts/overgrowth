@@ -729,8 +729,39 @@ animation: fade-in .25s linear;
     //     display: block;
     // }
 
+    .carousel-inner-container {
+        position: relative;
+        height: 700px;
+        max-width: 500px;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
     .product {
         padding: 85px 0 50px;
+        -webkit-transition: all 0.25s ease-in-out;
+        -moz-transition: all 0.25s ease-in-out;
+        -o-transition: all 0.25s ease-in-out;
+        transition: all 0.25s ease-in-out;
+        opacity: 1;
+
+        &.ng-hide-add-active {
+            opacity: 0;
+        }
+        &.ng-hide-add {
+            // opacity: 1;
+        }
+        &.ng-hide-remove-active {
+            opacity: 1;
+        }
+        &.ng-hide-remove {
+            opacity: 0;
+        }
+        .ng-hide {
+        }
+        .ng-show {
+        }
+
 
         .purchase {
             display: block;
@@ -885,6 +916,26 @@ animation: fade-in .25s linear;
     bottom: 50px;
     text-align: center;
 }
+
+.fadein.ng-leave {
+    display: none;
+}
+.fadein.ng-enter {
+    webkit-transition: opacity 0.3s linear;
+    -o-transition: opacity 0.3s linear;
+    transition: opacity 0.3s linear;
+    -webkit-transition: all opacity 0.3s linear ease-out;
+    -moz-transition: all opacity 0.3s linear ease-out;
+    -o-transition: all opacity 0.3s linear ease-out;
+    transition: all opacity 0.3s linear ease-out;
+}
+.fadein.ng-enter, .fadein.ng-leave.ng-leave-active {
+    opacity: 0;
+}
+.fadein, .fadein.ng-enter.ng-enter-active {
+    opacity: 1;
+}
+
 
 #credits {
     background: @green;

@@ -386,17 +386,24 @@ overgrowthApp.controller('overgrowthController', function($scope) {
     };
 
     $scope.switchSection = function(product_type) {
-        $scope.current_section = $scope.store[product_type];
-        console.log($scope.current_section);
+        if ($scope.current_section != $scope.store[product_type]) {
+            $scope.products_changing = true;
+            setTimeout(function() {
+                $scope.products_changing = false;
+            }, 1000);
+            $scope.current_section = $scope.store[product_type];
+            console.log($scope.current_section);
 
-        $scope.current_variation = $scope.current_section.products[0];
-        $scope.current_variation.selected_size = $scope.current_variation.sizes[0];
-        $scope.current_variation.selected_quantity = 1;
-        if (_.has($scope.current_variation, 'numbers')) {
-            $scope.current_variation.selected_number = 1;
+            $scope.current_variation = $scope.current_section.products[0];
+            $scope.current_variation.selected_size = $scope.current_variation.sizes[0];
+            $scope.current_variation.selected_quantity = 1;
+            if (_.has($scope.current_variation, 'numbers')) {
+                $scope.current_variation.selected_number = 1;
+            }
+
+
+            console.log($scope.current_section);
         }
-
-        console.log($scope.current_section);
         // $('#store-items').on('slide.bs.carousel', function (e) {
         //   // do something…
         //   var elem = e.relatedTarget;
