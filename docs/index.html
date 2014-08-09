@@ -1,0 +1,303 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<style>
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    color: #737373;
+    background-color: white;
+    margin: 10px 13px 10px 13px;
+}
+table {
+	margin: 10px 0 15px 0;
+	border-collapse: collapse;
+}
+td,th {	
+	border: 1px solid #ddd;
+	padding: 3px 10px;
+}
+th {
+	padding: 5px 10px;	
+}
+
+a {
+    color: #0069d6;
+}
+a:hover {
+    color: #0050a3;
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+p {
+    margin-bottom: 9px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #404040;
+    line-height: 36px;
+}
+h1 {
+    margin-bottom: 18px;
+    font-size: 30px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 16px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 13px;
+}
+hr {
+    margin: 0 0 19px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+blockquote {
+    padding: 13px 13px 21px 15px;
+    margin-bottom: 18px;
+    font-family:georgia,serif;
+    font-style: italic;
+}
+blockquote:before {
+    content:"\201C";
+    font-size:40px;
+    margin-left:-10px;
+    font-family:georgia,serif;
+    color:#eee;
+}
+blockquote p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+code, pre {
+    font-family: Monaco, Andale Mono, Courier New, monospace;
+}
+code {
+    background-color: #fee9cc;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 1px 3px;
+    font-size: 12px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+pre {
+    display: block;
+    padding: 14px;
+    margin: 0 0 18px;
+    line-height: 16px;
+    font-size: 11px;
+    border: 1px solid #d9d9d9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+pre code {
+    background-color: #fff;
+    color:#737373;
+    font-size: 11px;
+    padding: 0;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:10px auto;
+    }
+}
+@media print {
+	body,code,pre code,h1,h2,h3,h4,h5,h6 {
+		color: black;
+	}
+	table, pre {
+		page-break-inside: avoid;
+	}
+}
+</style>
+<title>Overgrowth Tutorial Docs</title>
+
+</head>
+<body>
+<h1>Overgrowth Tutorial Docs</h1>
+
+<h3>FTP / File Updates</h3>
+
+<p>The overgrowth server uses SFTP.</p>
+
+<p>Recommended client for Mac: Transmit<br>
+Recommended client for PC: WinSCP</p>
+
+<p>Host: thisisovergrowth.com<br>
+Username: overgrowth<br>
+Password: 1chucknorris<br></p>
+
+<h2>Editing main navigation</h2>
+
+<h3>Mobile</h3>
+
+<pre><code>&lt;div class="visible-xs-block"&gt;
+     &lt;div id="mobile-nav" class=""&gt;
+         &lt;ul class="nav-horizontal" role="tablist"&gt;
+             &lt;li&gt;&lt;a href="#about"&gt;About&lt;/a&gt;
+             &lt;/li&gt;
+             &lt;li&gt;&lt;a href="#gallery"&gt;Gallery&lt;/a&gt;
+             &lt;/li&gt;
+             &lt;li&gt;&lt;a href="#artist-statement"&gt;Artist Statement&lt;/a&gt;
+             &lt;/li&gt;
+             &lt;li&gt;&lt;a href="#kickstarter"&gt;Kickstarter&lt;/a&gt;
+             &lt;/li&gt;
+             &lt;li&gt;&lt;a href="#store"&gt;Store&lt;/a&gt;
+             &lt;/li&gt;
+             &lt;li&gt;&lt;a href="#exhibition"&gt;Exhibition&lt;/a&gt;
+             &lt;/li&gt;
+             &lt;li&gt;&lt;a href="#credits"&gt;Credits&lt;/a&gt;
+             &lt;/li&gt;
+         &lt;/ul&gt;
+     &lt;/div&gt;
+ &lt;/div&gt;
+</code></pre>
+
+<h3>Desktop</h3>
+
+<pre><code>    &lt;div id="main-nav" class="hidden-xs"&gt;
+        &lt;ul class="nav-horizontal" role="tablist"&gt;
+            &lt;li&gt;&lt;a href="#about"&gt;About&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;&lt;a href="#gallery"&gt;Gallery&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;&lt;a href="#artist-statement"&gt;Artist Statement&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li class="kickstarter-element"&gt;&lt;a href="#kickstarter"&gt;Kickstarter&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;&lt;a href="#store"&gt;Store&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;&lt;a href="#exhibition"&gt;Exhibition&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;&lt;a href="#credits"&gt;Credits&lt;/a&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+</code></pre>
+
+<p>You also need to add/remove the relevant nav dot located in the "dotted-nav"id.</p>
+
+<h2>Background Images</h2>
+
+<p>Background images for the Parallax sections must be updated in two locations. Use find and replace to find both files with the same URL src. One is located at the top of the site and looks like this:</p>
+
+<pre><code>&lt;div class="parallax-image-wrapper parallax-image-wrapper-100" data-anchor-target="#header + .gap" data-bottom-top="transform:translate3d(0px, 200%, 0px)" data-top-bottom="transform:translate3d(0px, 0%, 0px)"&gt;
+
+    &lt;div class="parallax-image parallax-image-100" style="background-image:url(static/img/large/10940016_v1_web.jpg)" data-anchor-target="#header + .gap" data-bottom-top="transform: translate3d(0px, -80%, 0px);" data-top-bottom="transform: translate3d(0px, 80%, 0px);"&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+</code></pre>
+
+<p>And in the section styles</p>
+
+<pre><code>&lt;section class="gap gap-100p" style="background-image:url(static/img/large/10940016_v1_web.jpg);" id="landing"&gt;
+</code></pre>
+
+<h2>Main Gallery</h2>
+
+<p>To change images in the main gallery, make sure they're included inside the A tag here.</p>
+
+<pre><code>&lt;div id="main-gallery" class="hidden-xs"&gt;
+    &lt;a href="static/img/large/11420016_v1_web.jpg" id="open-gallery-button"&gt;
+        &lt;img src="static/img/mobile/view-gallery-button.png" alt="Open gallery"&gt;
+    &lt;/a&gt;
+    &lt;a href="static/img/large/11340009_v1.jpg"&gt;&lt;/a&gt;
+    &lt;a href="static/img/large/11180030_v1_web.jpg"&gt;&lt;/a&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h2>Store Items</h2>
+
+<p>All of the store items are located in the file <code>/static/js/app.js</code></p>
+
+<p>Here is a sample section with commenting</p>
+
+<pre><code>'publications': {
+    'section': 'Publications',
+    'products': [{
+        'name': 'Original Edition', //product name
+        'price_range': "$20", //price shown
+        'sizes': [{
+            'sized': '10.5" x 4.25"', //if multiple sizes, then the selector is shown at checkout
+            'price': 20 //price charged for this size
+        }],
+        'page_count': '38',
+        'images': [ //all images contained here become part of a gallery for a single product
+            {
+                'small': 'http://lorempixel.com/g/290/435/people/1/Original-Edition-Thumb-1', //thumbnail image
+                'large': 'http://lorempixel.com/g/800/600/people/1/Original-Edition-Large-1', //full size image 
+            },
+            {
+                'small': 'http://lorempixel.com/g/290/435/people/2/Original-Edition-Thumb-2',
+                'large': 'http://lorempixel.com/g/800/600/people/2/Original-Edition-Large-2',
+            },
+            {
+                'small': 'http://lorempixel.com/g/290/435/people/3/Original-Edition-Thumb-3',
+                'large': 'http://lorempixel.com/g/800/600/people/3/Original-Edition-Large-3',
+            },
+        ]
+    }, {
+        'name': 'Overgrowth Book (Pre-Order)',
+        'price_range': "$40",
+        'sizes': [{
+            'sized': '11" x 14"',
+            'price': 40
+        }],
+        'page_count': '75-150',
+        'images': [
+            {
+                'small': 'http://lorempixel.com/g/290/435/people/4/Overgrowth-Book-1',
+                'large': 'http://lorempixel.com/g/290/435/people/4/Overgrowth-Book-1',
+            },
+            {
+                'small': 'http://lorempixel.com/g/290/435/people/5/Overgrowth-Book-2',
+                'large': 'http://lorempixel.com/g/290/435/people/5/Overgrowth-Book-2',
+            },
+            {
+                'small': 'http://lorempixel.com/g/290/435/people/6/Overgrowth-Book-3',
+                'large': 'http://lorempixel.com/g/290/435/people/6/Overgrowth-Book-3',
+            },
+        ]
+    }]
+},
+</code></pre>
+
+<p>Let me know if you have any questions!</p>
+
+<p>Nick</p>
+</body>
+</html>
