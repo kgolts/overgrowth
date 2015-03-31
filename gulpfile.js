@@ -1,4 +1,4 @@
-(function() {
+(function () {
 
   var gulp = require('gulp');
   var gutil = require('gulp-util');
@@ -20,13 +20,16 @@
     vendorScripts: [
       // specify your vendor scripts in dependency order
    
-      'assets/vendor/jquery/dist/jquery.js',
-
+      'assets/vendor/jquery/dist/jquery.min.js',
+    'assets/vendor/jquery-ui/jquery-ui.min.js',
+         'assets/vendor/videojs/dist/video-js/video.js',
+         'assets/vendor/bigvideo.js/lib/bigvideo.js'
+     
       // Bootstrap JS files
     
     
       // Misc Vendor Libraries
-      'assets/vendor/jquery.easing/js/jquery.easing.js'
+    
         
     ],
     appScripts: [
@@ -129,7 +132,7 @@
   });
 
   gulp.task('refresh', function() {
-    livereload.listen();
+    //livereload.listen();
   });
 
   gulp.task('default', function(){
