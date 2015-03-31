@@ -52,7 +52,7 @@
                 </li>
                 <li><a href="#artist-statement">Artist Statement</a>
                 </li>
-                <li><a href="#kickstarter">Kickstarter</a>
+                <li><a href="#kickstarter" class='scroll-link'>Kickstarter</a>
                 </li>
                 <li><a href="#store">Store</a>
                 </li>
@@ -351,8 +351,8 @@
             </div>
         </section>
         
-        
-        <section class="gap gap-100p kickstarter-element" style="background-image:url(static/img/kickstarter-bg-2.jpg);" id="kickstarter">
+      
+        <section class="gap gap-100p kickstarter-element" style="background-image:url(static/img/kickstarter-bg-2.jpg);" id="kickstarter"> <a name="1"></a>
             <div class="top-right hidden-xs" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1">
                 <img src="static/img/kickstarter.png" alt="Kickstarter">
             </div>
@@ -369,18 +369,20 @@
 
             <div class="display-table">
                 <div class="display-table-cell">
-                    <h3><a href="">VIEW KICKSTARTER</a></h3>
+                   <a href="" class="box-a">VIEW KICKSTARTER</a>
                    
-                    <hr class="transparent">
-                    
                      <div class="smalltxt">Help Support Overgrowth</div>
                     
-                    <div data-toggle="modal" class="nofocus" data-target="#myModal" id="play-video">
+                    <div data-toggle="modal" class="nofocus link hide-mobile" data-target="#myModal" id="play-video">
                         <img src="static/img/playvid.png" alt="play">
                     </div>
                    
-                    <h3 class="prkit"><a href="#download-presskit">DOWNLOAD PRESS KIT</a></h3>
-                    <hr class="transparent presskit">
+                    <div class="show-mobile">
+                        <a href="http://video-js.zencoder.com/oceans-clip.mp4" target="_blank"><img src="static/img/playvid@2x.png" width="110" alt="play"></a>
+                    </div>
+                    
+                     <a href="" class="box-a press-kit">DOWNLOAD PRESS KIT</a>
+                   
                     
                 </div>
             </div>
@@ -668,13 +670,15 @@
             </video>
             
              <div class="pause-overlay">
-                <p class="link" id="video-resume">RESUME</p>
-                
+               
+                <h3 class="link" id="video-resume">RESUME</h3>
+                <hr class="transparent resume-txt">
+                 
                 <h3><a target="_blank" href="http://www.google.com">VIEW KICKSTARTER</a></h3>
-                <hr class="transparent"> 
+                <hr class="transparent view-txt"> 
                  
-                 
-                <p class="link" id="video-close">CLOSE</p>
+                 <h3 class="link" id="video-close">CLOSE</h3>
+                <hr class="transparent close-txt"> 
             </div>
             
         </div> <!-- /.modal-content -->
@@ -688,16 +692,26 @@
 
        
         
-    <!-- Angular scripts -->
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.min.js"></script>
+    <!-- Angular scripts 
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.min.js"></script>-->
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-animate.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-touch.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap.min.js"></script>
 
     <!-- Application scripts -->
     <script src="static/js/app.js"></script>
+    
         
+    
     <script>
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+              // tasks to do if it is a Mobile Device
+              $(function (){
+                $(".hide-mobile").hide();
+                  $(".show-mobile").show();
+              })
+            }
+        
         videojs("main_video").ready(function(){
             var vidPlayer = this;
             $('#play-video').on('click', function(e){
@@ -722,7 +736,8 @@
             
         $('#video-close').on('click', function(e){
 				$('.pause-overlay').removeClass('is-visible');
-            $('#myModal').modal('hide');
+             $('#myModal').fadeOut(function(){ $('#myModal').modal('hide'); }); 
+           
             
             })
 
@@ -748,29 +763,52 @@
     <script src="static/js/skrollr-menu/dist/skrollr.menu.min.js"></script>
     <script src="https://checkout.stripe.com/checkout.js"></script>
     <script>
-        var s = skrollr.init({
-            mobileDeceleration: 0.004,
-            smoothScrolling: false
+        
+        $(document).ready(function() {
+        
+            var s = skrollr.init({
+                mobileDeceleration: 0.004,
+                smoothScrolling: false
+            });
+            skrollr.menu.init(s, {
+                //skrollr will smoothly animate to the new position using `animateTo`.
+                animate: true,
+
+                //The easing function to use.
+                easing: 'sqrt',
+
+                //Multiply your data-[offset] values so they match those set in skrollr.init
+                scale: 2,
+
+                //How long the animation should take in ms.
+                duration: function(currentTop, targetTop) {
+
+                    //By default, the duration is hardcoded at 500ms.
+                    return 500;
+
+                    //But you could calculate a value based on the current scroll position (`currentTop`) and the target scroll position (`targetTop`).
+                    //return Math.abs(currentTop - targetTop) * 10;
+                }
+                
+
+
+            });
+        
+        
+        //check url
+        var pathname = $(location).attr('href');
+        console.log(pathname);
+
+        //if url path is this link, then trigger a click and animateTo
+         if(pathname == "http://overgrowth.dev/index-kickstarter.html#kickstarter"){
+                  //could have a timer here perhaps...
+                       //  s.animateTo(1510);
+                           
+                   
+           }
+            
         });
-        skrollr.menu.init(s, {
-            //skrollr will smoothly animate to the new position using `animateTo`.
-            animate: true,
-
-            //The easing function to use.
-            easing: 'sqrt',
-
-            //Multiply your data-[offset] values so they match those set in skrollr.init
-            scale: 2,
-
-            //How long the animation should take in ms.
-            duration: function(currentTop, targetTop) {
-                //By default, the duration is hardcoded at 500ms.
-                return 500;
-
-                //But you could calculate a value based on the current scroll position (`currentTop`) and the target scroll position (`targetTop`).
-                //return Math.abs(currentTop - targetTop) * 10;
-            }
-        });
+            
     </script>
     <script type="text/javascript">
     $(function() {

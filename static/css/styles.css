@@ -14,11 +14,62 @@ body {
 .skrollr-desktop body {
   height: 100% !important;
 }
+.avenir-heavy,
+.avenir-heavy a {
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 16.67px;
+  letter-spacing: 3.674px;
+}
+.avenir-light {
+  font-size: 8.33px;
+  font-weight: 500;
+  letter-spacing: 1.8px;
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
 p {
   margin: 1em 0;
 }
 em {
   font-style: italic;
+}
+a.nofocus {
+  outline: 0px;
+}
+.modal-dialog {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0 auto;
+}
+.pause-overlay {
+  display: none;
+}
+.pause-overlay.is-visible {
+  display: block;
+  height: 160px;
+  width: 300px;
+  padding: 16px;
+  /* background: rgba(171, 171, 171, 0.4);*/
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.vjs-default-skin .vjs-play-progress,
+.vjs-default-skin .vjs-volume-level {
+  background: rgba(107, 107, 107, 0.2);
+}
+.link {
+  cursor: pointer;
+}
+.modal-content {
+  height: 100%;
+  border-radius: 0;
 }
 .parallax-image-wrapper {
   position: fixed;
@@ -568,6 +619,9 @@ em {
 #artist-statement {
   background: #e5d6d4;
 }
+#myModal {
+  text-align: center;
+}
 #exhibition .exhibition-body {
   color: #FFF;
   text-align: left;
@@ -986,11 +1040,90 @@ section {
   background: transparent center no-repeat;
   background-size: cover;
 }
-#kickstarter .bottom-middle {
+#kickstarter a:hover,
+#myModal a:hover {
+  text-decoration: none;
+}
+#kickstarter .box-a,
+#myModal .box-a {
+  padding: 10px;
+  border: solid 1px #fff;
+  color: #fff;
+  /* width: 200px; */
+  /* margin: 0 auto; */
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 3px;
+  margin-bottom: 210px;
+  /* display: block; */
+  position: relative;
+  top: -20px;
+}
+#kickstarter .box-a.press-kit,
+#myModal .box-a.press-kit {
+  top: 80px;
+}
+#kickstarter div.box-txt > a,
+#myModal div.box-txt > a {
+  color: #fff !important;
+}
+#kickstarter h3,
+#myModal h3,
+#kickstarter a h3,
+#myModal a h3,
+#kickstarter h3 a,
+#myModal h3 a {
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 16.67px;
+  letter-spacing: 3.674px;
+}
+#kickstarter .prkit,
+#myModal .prkit {
+  margin-top: 57px;
+}
+#kickstarter .smalltxt,
+#myModal .smalltxt {
+  font-size: 8.33px;
+  font-weight: 500;
+  letter-spacing: 1.8px;
+  color: #ffffff;
+  margin-bottom: 20px;
+  margin-bottom: 58px;
+  text-transform: uppercase;
+}
+#kickstarter hr.transparent,
+#myModal hr.transparent {
+  height: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  width: 200px;
+  padding: 0;
+  margin-top: -11px;
+  margin-bottom: 11px;
+}
+#kickstarter hr.transparent.presskit,
+#myModal hr.transparent.presskit {
+  width: 240px;
+}
+#kickstarter hr.transparent.resume-txt,
+#myModal hr.transparent.resume-txt {
+  width: 80px;
+}
+#kickstarter hr.transparent.close-txt,
+#myModal hr.transparent.close-txt {
+  width: 65px;
+}
+#kickstarter hr.transparent.view-txt,
+#myModal hr.transparent.view-txt {
+  width: 210px;
+}
+#kickstarter .bottom-middle,
+#myModal .bottom-middle {
   width: 210px;
   margin-left: -105px;
 }
-#kickstarter .bottom-middle a {
+#kickstarter .bottom-middle a,
+#myModal .bottom-middle a {
   text-transform: uppercase;
   color: #FFF;
   border-bottom: 1px solid #FFF;
@@ -1113,7 +1246,16 @@ section {
 .inline-block {
   display: inline-block;
 }
+.show-mobile {
+  display: none;
+}
 @media (max-width: 500px) {
+  .hide-mobile {
+    display: none;
+  }
+  .show-mobile {
+    display: block;
+  }
   #toggle-mobile-menu {
     position: fixed;
     width: 16px;
