@@ -7,6 +7,7 @@ body {
   height: 100%;
   padding: 0;
   margin: 0;
+  min-width: 320px;
 }
 body {
   position: relative;
@@ -29,14 +30,25 @@ body {
   margin-bottom: 20px;
   text-transform: uppercase;
 }
+.avenir-book {
+  font-weight: 200;
+  color: #585858;
+}
 p {
   margin: 1em 0;
 }
 em {
   font-style: italic;
 }
-a.nofocus {
+a.nofocus,
+a,
+a:focus,
+a:hover {
   outline: 0px;
+  text-decoration: none;
+}
+.center-div {
+  margin: 0 auto;
 }
 .modal-dialog {
   width: 100%;
@@ -59,6 +71,48 @@ a.nofocus {
   left: 0;
   bottom: 0;
   right: 0;
+}
+.pull-quote {
+  word-spacing: .8px;
+  padding: 0 5px;
+}
+.about-text-wrapper {
+  color: #585858;
+  width: 255px;
+  text-align: left;
+}
+.about-text-wrapper .title-txt {
+  font-weight: 300;
+  margin-bottom: -11px;
+  font-size: 11px;
+  letter-spacing: 1.3px;
+}
+.about-text-wrapper .ucase {
+  text-transform: uppercase;
+}
+.about-text-wrapper .highlighttxt {
+  letter-spacing: 3px;
+}
+.about-text-wrapper .tiny-txt {
+  font-weight: 300;
+  font-size: 9.5px;
+  letter-spacing: .7px;
+  line-height: 16px;
+}
+.about-text-wrapper .margintop30 {
+  margin-top: 40px;
+}
+.light-txt {
+  font-weight: 200;
+  color: #585858;
+  font-size: 14px;
+  text-transform: none;
+}
+.light-italic {
+  font-weight: 200;
+  color: #585858;
+  font-size: 13px;
+  font-style: italic;
 }
 .vjs-default-skin .vjs-play-progress,
 .vjs-default-skin .vjs-volume-level {
@@ -157,6 +211,9 @@ a.nofocus {
   text-align: left;
   line-height: 1.66;
 }
+.topalign > div {
+  background-position: top;
+}
 #dotted-nav {
   position: fixed;
   top: 50%;
@@ -254,6 +311,7 @@ a.nofocus {
 }
 .centered {
   text-align: center;
+  margin: 0 auto;
 }
 /* IMAGE LIGHTBOX SELECTOR */
 #imagelightbox {
@@ -627,19 +685,27 @@ a.nofocus {
   text-align: left;
   max-width: 329px;
   margin: 0 auto;
-  text-align: justify;
+  text-align: center;
 }
 #exhibition .exhibition-body h3 {
   text-transform: uppercase;
-  font-size: 22px;
-  letter-spacing: 5px;
+  font-size: 20px;
+  letter-spacing: 7px;
+  font-weight: 300;
+  line-height: 32px;
+}
+#exhibition .exhibition-body .exhibition-address {
+  font-size: 15px;
   font-weight: 400;
+  margin-top: 40px;
+}
+#exhibition .exhibition-body .exhibition-address p {
+  margin: 14px auto;
 }
 #exhibition .exhibition-body .large-dates {
-  font-size: 76px;
+  font-size: 65px;
   font-weight: 500;
-  line-height: 1.1;
-  letter-spacing: 5px;
+  line-height: 1.2;
 }
 #exhibition .exhibition-body .large-dates .dash {
   display: inline-block;
@@ -969,7 +1035,7 @@ a.nofocus {
   margin-bottom: 2px;
 }
 #credits .credits-photos {
-  padding: 0 0 40px;
+  padding: 0 0 30px;
 }
 #credits .credits-text {
   display: block;
@@ -977,11 +1043,15 @@ a.nofocus {
   margin: 0 auto;
   color: #FFF;
   text-align: left;
-  font-weight: 300;
+  font-weight: 200;
   font-size: 13px;
   line-height: 1.666;
-  letter-spacing: 1px;
+  letter-spacing: .8px;
   text-align: justify;
+  padding: 0 5px;
+}
+#credits .credits-text p {
+  margin: 14px auto;
 }
 #credits .infinite-scroll {
   position: absolute;
@@ -1031,6 +1101,12 @@ a.nofocus {
   padding: 0;
   margin: 0;
 }
+#credits .bottom-middle {
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  max-width: 550px;
+}
 section {
   position: relative;
   height: 100%;
@@ -1047,6 +1123,7 @@ section {
 #kickstarter .box-a,
 #myModal .box-a {
   padding: 10px;
+  padding-top: 11px;
   border: solid 1px #fff;
   color: #fff;
   /* width: 200px; */
@@ -1062,6 +1139,17 @@ section {
 #kickstarter .box-a.press-kit,
 #myModal .box-a.press-kit {
   top: 80px;
+}
+#kickstarter .vidtxt,
+#myModal .vidtxt,
+#kickstarter .vidtxt a,
+#myModal .vidtxt a {
+  color: #fff;
+  /* width: 200px; */
+  /* margin: 0 auto; */
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 3px;
 }
 #kickstarter div.box-txt > a,
 #myModal div.box-txt > a {
@@ -1249,12 +1337,35 @@ section {
 .show-mobile {
   display: none;
 }
-@media (max-width: 500px) {
+.thecredits a {
+  font-size: 12px;
+  font-weight: 300;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+.thecredits a em {
+  font-weight: 100;
+  text-transform: none;
+}
+.thecredits a span {
+  text-decoration: underline;
+}
+@media (max-width: 767px) {
   .hide-mobile {
     display: none;
   }
   .show-mobile {
     display: block;
+  }
+  #kickstarter .box-a.press-kit,
+  #myModal .box-a.press-kit {
+    top: 40px;
+  }
+  #kickstarter .smalltxt,
+  #myModal .smalltxt {
+    margin-bottom: 28px;
   }
   #toggle-mobile-menu {
     position: fixed;

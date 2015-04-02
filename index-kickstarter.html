@@ -26,6 +26,9 @@
     <link rel="stylesheet" href="static/swipebox/src/css/swipebox.css">
     <link rel="stylesheet" href="static/css/font-awesome.min.css">
   
+    <link id="snipcart-theme" type="text/css"
+    href="https://app.snipcart.com/themes/base/snipcart.css"
+    rel="stylesheet">
 
     <script type="text/javascript">
     document.addEventListener('touchmove', function(event) {
@@ -95,7 +98,7 @@
         <!--the +/-80% translation can be adjusted to control the speed difference of the image-->
     </div>
 
-    <div class="parallax-image-wrapper parallax-image-wrapper-100" data-anchor-target="#artist-statement + #kickstarter" data-bottom-top="transform:translate3d(0px, 200%, 0px)" data-top-bottom="transform:translate3d(0px, 0%, 0px)">
+    <div class="parallax-image-wrapper parallax-image-wrapper-100 topalign" data-anchor-target="#artist-statement + #kickstarter" data-bottom-top="transform:translate3d(0px, 200%, 0px)" data-top-bottom="transform:translate3d(0px, 0%, 0px)">
 
         <div class="parallax-image parallax-image-100" style="background-image:url(static/img/kickstarter-bg-2.jpg)" data-anchor-target="#artist-statement + #kickstarter" data-bottom-top="transform: translate3d(0px, -80%, 0px);" data-top-bottom="transform: translate3d(0px, 80%, 0px);"></div>
         <!--the +/-80% translation can be adjusted to control the speed difference of the image-->
@@ -160,7 +163,9 @@
 
     <div id="skrollr-body">
         <div class="header" id="header"></div>
-        <section class="gap gap-100p" style="background-image:url(/static/img/mobile/10940016_v1.jpg);" id="landing">
+        
+        <!--style="background-image:url(/static/img/mobile/10940016_v1.jpg);"-->
+        <section class="gap gap-100p"  id="landing" style="background-image:url(/static/img/mobile/overgrowth.jpg);">
             <div id="main-nav" class="hidden-xs">
                 <ul class="nav-horizontal" role="tablist">
                     <li><a href="#about">About</a>
@@ -224,7 +229,25 @@
 
             <div class="display-table">
                 <div class="display-table-cell">
-                    <img src="static/img/mobile/about-body.png">
+                    <div class="center-div about-text-wrapper">
+                    <p class="light-txt">An artistic collaboration between</p>
+                    <p class="light-italic title-txt">Photographer</p>
+                    <p class="ucase highlighttxt">Parker Fitzgerald</p>
+                    <p class="light-italic">&amp;</p>
+                     <p class="light-italic title-txt">Floral Designer</p>
+                     <p class="ucase highlighttxt">Riley Messina</p>
+                    <p class="tiny-txt margintop30">
+                        First launched and exhibited in Japan in late 2013,
+                        Overgrowth is entering its second iteration.</p>
+                    
+                     <p class="tiny-txt">
+                         Overgrowth will soon be available in book form,
+                         with an exhibition planned for Tokyo, in either the
+                         fourth quarter of 2014, or the first quarter of 2015.
+                    </p>
+                    </div>
+                    
+                    <!--<img src="static/img/mobile/about-body.png">-->
                 </div>
             </div>
 
@@ -326,10 +349,10 @@
 
             <div class="display-table">
                 <div class="display-table-cell">
-                    <img class="hidden-xs" src="static/img/artist-statement-body.png">
-                    <img class="visible-xs-inline" src="static/img/mobile/artist-statement-body.png">
-                    <div class="body-text hidden">We do not want merely to see beauty, we want something else which can hardly be put into words &#8212;<br>
-                    <em>to be united with the beauty we see, to pass into it, <br> to become part of it.</em></div>
+                    <!--<img class="hidden-xs" src="static/img/artist-statement-body.png">
+                    <img class="visible-xs-inline" src="static/img/mobile/artist-statement-body.png">-->
+                    <div class="body-text pull-quote"><em>"</em>We do not want merely to see beauty, we want something else which can hardly be put into words &#8212;<br>
+                    <em>to be united with the beauty we see, to pass into it, <br> to become part of it."</em></div>
                 </div>
             </div>
 
@@ -352,7 +375,7 @@
         </section>
         
       
-        <section class="gap gap-100p kickstarter-element" style="background-image:url(static/img/kickstarter-bg-2.jpg);" id="kickstarter"> <a name="1"></a>
+        <section class="gap gap-100p kickstarter-element" style="background-image:url(static/img/kickstarter-bg-2.jpg);" id="kickstarter">
             <div class="top-right hidden-xs" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1">
                 <img src="static/img/kickstarter.png" alt="Kickstarter">
             </div>
@@ -559,18 +582,18 @@
             <div class="display-table">
                 <div class="display-table-cell">
 
-                    <img class="hidden-xs" src="static/img/exhibition-updated2015.png">
-                    <img class="visible-xs-inline" src="static/img/mobile/exhibition-updated2015.png">
+                    <!--<img class="hidden-xs" src="static/img/exhibition-updated2015.png">
+                    <img class="visible-xs-inline" src="static/img/mobile/exhibition-updated2015.png">-->
 
-                    <div class="exhibition-body hidden">
-                        <h3>Gallery Exhibition</h3>
+                    <div class="exhibition-body"> 
+                        <h3>Gallery<br>Exhibition</h3>
                         <div class="large-dates">
-                            08.20 <div class="dash"></div><br>
-                            09.28
+                            2015
                         </div>
                         <div class="exhibition-address">
-                            <h5>Truck Gallery</h5>
-                            <em>235 Milt Street Osaka, Japan</em>
+                           Tokyo
+                            <p>-</p>
+                            Japan
                         </div>
                     </div>
                 </div>
@@ -625,23 +648,42 @@
                         <a href="http://ransomltd.com"><img src="static/img/mobile/ransom.png" alt="Ransom" style="padding-right: 48px;"></a>
                         <a href="http://erbastudio.com"><img src="static/img/mobile/erba.png" alt="Erba Floral Studio"></a>
                     </div>
+<!--
                     <img class="credits-text hidden-xs" src="static/img/credits-updated.png">
                     <img class="credits-text visible-xs-inline" src="static/img/mobile/credits-text.png">
-                    <div class="credits-text hidden">
-                        <p>Overgrowth is the first of Ransom Limited’s sponsored Editions series and it is the first joint project between Ransom Limited and Erba Studio.</p>
-                        <p>Ransom Limited Editions is an annual or semi-annual collaboration with jury-selected artists and photographers. The aim of Editions is to celebrate and promote beautiful work through publication, exhibition, and online exposure.</p>
-                        <p>Ransom Limited is also a photographic cooperative based in Portland, OR. Founded in 2013 by brothers Parker and James Fitzgerald, Ransom photographs have been published and licensed worldwide.</p>
-                        <p>Erba Studio is the work of Riley Messina. Based out of Portland, or, she is known internationally for the cohesive simplicity and balance in her aesthetic. As a floral designer and stylist, Riley has worked throughout the United States and abroad.</p>
+-->
+                    <div class="credits-text">
+                        <p><em>Overgrowth</em> is the first of Ransom Limited’s sponsored <em>Editions</em> series and is the first joint project between Ransom Limited and Erba Studio.</p>
+                        <p><em>Ransom Limited Editions</em> is intended to be an annual collaboration with jury-selected artists and photographers, the aim of which is to and promote beautiful work through publication, exhibition, and online exposure.</p>
+                        <p>Ransom Limited is also a new photographic cooperative based in Portland, OR. Founded in 2013 by brothers Parker and James Fitzgerald, Ransom photographs have been published and licensed worldwide.</p>
+                        <p>Erba Studio is the work of Riley Messina. Based out of Portland, OR, she is known internationally for the cohesive simplicity and balance in her aesthetic. As a floral designer and stylist, Riley has worked throughout the United States and abroad.</p>
                     </div>
                 </div>
             </div>
 
-            <div class="bottom-middle credits-names hidden-xs" style="z-index: 50;">
-                <a class="ben" href="http://benbiondo.com/"><img src="static/img/credit-design-ben.png" alt="Ben Biondo"></a>
-                <a class="michelle" href="http://www.70degreeswest.com/"><img src="static/img/credit-design-michelle.png" alt="Michelle Stauffer">
+            <div class="bottom-middle credits-names thecredits hidden-xs" style="z-index: 50;">
+                
+                <div class="row center-block">
+                
+                    <div class="col-md-6">
+                        <a class="ben" href="http://benbiondo.com/">
+<!--                    <img src="static/img/credit-design-ben.png" alt="Ben Biondo">-->
+                            <em>Design</em> <span>Ben Biondo</span>
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a class="michelle" href="http://www.70degreeswest.com/">
+                        <!--                    <img src="static/img/credit-design-michelle.png" alt="Michelle Stauffer">-->
+                        <em>Production</em> <span>Michelle Stauffer</span>
+                        </a>
+                    </div>
+                
+                </div>
+                
+               
             </div>
 
-            <div class="credits-names visible-xs-block" style="z-index: 50;">
+            <!--<div class="credits-names visible-xs-block" style="z-index: 50;">
                 <ul class="credits-list">
                     <li class="ben">
                         <a href="http://benbiondo.com/"><img src="static/img/mobile/credit-design-ben.png" alt="Ben Biondo"></a>
@@ -650,7 +692,7 @@
                         <a href="#" onClick="return false;"><img src="static/img/mobile/credit-design-michelle.png" alt="Michelle Stauffer"></a>
                     </li>
                 </ul>
-            </div>
+            </div>-->
         </section>
     </div>
     
@@ -660,7 +702,7 @@
     <div class="modal-dialog">
         <div class="modal-content">            
             <video id="main_video" class="video-js vjs-default-skin"
-              controls preload="auto" width="100%" height="100%"
+              controls preload="false" width="100%" height="100%"
               
               data-setup=''>
              <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4' />
@@ -671,14 +713,12 @@
             
              <div class="pause-overlay">
                
-                <h3 class="link" id="video-resume">RESUME</h3>
-                <hr class="transparent resume-txt">
+                <p class="link vidtxt" id="video-resume">RESUME</p>
+                
+                 <p class="link vidtxt"><a target="_blank" href="http://www.google.com">VIEW KICKSTARTER</a></p>
                  
-                <h3><a target="_blank" href="http://www.google.com">VIEW KICKSTARTER</a></h3>
-                <hr class="transparent view-txt"> 
-                 
-                 <h3 class="link" id="video-close">CLOSE</h3>
-                <hr class="transparent close-txt"> 
+                 <p class="link vidtxt" id="video-close">CLOSE</p>
+                
             </div>
             
         </div> <!-- /.modal-content -->
@@ -686,7 +726,7 @@
 </div> <!-- /.modal -->
         
          <script src="public/js/vendor.min.js"></script>
-        
+     
   <!-- <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="//code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>-->
 
@@ -754,17 +794,20 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.underscore.min.js"></script>
     <script src="static/fullpage/vendors/jquery.easings.min.js"></script>
     <script src="static/js/jquery.ui.touch-punch.min.js"></script>
-    <script src="static/jquery.tap/jquery.tap.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  
+
     <script src="static/swipebox/src/js/jquery.swipebox.js"></script>
     <script src="static/TouchSwipe-Jquery-Plugin/jquery.touchSwipe.min.js"></script>
     <script src="static/Magnific-Popup/dist/jquery.magnific-popup.min.js"></script>
     <script src="static/js/skrollr/dist/skrollr.min.js"></script>
     <script src="static/js/skrollr-menu/dist/skrollr.menu.min.js"></script>
     <script src="https://checkout.stripe.com/checkout.js"></script>
+        
+         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>    
+        
     <script>
         
-        $(document).ready(function() {
+       $( document ).ready(function() {
         
             var s = skrollr.init({
                 mobileDeceleration: 0.004,
@@ -806,8 +849,10 @@
                            
                    
            }
+           
+       })
             
-        });
+       
             
     </script>
     <script type="text/javascript">
@@ -962,7 +1007,16 @@
 
         });
     </script>
-    <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+    
+    
+    <script type="text/javascript"
+    id="snipcart"
+    src="https://app.snipcart.com/scripts/snipcart.js"
+    data-api-key="YOUR_API_KEY"></script>
+
+
+    
+  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 </body>
 
 </html>
