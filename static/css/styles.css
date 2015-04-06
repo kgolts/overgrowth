@@ -1562,6 +1562,12 @@ section {
   #gallery {
     background: url(../img/mobile/gallery-placeholder.jpg);
   }
+  #credits .credits-text {
+    font-weight: 300;
+    padding: 0 20px;
+    font-size: 12px;
+    line-height: 14px;
+  }
 }
 #change-portrait-prompt {
   height: 100%;

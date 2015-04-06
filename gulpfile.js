@@ -22,8 +22,12 @@
    
       'assets/vendor/jquery/dist/jquery.min.js',
     'assets/vendor/jquery-ui/jquery-ui.min.js',
+           'assets/vendor/modernizr/modernizr.js',
+       'assets/vendor/bootstrap/dist/js/bootstrap.min.js',
+        'assets/vendor/enquire/dist/enquire.min.js',
          'assets/vendor/videojs/dist/video-js/video.js',
-         'assets/vendor/bigvideo.js/lib/bigvideo.js'
+                 'assets/vendor/bigvideo.js/lib/bigvideo.js',
+        'assets/vendor/angular/angular.min.js'
      
       // Bootstrap JS files
     

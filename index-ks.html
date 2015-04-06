@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html class="no-skrollr"  ng-app="overgrowthApp" ng-controller="overgrowthController">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <title>Overgrowth</title>
+
+    <style>
+    #main-nav, #dotted-nav, #welcome, #overgrowth-fixed {
+        opacity: 0;
+        -webkit-transition: opacity 1s ease-in 2s;
+        -moz-transition: opacity 1s ease-in 2s;
+        -o-transition: opacity 1s ease-in 2s;
+        transition: opacity 1s ease-in 2s;
+    }
+    </style>
+    <link rel="stylesheet" href="static/css/avenir.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link href="static/css/video-js.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/styles.css">
+    <link rel="stylesheet" href="static/Magnific-Popup/dist/magnific-popup.css">
+    <link rel="stylesheet" href="static/swipebox/src/css/swipebox.css">
+    <link rel="stylesheet" href="static/css/font-awesome.min.css">
+  
+    <link id="snipcart-theme" type="text/css"
+    href="https://app.snipcart.com/themes/base/snipcart.css"
+    rel="stylesheet">
+
+   
+   
+</head>
+
+<body>
+   
+    <div id="change-portrait-prompt" class="display-table" style="display: none;">
+        <div class="display-table-cell">
+            <img src="static/img/mobile/rotation-graphic.png" alt="">
+        </div>
+    </div>
+
+    <a href="#" id="toggle-mobile-menu" class="visible-xs-inline light" data-open="false"></a>
+
+    <div class="visible-xs-block">
+        <div id="mobile-nav" class="">
+            <ul class="nav-horizontal" role="tablist">
+                 <li><a href="#about" data-nav-target="500">About</a>
+                </li>
+                <li><a href="#gallery">Gallery</a>
+                </li>
+                <li><a href="#artist-statement">Artist Statement</a>
+                </li>
+                <li><a href="#kickstarter" class='scroll-link'>Kickstarter</a>
+                </li>
+                <li><a href="#store"  data-nav-target="500">Store</a>
+                </li>
+                <li><a href="#exhibition">Exhibition</a>
+                </li>
+                <li><a href="#credits">Credits</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--
+        We position the images fixed and therefore need to place them outside of #skrollr-body.
+        We will then use data-anchor-target to displajy the correct image matching the current section (.gap element).
+    -->
+    <!-- reference http://read.thisispaper.com/#issue-two and file:///Users/nick/Sites/client/overgrowth/static/js/skrollr/examples/classic.html -->
+
+    <div class="parallax-image-wrapper parallax-image-wrapper-100" data-anchor-target="#header + .gap" data-bottom-top="transform:translate3d(0px, 200%, 0px)" data-top-bottom="transform:translate3d(0px, 0%, 0px)">
+
+        <div class="parallax-image parallax-image-100" style="background-image:url(static/img/large/10940016_v1.jpg)" data-anchor-target="#header + .gap" data-bottom-top="transform: translate3d(0px, -80%, 0px);" data-top-bottom="transform: translate3d(0px, 80%, 0px);"></div>
+        <!--the +/-80% translation can be adjusted to control the speed difference of the image-->
+    </div>
+
+    <div class="parallax-image-wrapper parallax-image-wrapper-100 hidden-xs" data-anchor-target="#about + .gap" data-bottom-top="transform:translate3d(0px, 200%, 0px)" data-top-bottom="transform:translate3d(0px, 0%, 0px)">
+
+        <div class="parallax-image parallax-image-100" style="background-image:url(static/img/gallery-placeholder-updated.jpg)" data-anchor-target="#about + .gap" data-bottom-top="transform: translate3d(0px, -80%, 0px);" data-top-bottom="transform: translate3d(0px, 80%, 0px);"></div>
+        <!--the +/-80% translation can be adjusted to control the speed difference of the image-->
+    </div>
+
+
+    <div class="parallax-image-wrapper parallax-image-wrapper-100 visible-xs-inline" data-anchor-target="#about + .gap" data-bottom-top="transform:translate3d(0px, 200%, 0px)" data-top-bottom="transform:translate3d(0px, 0%, 0px)">
+
+        <div class="parallax-image parallax-image-100" style="background-image:url(static/img/gallery/10940037_v1_web.jpg)" data-anchor-target="#about + .gap" data-bottom-top="transform: translate3d(0px, -80%, 0px);" data-top-bottom="transform: translate3d(0px, 80%, 0px);"></div>
+        <!--the +/-80% translation can be adjusted to control the speed difference of the image-->
+    </div>
+
+
+    <div class="parallax-image-wrapper parallax-image-wrapper-100" data-anchor-target="#store + #exhibition" data-bottom-top="transform:translate3d(0px, 200%, 0px)" data-top-bottom="transform:translate3d(0px, 0%, 0px)">
+
+        <div class="parallax-image parallax-image-100" style="background-image:url(static/img/flower-drum.jpg)" data-anchor-target="#store + #exhibition" data-bottom-top="transform: translate3d(0px, -80%, 0px);" data-top-bottom="transform: translate3d(0px, 80%, 0px);"></div>
+        <!--the +/-80% translation can be adjusted to control the speed difference of the image-->
+    </div>
+
+    <div class="parallax-image-wrapper parallax-image-wrapper-100 topalign" data-anchor-target="#artist-statement + #kickstarter" data-bottom-top="transform:translate3d(0px, 200%, 0px)" data-top-bottom="transform:translate3d(0px, 0%, 0px)">
+
+        <div class="parallax-image parallax-image-100" style="background-image:url(static/img/kickstarter-bg-2.jpg)" data-anchor-target="#artist-statement + #kickstarter" data-bottom-top="transform: translate3d(0px, -80%, 0px);" data-top-bottom="transform: translate3d(0px, 80%, 0px);"></div>
+        <!--the +/-80% translation can be adjusted to control the speed difference of the image-->
+    </div>
+
+      <div id="dotted-nav" class="light">
+        <ul class="nav dots">
+            <li class="dot">
+                <a href="#landing">
+                    <i class="fa fa-circle-o"></i>
+                    <i class="fa fa-circle"></i>
+                </a>
+            </li>
+            <li class="dot">
+                <a href="#about">
+                    <i class="fa fa-circle-o"></i>
+                    <i class="fa fa-circle"></i>
+                </a>
+            </li>
+            <li class="dot">
+                <a href="#gallery">
+                    <i class="fa fa-circle-o"></i>
+                    <i class="fa fa-circle"></i>
+                </a>
+            </li>
+            <li class="dot">
+                <a href="#artist-statement">
+                    <i class="fa fa-circle-o"></i>
+                    <i class="fa fa-circle"></i>
+                </a>
+            </li>
+            <li class="dot" class="kickstarter-element">
+                <a href="#kickstarter">
+                    <i class="fa fa-circle-o"></i>
+                    <i class="fa fa-circle"></i>
+                </a>
+            </li>
+            <li class="dot">
+                <a href="#store"  data-nav-target="500">
+                    <i class="fa fa-circle-o"></i>
+                    <i class="fa fa-circle"></i>
+                </a>
+            </li>
+            <li class="dot">
+                <a href="#exhibition">
+                    <i class="fa fa-circle-o"></i>
+                    <i class="fa fa-circle"></i>
+                </a>
+            </li>
+            <li class="dot">
+                <a href="#credits">
+                    <i class="fa fa-circle-o"></i>
+                    <i class="fa fa-circle"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="overgrowth-fixed" class="hidden-xs">
+        <div id="overgrowth-image" class="light"></div>
+    </div>
+
+    <div id="skrollr-body">
+        <div class="header" id="header"></div>
+        
+        <!--style="background-image:url(/static/img/mobile/10940016_v1.jpg);"-->
+        <section class="gap gap-100p"  id="landing">
+            <div id="main-nav" class="hidden-xs">
+                <ul class="nav-horizontal" role="tablist">
+                    <li><a href="#about">About</a>
+                    </li>
+                    <li><a href="#gallery">Gallery</a>
+                    </li>
+                    <li><a href="#artist-statement">Artist Statement</a>
+                    </li>
+                    <li class="kickstarter-element"><a href="#kickstarter">Kickstarter</a>
+                    </li>
+                    <li><a href="#store"  data-nav-target="500">Store</a>
+                    </li>
+                    <li><a href="#exhibition">Exhibition</a>
+                    </li>
+                    <li><a href="#credits">Credits</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="welcome" class="top-right hidden-xs" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1">
+                <img src="static/img/welcome.png" alt="Welcome">
+            </div>
+
+            <div class="gap gap-100p" data-bottom-top="transform:translate3d(0px, -50%, 0px)" data-top-bottom="transform:translate3d(0px, 50%, 0px)">
+                <div class="display-table">
+                    <div class="display-table-cell overgrowth-logo">
+                        <img class="desktop hidden-xs" src="/static/img/overgrowth.png" alt="Overgrowth">
+                        <img class="mobile visible-xs-inline" src="static/img/overgrowth.png" alt="Overgrowth">
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom-right hidden-xs" data-125-center-center="opacity:0" data--100-bottom-top="opacity:1">
+                <a href="#about">
+                    <img src="static/img/down-arrow-white.png" alt="Next section">
+                </a>
+            </div>
+
+            <div class="bottom-right visible-xs-inline" data-bottom="opacity:1" data-center-center="opacity:0">
+                <a href="#about">
+                    <img src="static/img/down-arrow-white.png" alt="Next section">
+                </a>
+            </div>
+
+            <div class="bottom-middle hidden-xs" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1" style="width: 49px; margin-left: -24px;">
+                <img src="static/img/mobile/welcome.png" alt="Welcome">
+            </div>
+
+            <div class="bottom-middle visible-xs-inline" data-bottom="opacity:1" data-center-center="opacity:0" style="width: 49px; margin-left: -24px;">
+                <img src="static/img/mobile/welcome.png" alt="Welcome">
+            </div>
+        </section>
+
+        <section class="" id="about">
+            
+            <div class="top-right hidden-xs" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1">
+                <img src="static/img/about.png" alt="About" class="parallax-fadeout">
+            </div>
+
+            <div class="top-middle visible-xs-inline" data-bottom="opacity:0" data-center-center="opacity:1" style="margin-top: -6px; margin-left: -36px;">
+                <img src="static/img/mobile/overgrowth-gray.png" alt="Overgrowth">
+            </div>
+
+            <div class="display-table">
+                <div class="display-table-cell">
+                    <div class="center-div about-text-wrapper">
+                    <p class="light-txt">An artistic collaboration between</p>
+                    <p class="light-italic title-txt">Photographer</p>
+                    <p class="ucase highlighttxt">Parker Fitzgerald</p>
+                    <p class="light-italic">&amp;</p>
+                     <p class="light-italic title-txt">Floral Designer</p>
+                     <p class="ucase highlighttxt">Riley Messina</p>
+                    <p class="tiny-txt margintop30">
+                        First launched and exhibited in Japan in late 2013,
+                        Overgrowth is entering its second iteration.</p>
+                    
+                     <p class="tiny-txt">
+                         Overgrowth will soon be available in book form,
+                         with an exhibition planned for Tokyo, in either the
+                         fourth quarter of 2014, or the first quarter of 2015.
+                    </p>
+                    </div>
+                    
+                    <!--<img src="static/img/mobile/about-body.png">-->
+                </div>
+            </div>
+
+            <div class="bottom-right hidden-xs" data-125-center-center="opacity:0" data--100-bottom-top="opacity:1">
+                <a href="#gallery">
+                    <img src="static/img/down-arrow-gray.png" alt="Next section" class="parallax-fadeout">
+                </a>
+            </div>
+
+            <div class="bottom-right visible-xs-inline" data-bottom="opacity:1" data-center-center="opacity:0">
+                <a href="#gallery">
+                    <img src="static/img/down-arrow-gray.png" alt="Next section" class="parallax-fadeout">
+                </a>
+            </div>
+
+            <div class="bottom-middle visible-xs-inline" data-bottom="opacity:1" data-center-center="opacity:0" style="width: 34px; margin-left: -17px;">
+                <img src="static/img/mobile/about.png" alt="About">
+            </div>
+        </section>
+
+
+        <section class="gap gap-100p" id="gallery">
+            <div class="top-right hidden-xs" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1">
+                <img src="static/img/gallery.png" alt="Gallery">
+            </div>
+
+            <div class="top-middle visible-xs-inline" data-bottom="opacity:0" data-center-center="opacity:1" style="margin-top: -6px; margin-left: -36px;">
+                <img src="static/img/mobile/overgrowth-vertical-white.png" alt="Overgrowth">
+            </div>
+
+            <div class="display-table">
+                <div class="display-table-cell">
+                    <!-- Gallery 1 -->
+                    <div id="main-gallery" class="hidden-xs">
+                        <a href="static/img/gallery/10940037_v1_web.jpg" id="open-gallery-button">
+                            <img src="static/img/mobile/view-gallery-button.png" alt="Open gallery">
+                        </a>
+                        <a href="static/img/gallery/11060013_v1_web.jpg"></a>
+                        <a href="static/img/gallery/11350013_v1_web.jpg"></a>
+                        <a href="static/img/gallery/000058530020_v1_web.jpg"></a>
+                        <a href="static/img/gallery/11410036_v1_web.jpg"></a>
+                        <a href="static/img/gallery/10930029_v1_web.jpg"></a>
+                        <a href="static/img/gallery/000058490027_v1_web.jpg"></a>
+                        <a href="static/img/gallery/11420016_v1_web.jpg"></a>
+                        <a href="static/img/gallery/11120024_v1_web.jpg"></a>
+                        <a href="static/img/gallery/11000030_v1_web.jpg"></a>
+                    </div>
+
+                    <div id="main-gallery-touch" class="visible-xs-inline">
+                        <a class="swipebox" href="static/img/gallery/10940037_v1_web.jpg">
+                            <img src="static/img/mobile/view-gallery-button.png" alt="Open gallery">
+                        </a>
+                        <a class="swipebox" href="static/img/gallery/11060013_v1_web.jpg"></a>
+                        <a class="swipebox" href="static/img/gallery/11350013_v1_web.jpg"></a>
+                        <a class="swipebox" href="static/img/gallery/000058530020_v1_web.jpg"></a>
+                        <a class="swipebox" href="static/img/gallery/11410036_v1_web.jpg"></a>
+                        <a class="swipebox" href="static/img/gallery/10930029_v1_web.jpg"></a>
+                        <a class="swipebox" href="static/img/gallery/000058490027_v1_web.jpg"></a>
+                        <a class="swipebox" href="static/img/gallery/11420016_v1_web.jpg"></a>
+                        <a class="swipebox" href="static/img/gallery/11120024_v1_web.jpg"></a>
+                        <a class="swipebox" href="static/img/gallery/11000030_v1_web.jpg"></a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="middle-right hidden">
+                <img src="static/img/overgrowth-vertical-white.png" alt="Overgrowth">
+            </div>
+
+            <div class="bottom-middle visible-xs-inline" data-bottom="opacity:1" data-center-center="opacity:0" style="width: 42px; margin-left: -21px;">
+                <img src="static/img/mobile/gallery.png" alt="Gallery">
+            </div>
+
+            <div class="bottom-right hidden-xs" data-125-center-center="opacity:0" data--100-bottom-top="opacity:1">
+                <a href="#artist-statement">
+                    <img src="static/img/down-arrow-white.png" alt="Next section">
+                </a>
+            </div>
+
+            <div class="bottom-right visible-xs-inline" data-bottom="opacity:1" data-center-center="opacity:0">
+                <a href="#artist-statement">
+                    <img src="static/img/down-arrow-white.png" alt="Next section">
+                </a>
+            </div>
+        </section>
+
+        <section id="artist-statement">
+            <div class="top-right hidden-xs" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1">
+                <img src="static/img/artist-statement.png" alt="Artist Statement">
+            </div>
+
+            <div class="top-middle visible-xs-inline" data-bottom="opacity:0" data-center-center="opacity:1" style="margin-top: -6px; margin-left: -36px;">
+                <img src="static/img/mobile/overgrowth-gray.png" alt="Overgrowth" style="">
+            </div>
+
+            <div class="middle-right hidden">
+                <img src="static/img/overgrowth-gray.png" alt="Overgrowth">
+            </div>
+
+            <div class="display-table">
+                <div class="display-table-cell">
+                    <!--<img class="hidden-xs" src="static/img/artist-statement-body.png">
+                    <img class="visible-xs-inline" src="static/img/mobile/artist-statement-body.png">-->
+                    <div class="body-text pull-quote"><em>"</em>We do not want merely to see beauty, we want something else which can hardly be put into words &#8212;<br>
+                    <em>to be united with the beauty we see, to pass into it, <br> to become part of it."</em></div>
+                </div>
+            </div>
+
+
+            <div class="bottom-middle visible-xs-inline" data-bottom="opacity:1" data-center-center="opacity:0" style="width: 94px; margin-left: -47px;">
+                <img src="static/img/mobile/artist-statement.png" alt="Gallery">
+            </div>
+
+            <div class="bottom-right hidden-xs" data-125-center-center="opacity:0" data--100-bottom-top="opacity:1">
+                <a href="#kickstarter" class="alternative-next-section">
+                    <img src="static/img/down-arrow-gray.png" alt="Next section">
+                </a>
+            </div>
+
+            <div class="bottom-right visible-xs-inline" data-bottom="opacity:1" data-center-center="opacity:0">
+                <a href="#kickstarter" class="alternative-next-section">
+                    <img src="static/img/down-arrow-gray.png" alt="Next section">
+                </a>
+            </div>
+        </section>
+        
+      
+        <section class="gap gap-100p kickstarter-element" style="background-image:url(static/img/kickstarter-bg-2.jpg);" id="kickstarter">
+            <div class="top-right hidden-xs" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1">
+                <a name="test"></a>
+                <img src="static/img/kickstarter.png" alt="Kickstarter">
+            </div>
+
+            <div class="top-middle visible-xs-inline" data-bottom="opacity:0" data-center-center="opacity:1" style="margin-left: -36px; margin-top: -6px;">
+                <img src="static/img/mobile/overgrowth-white.png" alt="Overgrowth">
+            </div>
+
+            <!--<div class="middle-right kickstarter" style="height: 158px; margin-top: -79px;">
+                <a href="#view-kickstarter">
+                    <img src="static/img/view-kickstarter-button.png" alt="Go to Kickstarter Campaign">
+                </a>
+            </div>-->
+
+            <div class="display-table">
+                <div class="display-table-cell">
+                   <a href="" class="box-a">VIEW KICKSTARTER</a>
+                   
+                     <div class="smalltxt">Help Support Overgrowth</div>
+                    
+                    <div data-toggle="modal" class="nofocus link hide-mobile" data-target="#myModal" id="play-video">
+                        <img src="static/img/playvid.png" alt="play">
+                    </div>
+                   
+                    <div class="show-mobile">
+                        <a href="http://video-js.zencoder.com/oceans-clip.mp4" target="_blank"><img src="static/img/playvid@2x.png" width="110" alt="play"></a>
+                    </div>
+                    
+                     <a href="" class="box-a press-kit">DOWNLOAD PRESS KIT</a>
+                   
+                    
+                </div>
+            </div>
+            
+            <!---<div class="bottom-middle hidden-xs">
+                <a class="" href="#">Support Overgrowth</a>
+            </div>--->
+
+            <div class="bottom-middle visible-xs-inline" data-bottom="opacity:1" data-center-center="opacity:0" style="width: 64px; margin-left: -32px;">
+                <img src="static/img/mobile/kickstarter.png" alt="Kickstarter">
+            </div>
+
+            <div class="bottom-right hidden-xs" data-125-center-center="opacity:0" data--100-bottom-top="opacity:1">
+                <a href="#store">
+                    <img src="static/img/down-arrow-white.png" alt="Next section">
+                </a>
+            </div>
+
+            <div class="bottom-right visible-xs-inline" data-bottom="opacity:1" data-center-center="opacity:0">
+                <a href="#store">
+                    <img src="static/img/down-arrow-white.png" alt="Next section">
+                </a>
+            </div>
+        </section>
+
+        
+        
+        <section id="store" class="centered">
+            <a name="test2"></a>
+            <div class="checkout-overlay" style="">
+                <div class="display-table" style="">
+                    <div class="display-table-cell">
+                        <h5>{{current_variation.name}}</h5>
+                        <div class="fine-print">
+                            <div class="inline-contents">
+                                <div class="inline-block">
+                                    <em>Price</em> $<span id="total-price" ng-model="price">{{current_variation.selected_size.price}}</span>
+                                </div>
+                                <div class="inline-block" ng-if="current_variation.sizes.length == 1"><em>Size</em> {{current_variation.sizes[0].sized}}</div>
+                                <div class="inline-block" ng-if="current_variation.sizes.length > 1"><em>Sizes</em> ({{current_variation.sizes.length}})</div>
+                                <div class="inline-block"ng-if="current_variation.page_count"><em>Page Count</em> {{current_variation.page_count}}</div>
+                            </div>
+                            <div>
+                                <div class="quantity">
+                                    <a href class="checkout-arrow-left" ng-click="deincrementQuantity(); $event.stopPropagation();"></a>
+                                    <em>Quantity</em> {{current_variation.selected_quantity}}
+                                    <a href class="checkout-arrow-right" ng-click="incrementQuantity(); $event.stopPropagation();"></a>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="variation" ng-if="current_variation.sizes.length > 1" ng-class="{disabled: current_variation.sizes.length < 2}">
+                                    <a href class="checkout-arrow-left" ng-click="previousSize(); $event.stopPropagation();"></a>
+                                    <em>Size</em> {{current_variation.selected_size.sized}}
+                                    <a href class="checkout-arrow-right" ng-click="nextSize(); $event.stopPropagation();"></a>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="variation" ng-if="current_variation.numbers">
+                                    <a href class="checkout-arrow-left" ng-click="previousNumber(); $event.stopPropagation();"></a>
+                                    <em>Photo No.</em> {{current_variation.selected_number}}
+                                    <a href class="checkout-arrow-right" ng-click="nextNumber(); $event.stopPropagation();"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="checkout" href ng-click="stripeCheckout(); ; $event.stopPropagation();">
+                            <img src="static/img/mobile/checkout.png" alt="Checkout">
+                        </a>
+                        <div class="continue-shopping">
+                            <a href="#" id="continue-shopping">Go Back</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a href class="carousel-control arrow-left" ng-click="previousProduct(); $event.stopPropagation();"></a>
+            <a href class="carousel-control arrow-right" ng-click="nextProduct(); $event.stopPropagation();"></a>
+
+            <div class="top-right hidden-xs" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1">
+                <img src="static/img/store.png" alt="Exhibition">
+            </div>
+            <div class="top-middle visible-xs-inline" data-bottom="opacity:0" data-center-center="opacity:1" style="margin-left: -36px; margin-top: -6px;">
+                <img src="static/img/mobile/overgrowth-gray.png" alt="Overgrowth">
+            </div>
+
+            <div class="middle-right hidden-xs become-a-stockist">
+                <a href="mailto:hello@parkerfitzgerald.com?subject=Become a Stockist" style="">
+                    <img src="static/img/become-a-stockist.png" alt="Overgrowth">
+                </a>
+            </div>
+
+
+
+            <div class="display-table">
+                <div class="display-table-cell">
+
+                    <div id="store-items" class="carousel slide" data-ride="carousel">
+
+                        <ul class="nav-store">
+                            <li ng-class="{active: current_section.section == 'Publications'}"><a ng-click="switchSection('publications')">Publications</a>
+                            </li>
+                            <li ng-class="{active: current_section.section == 'Prints'}"><a ng-click="switchSection('prints')">Prints</a>
+                            </li>
+                            <li ng-class="{active: current_section.section == 'Posters'}"><a ng-click="switchSection('posters')">Posters</a>
+                            </li>
+                            <li ng-class="{active: current_section.section == 'Postcards'}"><a ng-click="switchSection('postcards')">Postcards</a>
+                            </li>
+                        </ul>
+
+                        <div class="carousel-inner-container" ng-animate="'fadein'">
+
+
+
+                            <div ng-repeat="s in store">
+                                <div class="product item" ng-repeat="p in s.products" ng-show="(s == current_section && current_variation.name == p.name)" ng-animate>
+                                    <div class="product-image gallery">
+                                        <a href="{{i.large}}" ng-repeat="i in p.images" class="gallery-item">
+                                            <img ng-if="$first" ng-src="{{i.small}}">
+                                        </a>
+                                    </div>
+
+                                    <a class="purchase">
+                                        <div class="product-details">
+                                            <h5>{{p.name}}</h5>
+                                            <div class="fine-print">
+                                                <div class="inline-block">
+                                                    <em>Price</em>
+                                                    <div class="inline-block" ng-if="p.price_range">{{p.price_range}}</div>
+                                                </div>
+                                                <div class="inline-block" ng-if="p.sizes.length == 1"><em>Size</em> {{p.sizes[0].sized}}</div>
+                                                <div class="inline-block" ng-if="p.sizes.length > 1"><em>Sizes</em> ({{p.sizes.length}})</div>
+                                                <div class="inline-block"ng-if="p.page_count"><em>Page Count</em> {{p.page_count}}</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="product-purchase">
+                                        <a href="#" class="purchase-overlay">Purchase</a>
+                                        <a href="#"
+    class="snipcart-add-item"
+    data-item-id="2"
+    data-item-name="Bacon"
+    data-item-price="3.00"
+    data-item-weight="20"
+    data-item-url="http://myapp.com/products/bacon"
+    data-item-description="Some fresh bacon">
+        Buy bacon
+</a>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <!--/carousel inner-->
+                    </div>
+                    <!--/carousel-->
+                </div>
+                <!--/table-cell-->
+            </div>
+
+            <div class="bottom-middle visible-xs-inline" data-bottom="opacity:1" data-center-center="opacity:0" style="width: 31px; margin-left: -15px;">
+                <img src="static/img/mobile/store.png" alt="Store">
+            </div>
+
+            <div class="bottom-right" data-125-center-center="opacity:0" data--100-bottom-top="opacity:1">
+                <a href="#exhibition">
+                    <img src="static/img/down-arrow-gray.png" alt="Next section">
+                </a>
+            </div>
+        </section>
+        
+        
+
+        <section class="gap gap-100p" style="background-image:url(static/img/flower-drum.jpg);" id="exhibition">
+            <div class="top-right hidden-xs" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1">
+                <img src="static/img/exhibition.png" alt="Exhibition">
+            </div>
+
+            <div class="top-middle visible-xs-inline" data-bottom="opacity:0" data-center-center="opacity:1" style="margin-left: -36px; margin-top: -6px;">
+                <img src="static/img/mobile/overgrowth-white.png" alt="Overgrowth">
+            </div>
+
+            <div class="middle-right hidden">
+                <img src="static/img/overgrowth-vertical-white.png" alt="Overgrowth">
+            </div>
+            <div class="display-table">
+                <div class="display-table-cell">
+
+                    <!--<img class="hidden-xs" src="static/img/exhibition-updated2015.png">
+                    <img class="visible-xs-inline" src="static/img/mobile/exhibition-updated2015.png">-->
+
+                    <div class="exhibition-body"> 
+                        <h3>Gallery<br>Exhibition</h3>
+                        <div class="large-dates">
+                            2015
+                        </div>
+                        <div class="exhibition-address">
+                           Tokyo
+                            <p>-</p>
+                            Japan
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom-middle visible-xs-inline" style="width: 56px; margin-left: -28px;">
+                <img src="static/img/mobile/exhibition.png" data-bottom="opacity:1" data-center-center="opacity:0" alt="Exhibition">
+            </div>
+
+            <div class="bottom-right hidden-xs" data-125-center-center="opacity:0" data--100-bottom-top="opacity:1">
+                <a href="#credits">
+                    <img src="static/img/over-arrow-white-down.png" alt="Next section">
+                </a>
+            </div>
+
+            <div class="bottom-right visible-xs-inline" data-bottom="opacity:1" data-center-center="opacity:0">
+                <a href="#credits">
+                    <img src="static/img/over-arrow-white-down.png" alt="Next section">
+                </a>
+            </div>
+        </section>
+
+        <section id="credits" class="centered">
+            <div class="top-right hidden-xs" data--125-center-center="opacity:0" data-100-top-bottom="opacity:1">
+                <img src="static/img/credits.png" alt="Credits">
+            </div>
+
+            <div class="top-middle visible-xs-inline" data-bottom="opacity:0" data-center-center="opacity:1" style="margin-top: -6px; margin-left: -36px;">
+                <img src="static/img/mobile/overgrowth-white.png" alt="Overgrowth">
+            </div>
+
+            <div class="middle-right hidden">
+                <img src="static/img/overgrowth-vertical-white.png" alt="Overgrowth">
+            </div>
+
+            <div class="bottom-left overgrowth-small hidden-xs" style="z-index: 50;">
+                <img src="static/img/credit-overgrowth-lower-leftcredits-2014.png" alt="Overgrowth">
+            </div>
+
+
+            <div class="bottom-right credit hidden-xs" style="z-index: 50;">
+                <img src="static/img/credit-2014.png" alt="Copyright 2014">
+            </div>
+
+            <div class="display-table">
+                <div class="display-table-cell">
+                    <div class="credits-photos hidden-xs" style="z-index: 50;">
+                        <a href="http://ransomltd.com"><img src="static/img/ransom.png" alt="Ransom" style="padding-right: 48px;"></a>
+                        <a href="http://erbastudio.com"><img src="static/img/erba.png" alt="Erba Floral Studio"></a>
+                    </div>
+                    <div class="credits-photos visible-xs-block" style="z-index: 50;">
+                        <a href="http://ransomltd.com"><img src="static/img/mobile/ransom.png" alt="Ransom" style="padding-right: 48px;"></a>
+                        <a href="http://erbastudio.com"><img src="static/img/mobile/erba.png" alt="Erba Floral Studio"></a>
+                    </div>
+<!--
+                    <img class="credits-text hidden-xs" src="static/img/credits-updated.png">
+                    <img class="credits-text visible-xs-inline" src="static/img/mobile/credits-text.png">
+-->
+                    <div class="credits-text">
+                        <p><em>Overgrowth</em> is the first of Ransom Limited’s sponsored <em>Editions</em> series and is the first joint project between Ransom Limited and Erba Studio.</p>
+                        <p><em>Ransom Limited Editions</em> is intended to be an annual collaboration with jury-selected artists and photographers, the aim of which is to and promote beautiful work through publication, exhibition, and online exposure.</p>
+                        <p>Ransom Limited is also a new photographic cooperative based in Portland, OR. Founded in 2013 by brothers Parker and James Fitzgerald, Ransom photographs have been published and licensed worldwide.</p>
+                        <p>Erba Studio is the work of Riley Messina. Based out of Portland, OR, she is known internationally for the cohesive simplicity and balance in her aesthetic. As a floral designer and stylist, Riley has worked throughout the United States and abroad.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom-middle credits-names thecredits hidden-xs" style="z-index: 50;">
+                
+                <div class="row center-block">
+                
+                    <div class="col-md-6">
+                        <a class="ben" href="http://benbiondo.com/">
+<!--                    <img src="static/img/credit-design-ben.png" alt="Ben Biondo">-->
+                            <em>Design</em> <span>Ben Biondo</span>
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a class="michelle" href="http://www.70degreeswest.com/">
+                        <!--                    <img src="static/img/credit-design-michelle.png" alt="Michelle Stauffer">-->
+                        <em>Production</em> <span>Michelle Stauffer</span>
+                        </a>
+                    </div>
+                
+                </div>
+                
+               
+            </div>
+
+            <!--<div class="credits-names visible-xs-block" style="z-index: 50;">
+                <ul class="credits-list">
+                    <li class="ben">
+                        <a href="http://benbiondo.com/"><img src="static/img/mobile/credit-design-ben.png" alt="Ben Biondo"></a>
+                    </li>
+                    <li class="michelle">
+                        <a href="#" onClick="return false;"><img src="static/img/mobile/credit-design-michelle.png" alt="Michelle Stauffer"></a>
+                    </li>
+                </ul>
+            </div>-->
+        </section>
+    </div>
+    
+
+<!-- Modal -->
+<div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">            
+            <video id="main_video" class="video-js vjs-default-skin"
+              controls preload="false" width="100%" height="100%"
+              
+              data-setup=''>
+             <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4' />
+             <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />
+             <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />
+             <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+            </video>
+            
+             <div class="pause-overlay">
+               
+                <p class="link vidtxt" id="video-resume">RESUME</p>
+                
+                 <p class="link vidtxt"><a target="_blank" href="http://www.google.com">VIEW KICKSTARTER</a></p>
+                 
+                 <p class="link vidtxt" id="video-close">CLOSE</p>
+                
+            </div>
+            
+        </div> <!-- /.modal-content -->
+    </div> <!-- /.modal-dialog -->
+</div> <!-- /.modal -->
+        
+         <script src="public/js/vendor.min.js"></script>
+     
+  <!-- <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>-->
+
+       
+        
+    <!-- Angular scripts 
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.min.js"></script>-->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-animate.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-touch.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap.min.js"></script>
+
+    <!-- Application scripts -->
+    <script src="static/js/app.js"></script>
+    
+        
+    
+    <script>
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+              // tasks to do if it is a Mobile Device
+              $(function (){
+                $(".hide-mobile").hide();
+                  $(".show-mobile").show();
+              })
+            }
+        
+        videojs("main_video").ready(function(){
+            var vidPlayer = this;
+            $('#play-video').on('click', function(e){
+               vidPlayer.play();
+
+            vidPlayer.on('pause', function() {
+                setTimeout(function(){
+                    if( vidPlayer.paused() )  {
+                        $('.pause-overlay').addClass('is-visible');
+                    }
+                }, 200);
+            });
+
+		vidPlayer.on('play', function(){
+			$('.pause-overlay').removeClass('is-visible');
+            	
+		});
+
+		$('#video-resume').on('click', function(e){
+			vidPlayer.play();
+		});
+            
+        $('#video-close').on('click', function(e){
+				$('.pause-overlay').removeClass('is-visible');
+             $('#myModal').fadeOut(function(){ $('#myModal').modal('hide'); }); 
+           
+            
+            })
+
+		
+               
+           })
+
+        });
+        
+       
+    </script>
+
+   <!-- Helpers -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.underscore.min.js"></script>
+    <script src="static/fullpage/vendors/jquery.easings.min.js"></script>
+    <script src="static/js/jquery.ui.touch-punch.min.js"></script>
+  
+
+    <script src="static/swipebox/src/js/jquery.swipebox.js"></script>
+    <script src="static/TouchSwipe-Jquery-Plugin/jquery.touchSwipe.min.js"></script>
+    <script src="static/Magnific-Popup/dist/jquery.magnific-popup.min.js"></script>
+    <script src="static/js/skrollr/dist/skrollr-min2.js"></script>
+    <script src="static/js/skrollr-menu/dist/skrollr.menu.min.js"></script>
+    <script src="https://checkout.stripe.com/checkout.js"></script>
+        
+    <!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>    -->
+        
+    
+    <script type="text/javascript">
+    $(function() {
+        
+        
+      
+        $('body').scrollspy({
+            target: '#dotted-nav',
+            offset: 300
+        });
+
+        function adjustElements() {
+            var active = $('#dotted-nav').find(".active > a").attr('href');
+            if (active == "#about" || active == "#artist-statement" || active == "#store") {
+                $('#dotted-nav').removeClass('light').addClass('dark');
+                $('#overgrowth-image').removeClass('light').addClass('dark');
+                $('#toggle-mobile-menu').removeClass('light').addClass('dark');
+            } else {
+                $('#dotted-nav').removeClass('dark').addClass('light');
+                $('#overgrowth-image').removeClass('dark').addClass('light');
+                $('#toggle-mobile-menu').removeClass('dark').addClass('light');
+            }
+            if (active == "#store" || active == "#kickstarter") {
+                $('#overgrowth-image').css('opacity', 0);
+            } else {
+                $('#overgrowth-image').css('opacity', 1);
+            }
+        }
+
+        $('#dotted-nav').on('activate.bs.scrollspy', function(event) {
+            adjustElements();
+        });
+
+        $('.swipebox').swipebox();
+
+        $('#main-gallery').magnificPopup({
+            delegate: 'a',
+            type: 'image',
+            removalDelay: 0,
+            mainClass: 'mfp-fade',
+            showCloseBtn: false,
+            gallery: {
+                enabled: true,
+                arrowMarkup: '<a class="gallery-arrow gallery-arrow-%dir% hug"></a>'
+            },
+            preloader: true,
+            tLoading: '<div class="loading"></div>',
+            callbacks: {
+                change: function() {
+                    if (this.isOpen) {
+                        this.wrap.addClass('mfp-open');
+                    }
+                },
+                open: function() {
+                    $('#open-gallery-button').css('opacity', '0');
+                },
+                close: function() {
+                    $('#open-gallery-button').css('opacity', '1');
+                },
+            },
+        });
+
+
+        $('.gallery').each(function() { // the containers for all your galleries
+            $(this).magnificPopup({
+                delegate: 'a', // the selector for gallery item
+                type: 'image',
+                mainClass: 'mfp-fade',
+                preloader: true,
+                tLoading: '<div class="loading"></div>',
+                gallery: {
+                  enabled:true,
+                  arrowMarkup: '<a class="gallery-arrow gallery-arrow-%dir% hug"></a>'
+                },
+                callbacks: {},
+            });
+        });
+
+
+        $('#main-nav, #dotted-nav, #welcome, #overgrowth-fixed').css('opacity', '1.00');
+
+
+        $('.purchase-overlay').click(function() {
+            $('.checkout-overlay').fadeIn();
+            return false;
+        });
+
+        $('#continue-shopping, .checkout-overlay').click(function() {
+            $('.checkout-overlay').fadeOut();
+            return false;
+        });
+
+        $('#toggle-mobile-menu').click(function() {
+            // $('#mobile-nav').show();
+            // console.log($(this).attr('data-open'));
+            if ($(this).attr('data-open') === "false") {
+                console.log('slidedown');
+                $('#mobile-nav').slideDown();
+                $(this).attr('data-open', "true");
+            } else {
+                console.log('slideup');
+                $('#mobile-nav').slideUp();
+                $(this).attr('data-open', "false");
+            }
+            return false;
+        });
+
+        $('#mobile-nav a').click(function() {
+            $('#mobile-nav').slideUp();
+            $('#toggle-mobile-menu').attr('data-open', "false");
+        });
+
+        // Responsive javascript
+        resizeElements();
+        $(window).resize(resizeElements());
+        function resizeElements() {
+          
+            var w = $(window).width();
+            var h = $(window).height();
+            if (h < 775) {
+                $('#store-items').addClass('short-screen');
+            }
+        }
+
+        // Force portrait mode
+    /*    function reorient(e) {
+            var portrait = (window.orientation % 180 === 0);
+            if ($(window).height() < 400) {
+                $("body, html").css('overflow', 'hidden');
+                $("body, html").css('height', '100%');
+                $("#change-portrait-prompt").show();
+                window.scrollTo(0, 0);
+            }
+        }
+        window.onorientationchange = reorient;
+        window.setTimeout(reorient, 0);
+*/
+        resetOpacity = false;
+        
+        /*
+        $("#skrollr-body").swipe( {
+            //Generic swipe handler for all directions
+            swipeStatus:function(event, phase, direction, distance, duration, fingerCount) {
+                if (phase == 'start') {
+                    $('#toggle-mobile-menu').css('opacity', '0');
+                }
+            },
+            swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+                adjustElements();
+                setTimeout(function() {
+                    $('#toggle-mobile-menu').css('opacity', '1');
+                }, 500);
+            },
+            threshold: 75
+        });
+        */
+
+
+        });
+        
+        
+      /**
+ * This demo was prepared for you by Petr Tichy - Ihatetomatoes.net
+ * Want to see more similar demos and tutorials?
+ * Help by spreading the word about Ihatetomatoes blog.
+ * Facebook - https://www.facebook.com/ihatetomatoesblog
+ * Twitter - https://twitter.com/ihatetomatoes
+ * Google+ - https://plus.google.com/u/0/109859280204979591787/about
+ * Article URL: http://ihatetomatoes.net/how-to-make-parallax-website-responsive/
+ */  
+        
+        ( function( $ ) {
+	
+	// Setup variables
+	$window = $(window);
+	$slide = $('section');
+	$body = $('body');
+	
+  
+	function adjustWindow(){
+
+	    // Get window size
+	    winH = $window.height();
+	    winW = $window.width();
+        
+       
+
+	    // Keep minimum height 550
+	    if(winH <= 550) {
+	        winH = 550;
+	    }
+
+	    // Init Skrollr for 768 and up
+	    if( winW >= 768) {
+           
+	        // Init Skrollr
+	         var s = skrollr.init({
+            
+            smoothScrolling: false
+        });
+
+	        // Resize our slides
+	        $slide.height(winH);
+
+	        s.refresh($('section'));
+
+	    } else {
+
+	        // Init Skrollr
+	         var s = skrollr.init({
+            mobileDeceleration: 0.004,
+            smoothScrolling: false
+        });
+	        s.destroy();
+	    }
+	
+		// Check for touch
+	   	if(Modernizr.touch) {
+
+			// Init Skrollr
+			var s = skrollr.init();
+			s.destroy();
+	   	}
+
+	}
+	
+	function initAdjustWindow() {
+	    return {
+	        match : function() {
+	            adjustWindow();
+	        },
+	        unmatch : function() {
+	            adjustWindow();
+	        }
+	    };
+	}
+    
+   
+	enquire.register("screen and (min-width : 768px)", initAdjustWindow(), false)
+
+   
+    
+      $( window ).resize(function() {
+         
+           thisAnchor = window.location.hash.substring(1);
+          console.log(thisAnchor);
+              adjustWindow();
+                scrollToAnchor(thisAnchor);
+        });
+        
+		
+} )( jQuery );
+        
+    
+    function scrollToAnchor(aid){
+        var aTag = $("section[id='"+ aid +"']");
+        console.log(aTag);
+        $('html,body').animate({scrollTop: aTag.offset().top},0);
+    }    
+    
+    </script>
+    
+    
+    <script type="text/javascript"
+    id="snipcart"
+    src="https://app.snipcart.com/scripts/snipcart.js"
+    data-api-key="YWQ3N2M5MjItNTY1ZS00M2Q1LThiZWUtMGVjMjcwYTUzZWRi"></script>
+
+
+    
+  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</body>
+
+</html>
