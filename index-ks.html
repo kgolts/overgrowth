@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
 
     <title>Overgrowth</title>
 
@@ -21,27 +24,25 @@
     <link rel="stylesheet" href="static/css/avenir.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link href="static/css/video-js.css" rel="stylesheet">
+      <link id="snipcart-theme" type="text/css"
+    href="https://app.snipcart.com/themes/base/snipcart.css"
+    rel="stylesheet">
     <link rel="stylesheet" href="static/css/styles.css">
     <link rel="stylesheet" href="static/Magnific-Popup/dist/magnific-popup.css">
     <link rel="stylesheet" href="static/swipebox/src/css/swipebox.css">
     <link rel="stylesheet" href="static/css/font-awesome.min.css">
   
-    <link id="snipcart-theme" type="text/css"
-    href="https://app.snipcart.com/themes/base/snipcart.css"
-    rel="stylesheet">
+  
 
    
    
 </head>
 
 <body>
+   <span class="snipcart-summary">
+       <a href="#" class="snipcart-checkout">(<span class="snipcart-total-items"></span> Items) &nbsp;&nbsp; View Cart &nbsp; <span class="small-txt">|</span> &nbsp; Checkout</a>
+</span>
    
-    <div id="change-portrait-prompt" class="display-table" style="display: none;">
-        <div class="display-table-cell">
-            <img src="static/img/mobile/rotation-graphic.png" alt="">
-        </div>
-    </div>
-
     <a href="#" id="toggle-mobile-menu" class="visible-xs-inline light" data-open="false"></a>
 
     <div class="visible-xs-block">
@@ -72,7 +73,7 @@
 
     <div class="parallax-image-wrapper parallax-image-wrapper-100" data-anchor-target="#header + .gap" data-bottom-top="transform:translate3d(0px, 200%, 0px)" data-top-bottom="transform:translate3d(0px, 0%, 0px)">
 
-        <div class="parallax-image parallax-image-100" style="background-image:url(static/img/large/10940016_v1.jpg)" data-anchor-target="#header + .gap" data-bottom-top="transform: translate3d(0px, -80%, 0px);" data-top-bottom="transform: translate3d(0px, 80%, 0px);"></div>
+        <div class="parallax-image parallax-image-100" style="background-image:url(static/img/large/10940016_v1-lg.jpg)" data-anchor-target="#header + .gap" data-bottom-top="transform: translate3d(0px, -80%, 0px);" data-top-bottom="transform: translate3d(0px, 80%, 0px);"></div>
         <!--the +/-80% translation can be adjusted to control the speed difference of the image-->
     </div>
 
@@ -163,7 +164,7 @@
         <div class="header" id="header"></div>
         
         <!--style="background-image:url(/static/img/mobile/10940016_v1.jpg);"-->
-        <section class="gap gap-100p"  id="landing">
+          <section class="gap gap-100p"  id="landing">
             <div id="main-nav" class="hidden-xs">
                 <ul class="nav-horizontal" role="tablist">
                     <li><a href="#about">About</a>
@@ -401,7 +402,7 @@
                     </div>
                    
                     <div class="show-mobile">
-                        <a href="http://video-js.zencoder.com/oceans-clip.mp4" target="_blank"><img src="static/img/playvid@2x.png" width="110" alt="play"></a>
+                        <a href="http://video-js.zencoder.com/oceans-clip.mp4"><img src="static/img/playvid@2x.png" width="110" alt="play"></a>
                     </div>
                     
                      <a href="" class="box-a press-kit">DOWNLOAD PRESS KIT</a>
@@ -537,11 +538,26 @@
                                                 <div class="inline-block" ng-if="p.sizes.length == 1"><em>Size</em> {{p.sizes[0].sized}}</div>
                                                 <div class="inline-block" ng-if="p.sizes.length > 1"><em>Sizes</em> ({{p.sizes.length}})</div>
                                                 <div class="inline-block"ng-if="p.page_count"><em>Page Count</em> {{p.page_count}}</div>
+                                               
                                             </div>
+                                            
+                                             
                                         </div>
                                     </a>
-                                    <div class="product-purchase">
-                                        <a href="#" class="purchase-overlay">Purchase</a>
+                                    
+                                    
+                                    <div class="product-add"><a href="#" class="snipcart-add-item"
+    data-item-id="{{p.product_id}}"
+    data-item-name="{{p.name}}"
+    data-item-price="{{p.price_range}}"
+    data-item-weight="20"
+    data-item-url="/index.html"
+    data-item-description="Size {{p.sizes[0].sized}} Page Count  {{p.page_count}}">Add To Cart</a></div>
+                                           
+                                    
+<!--                                    <div class="product-purchase">-->
+<!--                                        <a href="#" class="purchase-overlay">Purchase</a>-->
+<!--
                                         <a href="#"
     class="snipcart-add-item"
     data-item-id="2"
@@ -550,9 +566,10 @@
     data-item-weight="20"
     data-item-url="http://myapp.com/products/bacon"
     data-item-description="Some fresh bacon">
-        Buy bacon
-</a>
-                                    </div>
+ Buy bacon
+</a>-->
+       
+<!--                                    </div>-->
                                 </div>
                             </div>
 
@@ -754,52 +771,6 @@
     
         
     
-    <script>
-        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-              // tasks to do if it is a Mobile Device
-              $(function (){
-                $(".hide-mobile").hide();
-                  $(".show-mobile").show();
-              })
-            }
-        
-        videojs("main_video").ready(function(){
-            var vidPlayer = this;
-            $('#play-video').on('click', function(e){
-               vidPlayer.play();
-
-            vidPlayer.on('pause', function() {
-                setTimeout(function(){
-                    if( vidPlayer.paused() )  {
-                        $('.pause-overlay').addClass('is-visible');
-                    }
-                }, 200);
-            });
-
-		vidPlayer.on('play', function(){
-			$('.pause-overlay').removeClass('is-visible');
-            	
-		});
-
-		$('#video-resume').on('click', function(e){
-			vidPlayer.play();
-		});
-            
-        $('#video-close').on('click', function(e){
-				$('.pause-overlay').removeClass('is-visible');
-             $('#myModal').fadeOut(function(){ $('#myModal').modal('hide'); }); 
-           
-            
-            })
-
-		
-               
-           })
-
-        });
-        
-       
-    </script>
 
    <!-- Helpers -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.underscore.min.js"></script>
@@ -818,8 +789,11 @@
         
     
     <script type="text/javascript">
+        
+        
     $(function() {
         
+      
         
       
         $('body').scrollspy({
@@ -912,11 +886,11 @@
             // $('#mobile-nav').show();
             // console.log($(this).attr('data-open'));
             if ($(this).attr('data-open') === "false") {
-                console.log('slidedown');
+               // console.log('slidedown');
                 $('#mobile-nav').slideDown();
                 $(this).attr('data-open', "true");
             } else {
-                console.log('slideup');
+              //  console.log('slideup');
                 $('#mobile-nav').slideUp();
                 $(this).attr('data-open', "false");
             }
@@ -928,64 +902,13 @@
             $('#toggle-mobile-menu').attr('data-open', "false");
         });
 
-        // Responsive javascript
-        resizeElements();
-        $(window).resize(resizeElements());
-        function resizeElements() {
-          
-            var w = $(window).width();
-            var h = $(window).height();
-            if (h < 775) {
-                $('#store-items').addClass('short-screen');
-            }
-        }
-
-        // Force portrait mode
-    /*    function reorient(e) {
-            var portrait = (window.orientation % 180 === 0);
-            if ($(window).height() < 400) {
-                $("body, html").css('overflow', 'hidden');
-                $("body, html").css('height', '100%');
-                $("#change-portrait-prompt").show();
-                window.scrollTo(0, 0);
-            }
-        }
-        window.onorientationchange = reorient;
-        window.setTimeout(reorient, 0);
-*/
-        resetOpacity = false;
-        
-        /*
-        $("#skrollr-body").swipe( {
-            //Generic swipe handler for all directions
-            swipeStatus:function(event, phase, direction, distance, duration, fingerCount) {
-                if (phase == 'start') {
-                    $('#toggle-mobile-menu').css('opacity', '0');
-                }
-            },
-            swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
-                adjustElements();
-                setTimeout(function() {
-                    $('#toggle-mobile-menu').css('opacity', '1');
-                }, 500);
-            },
-            threshold: 75
-        });
-        */
+       
 
 
         });
         
         
-      /**
- * This demo was prepared for you by Petr Tichy - Ihatetomatoes.net
- * Want to see more similar demos and tutorials?
- * Help by spreading the word about Ihatetomatoes blog.
- * Facebook - https://www.facebook.com/ihatetomatoesblog
- * Twitter - https://twitter.com/ihatetomatoes
- * Google+ - https://plus.google.com/u/0/109859280204979591787/about
- * Article URL: http://ihatetomatoes.net/how-to-make-parallax-website-responsive/
- */  
+   //skrollr
         
         ( function( $ ) {
 	
@@ -998,19 +921,21 @@
 	function adjustWindow(){
 
 	    // Get window size
-	    winH = $window.height();
+	   winH = $window.height();
 	    winW = $window.width();
         
-       
+        if (winH < 775) {
+                $('#store-items').addClass('short-screen');
+            }
 
 	    // Keep minimum height 550
-	    if(winH <= 550) {
-	        winH = 550;
+	    if(winH <= 500) {
+	        winH = 500;
 	    }
 
 	    // Init Skrollr for 768 and up
 	    if( winW >= 768) {
-           
+          
 	        // Init Skrollr
 	         var s = skrollr.init({
             
@@ -1026,8 +951,7 @@
 
 	        // Init Skrollr
 	         var s = skrollr.init({
-            mobileDeceleration: 0.004,
-            smoothScrolling: false
+           
         });
 	        s.destroy();
 	    }
@@ -1057,33 +981,113 @@
 	enquire.register("screen and (min-width : 768px)", initAdjustWindow(), false)
 
    
-    
-      $( window ).resize(function() {
-         
-           thisAnchor = window.location.hash.substring(1);
-          console.log(thisAnchor);
-              adjustWindow();
-                scrollToAnchor(thisAnchor);
-        });
+    	if(! Modernizr.touch) { 
+          $( window ).resize(function() {
+               thisAnchor = window.location.hash.substring(1);
+             // console.log(thisAnchor);
+                  adjustWindow();
+                    scrollToAnchor(thisAnchor);
+            });
+        }else{
+            
+            $(function (){
+                $(".hide-mobile").hide();
+                  $(".show-mobile").show();
+              })
+            
+             $( window ).resize(function() {
+                  winH = $window.height() + 60;
+                 $slide = $('section');
+                  $slide.height(winH);
+               //  console.log(winH);
+                 
+                
+             })
+        }
         
 		
 } )( jQuery );
         
+        //end skrollr
+        
+        
+  //vid script
+        
+        videojs("main_video").ready(function(){
+            var vidPlayer = this;
+            $('#play-video').on('click', function(e){
+               vidPlayer.play();
+
+            vidPlayer.on('pause', function() {
+                setTimeout(function(){
+                    if( vidPlayer.paused() )  {
+                        $('.pause-overlay').addClass('is-visible');
+                    }
+                }, 200);
+            });
+
+		vidPlayer.on('play', function(){
+			$('.pause-overlay').removeClass('is-visible');
+            	
+		});
+
+		$('#video-resume').on('click', function(e){
+			vidPlayer.play();
+		});
+            
+        $('#video-close').on('click', function(e){
+				$('.pause-overlay').removeClass('is-visible');
+             $('#myModal').fadeOut(function(){ $('#myModal').modal('hide'); }); 
+           
+            
+            })
+
+		
+               
+           })
+
+        });
+        
+       
+   //end vid script
+        
     
     function scrollToAnchor(aid){
         var aTag = $("section[id='"+ aid +"']");
-        console.log(aTag);
+       // console.log(aTag);
         $('html,body').animate({scrollTop: aTag.offset().top},0);
     }    
     
     </script>
     
     
+    
     <script type="text/javascript"
     id="snipcart"
     src="https://app.snipcart.com/scripts/snipcart.js"
-    data-api-key="YWQ3N2M5MjItNTY1ZS00M2Q1LThiZWUtMGVjMjcwYTUzZWRi"></script>
+    data-api-key="YWQ3N2M5MjItNTY1ZS00M2Q1LThiZWUtMGVjMjcwYTUzZWRi"  data-autopop="false"></script>
 
+    <script>
+        //cart stuff
+        Snipcart.execute('bind', 'cart.ready', function (data) {
+           
+            if ($("span.snipcart-total-items").text() > 0) {
+                $(".snipcart-summary").addClass("show");
+            }
+         });
+        
+        Snipcart.execute('bind', 'item.added', function (item) {
+             if ($("span.snipcart-total-items").text() > 0) {
+                $(".snipcart-summary").addClass("show");
+            }
+        });
+        
+        Snipcart.execute('bind', 'item.removed', function (item) {
+           if ($("span.snipcart-total-items").text() == 0) {
+                $(".snipcart-summary").removeClass("show");
+            }
+        });
+    </script>
 
     
   <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>

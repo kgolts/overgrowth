@@ -7,12 +7,13 @@ overgrowthApp.controller('overgrowthController', function($scope) {
             'section': 'Publications',
             'products': [{
                 'name': 'Original Edition',
-                'price_range': "$20",
+                'price_range': "20",
                 'sizes': [{
                     'sized': '10.5" x 4.25"',
                     'price': 20
                 }],
                 'page_count': '38',
+                'product_id': '1111',
                 'images': [
                     {
                         'small': 'http://lorempixel.com/g/290/435/people/1/Original-Edition-Thumb-1',
@@ -29,12 +30,13 @@ overgrowthApp.controller('overgrowthController', function($scope) {
                 ]
             }, {
                 'name': 'Overgrowth Book (Pre-Order)',
-                'price_range': "$40",
+                'price_range': "40",
                 'sizes': [{
                     'sized': '11" x 14"',
                     'price': 40
                 }],
                 'page_count': '75-150',
+                'product_id': '1122',
                 'images': [
                     {
                         'small': 'http://lorempixel.com/g/290/435/people/4/Overgrowth-Book-1',
@@ -55,11 +57,12 @@ overgrowthApp.controller('overgrowthController', function($scope) {
             'section': 'Prints',
             'products': [{
                 'name': 'Archival Print No. 1',
-                'price_range': "$125",
+                'price_range': "125",
                 'sizes': [{
                     'sized': '8" x 12"',
                     'price': 125,
                 }],
+                 'product_id': '2222',
                 'images': [
                     {
                         'small': 'http://placehold.it/290x435&text=No+1.',
@@ -69,7 +72,7 @@ overgrowthApp.controller('overgrowthController', function($scope) {
             },
             {
                 'name': 'Archival Print No. 2',
-                'price_range': "$125",
+                'price_range': "125",
                 'sizes': [{
                     'sized': '8" x 12"',
                     'price': 125,
@@ -83,7 +86,7 @@ overgrowthApp.controller('overgrowthController', function($scope) {
             },
             {
                 'name': 'Archival Print No. 2',
-                'price_range': "$125",
+                'price_range': "125",
                 'sizes': [{
                     'sized': '8" x 12"',
                     'price': 125,
@@ -97,7 +100,7 @@ overgrowthApp.controller('overgrowthController', function($scope) {
             },
             {
                 'name': 'Archival Print No. 3',
-                'price_range': "$125",
+                'price_range': "125",
                 'sizes': [{
                     'sized': '8" x 12"',
                     'price': 125,
@@ -111,7 +114,7 @@ overgrowthApp.controller('overgrowthController', function($scope) {
             },
             {
                 'name': 'Archival Print No. 4',
-                'price_range': "$125",
+                'price_range': "125",
                 'sizes': [{
                     'sized': '8" x 12"',
                     'price': 125,
@@ -125,7 +128,7 @@ overgrowthApp.controller('overgrowthController', function($scope) {
             },
             {
                 'name': 'Archival Print No. 5',
-                'price_range': "$125",
+                'price_range': "125",
                 'sizes': [{
                     'sized': '8" x 12"',
                     'price': 125,
@@ -139,7 +142,7 @@ overgrowthApp.controller('overgrowthController', function($scope) {
             },
             {
                 'name': 'Archival Print No. 6',
-                'price_range': "$125",
+                'price_range': "125",
                 'sizes': [{
                     'sized': '8" x 12"',
                     'price': 125,
@@ -153,7 +156,7 @@ overgrowthApp.controller('overgrowthController', function($scope) {
             },
             {
                 'name': 'Archival Print No. 7',
-                'price_range': "$125",
+                'price_range': "125",
                 'sizes': [{
                     'sized': '8" x 12"',
                     'price': 125,
@@ -167,7 +170,7 @@ overgrowthApp.controller('overgrowthController', function($scope) {
             },
             {
                 'name': 'Archival Print No. 8',
-                'price_range': "$125",
+                'price_range': "125",
                 'sizes': [{
                     'sized': '8" x 12"',
                     'price': 125,
@@ -181,7 +184,7 @@ overgrowthApp.controller('overgrowthController', function($scope) {
             },
             {
                 'name': 'Archival Print No. 9',
-                'price_range': "$125",
+                'price_range': "125",
                 'sizes': [{
                     'sized': '8" x 12"',
                     'price': 125,
@@ -195,7 +198,7 @@ overgrowthApp.controller('overgrowthController', function($scope) {
             },
             {
                 'name': 'Archival Print No. 10',
-                'price_range': "$125",
+                'price_range': "125",
                 'sizes': [{
                     'sized': '8" x 12"',
                     'price': 125,
@@ -209,7 +212,7 @@ overgrowthApp.controller('overgrowthController', function($scope) {
             },
             {
                 'name': 'Archival Print No. 11',
-                'price_range': "$125",
+                'price_range': "125",
                 'sizes': [{
                     'sized': '8" x 12"',
                     'price': 125,
@@ -223,7 +226,7 @@ overgrowthApp.controller('overgrowthController', function($scope) {
             },
             {
                 'name': 'Archival Print No. 12',
-                'price_range': "$125",
+                'price_range': "125",
                 'sizes': [{
                     'sized': '8" x 12"',
                     'price': 125,
@@ -237,7 +240,7 @@ overgrowthApp.controller('overgrowthController', function($scope) {
             },
             {
                 'name': 'Archival Print No. 13',
-                'price_range': "$125",
+                'price_range': "125",
                 'sizes': [{
                     'sized': '8" x 12"',
                     'price': 125,
@@ -251,7 +254,7 @@ overgrowthApp.controller('overgrowthController', function($scope) {
             },
             {
                 'name': 'Archival Print No. 14',
-                'price_range': "$125",
+                'price_range': "125",
                 'sizes': [{
                     'sized': '8" x 12"',
                     'price': 125,
@@ -265,7 +268,7 @@ overgrowthApp.controller('overgrowthController', function($scope) {
             },
             {
                 'name': 'Archival Print No. 15',
-                'price_range': "$125",
+                'price_range': "125",
                 'sizes': [{
                     'sized': '8" x 12"',
                     'price': 125,
@@ -282,7 +285,7 @@ overgrowthApp.controller('overgrowthController', function($scope) {
             'section': 'Posters',
             'products': [{
                 'name': 'Poster No. 1',
-                'price_range': "$10",
+                'price_range': "10",
                 'sizes': [{
                     'sized': '11" x 14"',
                     'price': 10,
@@ -296,7 +299,7 @@ overgrowthApp.controller('overgrowthController', function($scope) {
             },
             {
                 'name': 'Poster No. 2',
-                'price_range': "$10",
+                'price_range': "10",
                 'sizes': [{
                     'sized': '11" x 14"',
                     'price': 10,
@@ -310,7 +313,7 @@ overgrowthApp.controller('overgrowthController', function($scope) {
             },
             {
                 'name': 'Poster No. 3',
-                'price_range': "$10",
+                'price_range': "10",
                 'sizes': [{
                     'sized': '11" x 14"',
                     'price': 10,
@@ -324,7 +327,7 @@ overgrowthApp.controller('overgrowthController', function($scope) {
             },
             {
                 'name': 'Poster No. 4',
-                'price_range': "$10",
+                'price_range': "10",
                 'sizes': [{
                     'sized': '11" x 14"',
                     'price': 10,
@@ -341,7 +344,7 @@ overgrowthApp.controller('overgrowthController', function($scope) {
             'section': 'Postcards',
             'products': [{
                 'name': 'Postcard set (10)',
-                'price_range': "$15",
+                'price_range': "15",
                 'sizes': [{
                     'sized': '4" x 6"',
                     'price': 15,
@@ -362,7 +365,7 @@ overgrowthApp.controller('overgrowthController', function($scope) {
                 ],
             }, {
                 'name': 'Postcard set (25)',
-                'price_range': "$30",
+                'price_range': "30",
                 'sizes': [{
                     'sized': '4" x 6"',
                     'price': 30,
