@@ -69,6 +69,11 @@ a.nofocus, a, a:focus, a:hover {
     margin:0 auto;
 }
 
+div#play-video.nofocus.link.hide-mobile {
+width:200px;
+margin: 0 auto; 
+}
+
 .small-txt {font-size: 13px;   display: inline-block;}
 
 .snipcart-checkout-container {
@@ -79,9 +84,28 @@ z-index: 9999;
     display: none !important;
 }
 
+  
+#snipcart-main-container #snipcart-flash-messages > li.snipcart-flash-success {
+ background-color: #faf3e4;
+}
+
 .snipcart-overwrite #snipcart-main-container span.snipcart-unit-price,  .snipcart-overwrite #snipcart-main-container span.snipcart-total-price, .snipcart-overwrite #snipcart-main-container table.snipcart-list span.snipcart-product-name, .snipcart-overwrite #snipcart-main-container table.snipcart-list span.snipcart-shipping-method-name, .snipcart-overwrite  #snipcart-main-container table.snipcart-list span.snipcart-shipping-method-price, .snipcart-overwrite #snipcart-main-container table.snipcart-list span.snipcart-confirm-item-quantity, .snipcart-overwrite #snipcart-main-container table.snipcart-list span.snipcart-confirm-item-price, .snipcart-overwrite #snipcart-main-container table.snipcart-list span.snipcart-confirm-item-total-price, .snipcart-overwrite #snipcart-main-container label, .snipcart-overwrite ul#snipcart-steps li span.snipcart-step-text, .snipcart-overwrite #snipcart-main-container table.snipcart-list th, .snipcart-overwrite #snipcart-main-content .snipcart-column span.snipcart-title, .snipcart-overwrite table#snipcart-confirm-prices tr td span, .snipcart-overwrite #snipcart-main-container .snipcart-full-width-text span.snipcart-title, .snipcart-overwrite #snipcart-main-container .snipcart-full-width-text, .snipcart-overwrite #snipcart-step-content-emptycart .snipcart-full-width-text p, .snipcart-overwrite #snipcart-blocked .snipcart-full-width-text p, .snipcart-overwrite #snipcart-header #snipcart-total span, .snipcart-overwrite #snipcart-header #snipcart-title  {
      font-family: "Avenir-Next", "Helvetica Neue", Helvetica, sans-serif;
 }
+
+#snipcart-main-container a.snipcart-next, #snipcart-main-container a.snipcart-finalize, #snipcart-main-container a.snipcart-mainaction {
+  
+
+  background: #eee;
+ border: 1px solid #eee;
+  color: #1d1f22;
+  text-shadow: none;
+}
+
+#snipcart-main-container a.snipcart-btn, #snipcart-main-container button.snipcart-btn {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+   box-shadow: none; }
 
 #snipcart-close {
   display: block;
@@ -123,7 +147,7 @@ z-index: 9999;
     top: 0px;
     z-index: 100;
     background: rgba(255, 255, 255, 0.85);
-    padding: 14px;
+    padding: 13px;
     width: 100%;
     text-align: right;
   
@@ -172,6 +196,7 @@ padding: 0 5px;
     }
 }
 
+.bg-div-landing {display: none;}
 
 
 .light-txt {
@@ -1178,7 +1203,7 @@ animation: fade-in .25s linear;
         margin: 0 auto;
         color: #FFF;
         text-align: left;
-        font-weight: 200;
+        font-weight: 300;
         font-size: 13px;
         line-height: 1.666;
         letter-spacing: .8px;
@@ -1482,6 +1507,15 @@ section {
 }
 
 
+  .divider-txt {
+         text-transform: uppercase;
+  font-size: 8px;
+  letter-spacing: 1.25px;
+    }
+
+.white {color:#fff}
+
+
 @media (max-width: 480px) {
       section {min-height: 400px;}
     .body-text {font-size: 18px;}
@@ -1492,9 +1526,20 @@ section {
     //     height: 120%;
     // }
     
-  
+   #landing { 
+     background-image: url(../img/large/landing-mobile.jpg);
+       transition: none;
+     
+ }
     
-    #landing { background-image: url(../img/mobile/overgrowth.jpg)}
+    .pull-quote {
+        word-spacing: .8px;
+        padding: 0 20px;
+        }
+
+   
+    
+   // #landing { background-image: url(../img/mobile/overgrowth.jpg)}
     
     .hide-mobile {display:none;}
     .show-mobile {display:block;}
@@ -1757,7 +1802,26 @@ section {
     }
 }
 
-
+html.touch {
+ 
+.bg-div-landing {
+    display: block;
+   position: absolute;
+  height: 100%;
+  width: 100%;
+   background-color: #1c1303;
+  z-index: -1;
+}
+    
+ #landing { 
+    background-image: url(../img/large/landing-mobile.jpg);
+     position: relative;
+     z-index: -2;
+     transition: none !important;
+ }
+#welcome {display: none;}
+.overgrowth-logo img {width: 80%;}
+}
 
 @media (orientation: portrait) {
     #change-portrait-prompt {
