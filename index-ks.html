@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
@@ -12,17 +12,9 @@
 
     <title>Overgrowth</title>
 
-    <style>
-    #main-nav, #dotted-nav, #welcome, #overgrowth-fixed {
-        opacity: 0;
-        -webkit-transition: opacity 1s ease-in 2s;
-        -moz-transition: opacity 1s ease-in 2s;
-        -o-transition: opacity 1s ease-in 2s;
-        transition: opacity 1s ease-in 2s;
-    }
-    </style>
+    
     <link rel="stylesheet" href="static/css/avenir.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/vendor/bootstrap/dist/css/bootstrap.min.css">
     <link href="static/css/video-js.css" rel="stylesheet">
       <link id="snipcart-theme" type="text/css"
     href="https://app.snipcart.com/themes/base/snipcart.css"
@@ -289,8 +281,9 @@
                 <div class="display-table-cell">
                     <!-- Gallery 1 -->
                     <div id="main-gallery" class="hidden-xs">
-                        <a href="static/img/gallery/10940037_v1_web.jpg" id="open-gallery-button">
-                            <img src="static/img/mobile/view-gallery-button.png" alt="Open gallery">
+                        <a href="static/img/gallery/10940037_v1_web.jpg" id="open-gallery-button" class="box-a">
+                            View Gallery
+<!--                            <img src="static/img/mobile/view-gallery-button.png" alt="Open gallery">-->
                         </a>
                         <a href="static/img/gallery/11060013_v1_web.jpg"></a>
                         <a href="static/img/gallery/11350013_v1_web.jpg"></a>
@@ -413,7 +406,7 @@
                     </div>
                    
                     <div class="show-mobile">
-                        <a href="http://video-js.zencoder.com/oceans-clip.mp4"><img src="static/img/playvid@2x.png" width="110" alt="play"></a>
+                        <a href="https://player.vimeo.com/video/124980462"><img src="static/img/playvid@2x.png" width="110" alt="play"></a>
                     </div>
                     
                      <a href="" class="box-a press-kit">DOWNLOAD PRESS KIT</a>
@@ -707,6 +700,28 @@
                         <p>Ransom Limited is also a new photographic cooperative based in Portland, OR. Founded in 2013 by brothers Parker and James Fitzgerald, Ransom photographs have been published and licensed worldwide.</p>
                         <p>Erba Studio is the work of Riley Messina. Based out of Portland, OR, she is known internationally for the cohesive simplicity and balance in her aesthetic. As a floral designer and stylist, Riley has worked throughout the United States and abroad.</p>
                     </div>
+                    
+                   
+  
+<div id="mc_embed_signup">
+<form action="//ransomltd.us10.list-manage.com/subscribe/post?u=0cf8103d5f160a55ecd8465cb&amp;id=a7c49d5240" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-inline" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll"  class="">
+        
+        <div class="form-group inline">
+    <label class="sr-only" for="mce-EMAIL">Email address</label>
+   <input type="email" value="" name="EMAIL" class="email form-contrl" id="mce-EMAIL" placeholder="email address" required>
+  </div>
+        <button type="submit" class="btn btn-default">Subscribe</button>
+        <input type="hidden" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="">
+        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            <div style="position: absolute; left: -5000px;"><input type="text" name="b_0cf8103d5f160a55ecd8465cb_a7c49d5240" tabindex="-1" value=""></div>
+    </div>
+    
+</form>
+</div>
+
+<!--End mc_embed_signup-->
+                    
                 </div>
             </div>
 
@@ -714,13 +729,13 @@
                 
                 <div class="row center-block">
                 
-                    <div class="col-md-6">
+                    <div class="col-xs-6">
                         <a class="ben" href="http://benbiondo.com/">
 <!--                    <img src="static/img/credit-design-ben.png" alt="Ben Biondo">-->
                             <em>Design</em> <span>Ben Biondo</span>
                         </a>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-xs-6">
                         <a class="michelle" href="http://www.70degreeswest.com/">
                         <!--                    <img src="static/img/credit-design-michelle.png" alt="Michelle Stauffer">-->
                         <em>Production</em> <span>Michelle Stauffer</span>
@@ -747,15 +762,14 @@
     
 
 <!-- Modal -->
-<div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal hide-mobile" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">            
             <video id="main_video" class="video-js vjs-default-skin"
               controls preload="false" width="100%" height="100%"
               
-              data-setup=''>
-             <source src="https://vimeo.com/124980462" type='video/mp4' />
-            
+              data-setup='{ "techOrder": ["vimeo"], "src": "https://vimeo.com/124980462", "loop": false, "autoplay": false }'>
+             
              <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
             </video>
             
@@ -773,12 +787,11 @@
     </div> <!-- /.modal-dialog -->
 </div> <!-- /.modal -->
         
-         <script src="public/js/vendor.min.js"></script>
+    
+    <!-- jquery etc, see gulp file -->
+    <script src="public/js/vendor.min.js"></script>
      
-  <!-- <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="//code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>-->
-
-       
+   
         
     <!-- Angular scripts 
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.min.js"></script>-->
@@ -786,13 +799,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-touch.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap.min.js"></script>
 
-    <!-- Application scripts -->
-    <script src="static/js/app.js"></script>
-    
-        
-    
-
-   <!-- Helpers -->
+      <!-- Helpers -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.underscore.min.js"></script>
     <script src="static/fullpage/vendors/jquery.easings.min.js"></script>
     <script src="static/js/jquery.ui.touch-punch.min.js"></script>
@@ -806,349 +813,21 @@
     <script src="https://checkout.stripe.com/checkout.js"></script>
         
     <!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>    -->
-        
-    
-    <script type="text/javascript">
-        
-        
-    $(function() {
-        
-      
-       
-        $('body').scrollspy({
-            target: '#dotted-nav',
-            offset: 300
-        });
-
-        //animate menu scrolling
-         $('#dotted-nav a,.bottom-right a, #main-nav a').on('click',function (e) {
-          e.preventDefault()
-           var $target = $(this)[0].hash;
-             console.log($target);
-            //   thisAnchor = thisHREF.hash.substring(1);
-           $('html,body').animate({scrollTop:$($target).offset().top}, 700, 'easeOutCubic',function(){
-             window.location.hash = $target;
-           });
-        })
-         
-        function adjustElements() {
-            var active = $('#dotted-nav').find(".active > a").attr('href');
-            if (active == "#about" || active == "#artist-statement" || active == "#store") {
-                $('#dotted-nav').removeClass('light').addClass('dark');
-                $('#overgrowth-image').removeClass('light').addClass('dark');
-                $('#toggle-mobile-menu').removeClass('light').addClass('dark');
-            } else {
-                $('#dotted-nav').removeClass('dark').addClass('light');
-                $('#overgrowth-image').removeClass('dark').addClass('light');
-                $('#toggle-mobile-menu').removeClass('dark').addClass('light');
-            }
-            if (active == "#store" || active == "#kickstarter") {
-                $('#overgrowth-image').css('opacity', 0);
-            } else {
-                $('#overgrowth-image').css('opacity', 1);
-            }
-        }
-
-        $('#dotted-nav').on('activate.bs.scrollspy', function(event) {
-            adjustElements();
-        });
-
-        $('.swipebox').swipebox();
-
-        $('#main-gallery').magnificPopup({
-            delegate: 'a',
-            type: 'image',
-            removalDelay: 0,
-            mainClass: 'mfp-fade',
-            showCloseBtn: false,
-            gallery: {
-                enabled: true,
-                arrowMarkup: '<a class="gallery-arrow gallery-arrow-%dir% hug"></a>'
-            },
-            preloader: true,
-            tLoading: '<div class="loading"></div>',
-            callbacks: {
-                change: function() {
-                    if (this.isOpen) {
-                        this.wrap.addClass('mfp-open');
-                    }
-                },
-                open: function() {
-                    $('#open-gallery-button').css('opacity', '0');
-                },
-                close: function() {
-                    $('#open-gallery-button').css('opacity', '1');
-                },
-            },
-        });
-
-
-        $('.gallery').each(function() { // the containers for all your galleries
-            $(this).magnificPopup({
-                delegate: 'a', // the selector for gallery item
-                type: 'image',
-                mainClass: 'mfp-fade',
-                preloader: true,
-                tLoading: '<div class="loading"></div>',
-                gallery: {
-                  enabled:true,
-                  arrowMarkup: '<a class="gallery-arrow gallery-arrow-%dir% hug"></a>'
-                },
-                callbacks: {},
-            });
-        });
-
-
-        $('#main-nav, #dotted-nav, #welcome, #overgrowth-fixed').css('opacity', '1.00');
-
-
-        $('.purchase-overlay').click(function() {
-            $('.checkout-overlay').fadeIn();
-            return false;
-        });
-
-        $('#continue-shopping, .checkout-overlay').click(function() {
-            $('.checkout-overlay').fadeOut();
-            return false;
-        });
-
-        $('#toggle-mobile-menu').click(function() {
-            // $('#mobile-nav').show();
-            // console.log($(this).attr('data-open'));
-            if ($(this).attr('data-open') === "false") {
-               // console.log('slidedown');
-                $('#mobile-nav').slideDown();
-                $(this).attr('data-open', "true");
-            } else {
-              //  console.log('slideup');
-                $('#mobile-nav').slideUp();
-                $(this).attr('data-open', "false");
-            }
-            return false;
-        });
-
-        $('#mobile-nav a').click(function() {
-            $('#mobile-nav').slideUp();
-            $('#toggle-mobile-menu').attr('data-open', "false");
-        });
-
-       
-
-
-        });
-        
-        
-   //skrollr
-        
-        ( function( $ ) {
-	
-	// Setup variables
-	$window = $(window);
-	$slide = $('section');
-	$body = $('body');
-	
-  
-	function adjustWindow(){
-
-	    // Get window size
-	   winH = $window.height();
-	    winW = $window.width();
-        
-        if (winH < 775) {
-                $('#store-items').addClass('short-screen');
-            }
-
-	    // Keep minimum height 550
-	    if(winH <= 500) {
-	        winH = 500;
-	    }
-
-	    // Init Skrollr for 768 and up
-	    if( winW >= 768) {
-          
-	        // Init Skrollr
-	         var s = skrollr.init({
-            
-            smoothScrolling: false
-        });
-
-	        // Resize our slides
-	        $slide.height(winH);
-
-	        s.refresh($('section'));
-
-	    } else {
-
-	        // Init Skrollr
-	         var s = skrollr.init({
-           
-        });
-	        s.destroy();
-	    }
-	
-		// Check for touch
-	   	if(Modernizr.touch) {
-
-			// Init Skrollr
-			var s = skrollr.init();
-			s.destroy();
-	   	}
-
-	}
-	
-	function initAdjustWindow() {
-	    return {
-	        match : function() {
-	            adjustWindow();
-	        },
-	        unmatch : function() {
-	            adjustWindow();
-	        }
-	    };
-	}
-    
-   
-	enquire.register("screen and (min-width : 768px)", initAdjustWindow(), false)
-
-   
-    	if(! Modernizr.touch) { 
-          $( window ).resize(function() {
-               thisAnchor = window.location.hash.substring(1); 
-                var str = "!/";
-                newAnchor = thisAnchor.replace(str, "");
-                window.location.hash = newAnchor;
-              
-                adjustWindow();
-                scrollToAnchor(newAnchor);
-            });
-        }else{
-            
-            //  $('#landing').css('background-image','url(/static/img/large/10940016_v1-lg.jpg)');
-           // $('#landing').hide();
-            //  $('#landing').fadeIn(1000);
-         
-            
-            $(function (){
-                   $(".bg-div-landing").fadeOut(2000, function() {
-                    $("#landing").css("z-index","1");
-                   });
-                $(".hide-mobile").hide();
-                  $(".show-mobile").show();
-                
-              })
-            
-             $( window ).resize(function() {
-                  winH = $window.height() + 60;
-                 $slide = $('section');
-                  $slide.height(winH);
-               //  console.log(winH);
-                 
-                
-             })
-        }
-        
-		
-} )( jQuery );
-        
-        //end skrollr
-        
-        
-  //vid script
-        
-        videojs("main_video").ready(function(){
-            var vidPlayer = this;
-            $('#play-video').on('click', function(e){
-               vidPlayer.play();
-
-            vidPlayer.on('pause', function() {
-                setTimeout(function(){
-                    if( vidPlayer.paused() )  {
-                        $('.pause-overlay').addClass('is-visible');
-                    }
-                }, 200);
-            });
-
-		vidPlayer.on('play', function(){
-			$('.pause-overlay').removeClass('is-visible');
-            	
-		});
-
-		$('#video-resume').on('click', function(e){
-			vidPlayer.play();
-		});
-            
-        $('#video-close').on('click', function(e){
-				$('.pause-overlay').removeClass('is-visible');
-             $('#myModal').fadeOut(function(){ $('#myModal').modal('hide'); }); 
-           
-            
-            })
-
-		
-               
-           })
-
-        });
-        
-       
-   //end vid script
-        
-    
-    function scrollToAnchor(aid){
-        var aTag = $("section[id='"+ aid +"']");
-       // console.log(aTag);
-        try {
-        $('html,body').animate({scrollTop: aTag.offset().top},0);
-        }
-        catch (err) {
-            console.log(err);
-        }
-
-    }    
-    
-    </script>
-    
-    
     
     <script type="text/javascript"
     id="snipcart"
     src="https://app.snipcart.com/scripts/snipcart.js"
     data-api-key="YWQ3N2M5MjItNTY1ZS00M2Q1LThiZWUtMGVjMjcwYTUzZWRi"  data-autopop="false"></script>
-
-    <script>
-        //cart stuff
-        Snipcart.execute('bind', 'cart.ready', function (data) {
-           
-            if ($("span.snipcart-total-items").text() > 0) {
-                $(".snipcart-summary").addClass("show");
-            }
-         });
-        
-        Snipcart.execute('bind', 'item.added', function (item) {
-             if ($("span.snipcart-total-items").text() > 0) {
-                $(".snipcart-summary").addClass("show");
-            }
-        });
-        
-        Snipcart.execute('bind', 'item.removed', function (item) {
-           if ($("span.snipcart-total-items").text() == 0) {
-                $(".snipcart-summary").removeClass("show");
-            }
-        });
-        
-        Snipcart.execute('bind', 'cart.closed', function() {
-            
-          
-            
-         if ($("span.snipcart-total-items").text() == 0) {
-                $(".snipcart-summary").removeClass("show");
-  
-            }
-        });
-    </script>
-
     
-  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+    <!-- Angular shop carousel script - add products there -->
+    <script src="static/js/app.js"></script>
+    
+<!--  scripts for this page - skrollr, menu etc  -->
+   <script src="public/js/application.min.js"></script>
+        
+   
+    
+<!--  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>-->
 </body>
 
 </html>
