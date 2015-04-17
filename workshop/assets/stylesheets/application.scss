@@ -1,0 +1,87 @@
+// Core variables and mixins
+@import "../vendor/twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/_variables.scss";
+@import "../vendor/twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/_mixins.scss";
+
+// Reset
+@import "../vendor/twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/_normalize.scss";
+// @import "../vendor/twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/_print.scss";
+
+// Core CSS
+@import "../vendor/twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/_scaffolding.scss";
+@import "../vendor/twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/_type.scss";
+@import "../vendor/twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/_code.scss";
+@import "../vendor/twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/_grid.scss";
+@import "../vendor/twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/_tables.scss";
+@import "../vendor/twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/_forms.scss";
+@import "../vendor/twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/_buttons.scss";
+
+// Components
+@import "../vendor/twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/_component-animations.scss";
+// @import "../vendor/twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/_glyphicons.scss";
+@import "../vendor/twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/_dropdowns.scss";
+@import "../vendor/twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/_button-groups.scss";
+@import "../vendor/twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/_input-groups.scss";
+@import "../vendor/twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/_navs.scss";
+@import "../vendor/twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/_navbar.scss";
+@import "../vendor/twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/_breadcrumbs.scss";
+@import "../vendor/twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/_pagination.scss";
+@import "../vendor/twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/_pager.scss";
+@import "../vendor/twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/_labels.scss";
+@import "../vendor/twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/_badges.scss";
+// @import "../vendor/twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/_jumbotron.scss";
+// @import "../vendor/twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/_thumbnails.scss";
+@import "../vendor/twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/_alerts.scss";
+// @import "../vendor/twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/_progress-bars.scss";
+// @import "../vendor/twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/_media.scss";
+@import "../vendor/twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/_list-group.scss";
+// @import "../vendor/twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/_panels.scss";
+// @import "../vendor/twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/_wells.scss";
+@import "../vendor/twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/_close.scss";
+
+// Components w/ JavaScript
+// @import "../vendor/twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/_modals.scss";
+// @import "../vendor/twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/_tooltip.scss";
+// @import "../vendor/twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/_popovers.scss";
+// @import "../vendor/twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/_carousel.scss";
+
+// Utility classes
+@import "../vendor/twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/_utilities.scss";
+@import "../vendor/twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/_responsive-utilities.scss";
+
+// Fonts - #### have to copy fonts to public folder
+@import '../vendor/font-awesome/scss/font-awesome';
+
+// Animate CSS
+//@import 'vendor/animate.scss';
+
+// Magnificent pop up
+@import '../vendor/magnific-popup/src/css/main';
+
+// Video JS - #### have to rename file to sass - and copy font to public folder
+// @import 'vendor/video-js';
+
+// Flex Slider #### have to rename file to sass - move fonts to public
+//@import 'vendor/flexslider';
+
+// magnific-popup #### have to rename file to sass
+// @import '../vendor/magnific-popup/dist/magnific-popup';
+
+
+// Themestyle
+@import "variables";
+@import "mixins";
+
+@import "layout";
+
+// ISOTOPE
+// @import "isotope";
+// WOW
+@import "wow";
+// PACE
+@import "pace";
+
+@import "slider";
+@import "header";
+@import "main";
+@import "modules";
+@import "footer";

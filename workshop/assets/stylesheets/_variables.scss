@@ -1,0 +1,118 @@
+$transition300:   all 300ms ease-in-out;
+$transition200:   all 200ms ease-in-out;
+
+$menu-height : 80px;
+$mobile-menu-height : 50px;
+
+/* COLORS */
+
+$white: #FFF;
+$black : #000;
+$blue: #2E9FFF;
+$gray: #797979;
+
+/* FONT FAMILIES */
+@font-face{
+  font-family: "Avenir-Next";
+  src:url("../fonts/avenir-next/AvenirNextLTPro-UltLt.otf");
+  font-weight: 200;
+}
+
+@font-face{
+  font-family: "Avenir-Next";
+  src:url("../fonts/avenir-next/AvenirNextLTPro-UltLtIt.otf");
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face{
+  font-family: "Avenir-Next";
+  src:url("../fonts/avenir-next/AvenirNextLTPro-Regular.otf");
+  font-weight: 300;
+}
+
+@font-face{
+  font-family: "Avenir-Next";
+  src:url("../fonts/avenir-next/AvenirNextLTPro-It.otf");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face{
+  font-family: "Avenir-Next";
+  src:url("../fonts/avenir-next/AvenirNextLTPro-Medium.otf");
+  font-weight: 400;
+}
+
+@font-face{
+  font-family: "Avenir-Next";
+  src:url("../fonts/avenir-next/AvenirNextLTPro-MediumIt.otf");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face{
+  font-family: "Avenir-Next";
+  src:url("../fonts/avenir-next/AvenirNextLTPro-Demi.otf");
+  font-weight: 500;
+}
+
+@font-face{
+  font-family: "Avenir-Next";
+  src:url("../fonts/avenir-next/AvenirNextLTPro-DemiIt.otf");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face{
+  font-family: "Avenir-Next";
+  src:url("../fonts/avenir-next/AvenirNextLTPro-Bold.otf");
+  font-weight: 600;
+}
+
+@font-face{
+  font-family: "Avenir-Next";
+  src:url("../fonts/avenir-next/AvenirNextLTPro-BoldIt.otf");
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face{
+  font-family: "Avenir-Next";
+  src:url("../fonts/avenir-next/AvenirNextLTPro-Heavy.otf");
+  font-weight: 700;
+}
+
+@font-face{
+  font-family: "Avenir-Next";
+  src:url("../fonts/avenir-next/AvenirNextLTPro-HeavyIt.otf");
+  font-weight: 700;
+  font-style: italic;
+}
+
+$body-font: 'Avenir-Next', sans-serif;
+
+/* FONT SIZES */
+$h1: 62px;
+$h2: 40px; 
+$h3: 24px;
+$h4: 18px;
+$h5: 16px;
+$body: 15px;
+
+/* FONT WEIGHTS */
+$fw-light: 300;
+$fw-semi: 600;
+$fw-bold: 700;
+$fw-black: 900;
+
+/* FIXED WIDTHS */
+$fixed-w-xl: 1370px;
+$fixed-w-lg: 1170px;
+$fixed-w-md: 970px;
+$fixed-w-sm: 750px;
+
+/* GUTTER */
+$gutter: 15px;
+
+$test: 12px;

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="">
+
+<title>Overgrowth | Workshop</title>
+
+<!-- minified css -- see assets/css for og files -->
+
+<link href="public/css/application.min.css" rel="stylesheet">
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+</head>
+    
+<body>
+
+
+<div class="poster-bg lazy"  data-original="public/images/poster.jpg">
+</div>
+
+ <div class="site-wrapper">
+
+  
+          <div class="link-content" id="show-main-content-link">
+            <p class="action-txt">Scroll or click for content</p>
+          </div>
+        
+          <div id="main-content" class="container-fluid">
+              <div class="row">
+                <div class="col-md-6">.col-md-6</div>
+                <div class="col-md-6">.col-md-6</div>
+              </div>
+          </div>
+
+
+      
+
+      </div>    
+    
+<script src="public/js/vendor.min.js"></script>
+<script src="public/js/application.min.js"></script>
+
+<script>
+$(function() {
+    //load and fadein bg image
+    $("div.lazy").lazyload({
+    effect : "fadeIn",
+      effectspeed: 1500 
+    })
+
+    //on scroll or click, show content idv
+    $(document).click(function() {
+        showContent();
+    })
+    
+    $(document).scroll(function() {
+      showContent();
+    });
+
+
+ }) //end page ready function
+
+//functions
+function showContent(){
+    if($('#main-content').is(':hidden')) {
+          $("#show-main-content-link").fadeOut( 100, function(){
+             $( "#main-content" ).fadeIn( 200, function(){
+               
+             } );
+          } );
+       
+      
+    }
+}
+
+</script>
+<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</body>
+</html>

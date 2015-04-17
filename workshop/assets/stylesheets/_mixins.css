@@ -1,0 +1,37 @@
+/*
+Set Border radious for any element
+@include border-radius(0px);
+--------------------- */
+/*
+opacity filter with x-browser fallback
+@include opacity(.9);
+--------------------- */
+/*
+Truncate text
+--------------------- */
+/*
+Transform
+@include transform(translateY(-50%));
+--------------------- */
+/*
+Background size with broswer prefix for cover image
+@include cover-background(path/to/img.jpg);
+--------------------- */
+/*
+Background size with broswer prefix for cover
+@include background-cover(cover);
+--------------------- */
+/*
+CSS Arrow Shape
+@include arrow-right(10px, $blue);
+--------------------- */
+/*
+Positioning - Absolute / Fixed / Relative
+Set position (top, right, bottom, left ) & z-index
+@include absolute($t:50%, $l:0, $z: 9999);
+@include relative;
+--------------------- */
+/*
+Firefox hack for images with opacity changes
+@include ff-hack;
+--------------------- */

@@ -1,0 +1,7 @@
+/* HERO SLIDER */
+#fullscreen_slider {
+  border: none;
+  overflow: hidden;
+  margin: 0px; }
+  #fullscreen_slider .flex-control-nav {
+    bottom: 0; }
