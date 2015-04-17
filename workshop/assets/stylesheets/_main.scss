@@ -60,6 +60,7 @@ html,
 body {
   height: 100%;
   background-color: #333;
+
 }
 body {
   color: #fff;
@@ -67,7 +68,11 @@ body {
  //  padding-top: $gutter*2;
   font-family: $body-font;
   font-weight: 300;
+   min-width: 320px;
+}
 
+.container-fluid {
+ min-width: 320px;
 }
 
 strong {font-weight: 500;}
@@ -75,18 +80,35 @@ strong {font-weight: 500;}
 #main-content {
     display: none;
     background-color: rgb(219, 213, 182);
-    height: 90%;
-    margin: 40px 46px 48px 46px;
-     color: $drk-txt;
-    text-align:justify;
-    padding: 73px 25px;
-     overflow-y: scroll;
+    height: 96%;
+  margin: 10px 0px 8px 0px;
+  color: #22282a;
+  text-align: justify;
+  padding: 33px 15px;
+  overflow-y: scroll;
+  overflow-x: hidden;
   
     a {
          color: $drk-txt;
          text-decoration: none;
     }
+    
+    a:hover {
+    
+    }
 }
+
+
+.top-pad10 {
+    padding-top: 20px;
+}
+
+.ologo {  position: relative;
+  top: 12px;
+  right: 35px;}
+
+.elogo {position: relative;
+  top: 4px;}
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .poster-bg {
@@ -159,11 +181,23 @@ font-weight: 500;
  text-transform: uppercase;
 }
 
+.signup-head-txt {
+    font-size: 28px;    
+    font-weight: 500;
+    text-align: center;
+}
+
+.spaced {letter-spacing: 4px; display: block;}
+
 .body-txt p {
-        font-size: 16px;
+        font-size: 14px;
       font-weight: 300;
       letter-spacing: .3px;
     }
+
+.heightspacer100 {height:70px;}
+
+.rewards {margin-top: 10px;}
 
 p.small-header-txt {
   font-size: 12.5px;
@@ -185,7 +219,47 @@ top: 80%;
 height: 100px;
 }
 
+#thankyou {display:none;}
 
+label.valid {display: none !important;}
+
+
+::-webkit-input-placeholder {
+   color:  $drk-txt !important
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color:  $drk-txt !important
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color:  $drk-txt !important
+}
+
+:-ms-input-placeholder {  
+   color:  $drk-txt !important
+}
+
+.white-popup-block {
+  position: relative;
+  
+  padding: 20px;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  color: $drk-txt;
+}
+
+.mfp-content { 
+    background-color: rgba(219, 213, 182, .88);  
+    height: 100%;
+}
+
+label {
+   
+  margin-bottom: 10px !important;
+  font-weight: 600 !important;
+}
 
 .box-a, {
   padding: 7px 23px 5px 23px;
@@ -201,20 +275,77 @@ height: 100px;
   display: inline-block;
 }
 
+#mc-form input, #mc-form input:focus, button.box-a,.form-control:focus {
+border: 2px  $drk-txt solid;
+    border-color: $drk-txt;
+  background-color: transparent;
+  padding: 7px;
+  margin: 0px;
+  width: 100%;
+     color: $drk-txt;
+      font-weight: 400;
+    font-size: 12.5px;
+     box-shadow: none;
+    border-radius: 0;
+}
+
+
+.has-error .form-control, .has-error .form-control:focus  {
+ border: 2px  #a94442 solid !important;
+ border-color: #a94442;
+ box-shadow: none;
+      border-radius: 0;
+}
+
+.form-control {height:auto;}
+
 /*
  * Affix and center
  */
 
+.inline {display: inline-block}
+ .mobile-hide, .mobile-hide-inline {display: none;}    
+ .mobile-show {display: block;} 
+
 @media (min-width: 768px) {
-  
+ //above mobile size
+    
+    .signup-head-txt {
+    font-size: 28px;    
+   
+    text-align: left;
+}
+
+    .spaced {display: inline;}
+    
+    .body-txt p {
+        font-size: 16px;
+     
+    }
+    
+    #main-content {
+     display: none;
+    background-color: rgb(219, 213, 182);
+    height: 90%;
+    
+     color: $drk-txt;
+    text-align:justify;
+    padding: 73px 10px;
+    margin: 40px 46px 48px 46px;
+    
+}
+    
+    
+ .mobile-hide {display: block;}   
+    .mobile-hide-inline {display: inline-block;}   
+    .mobile-show {display: none;}    
+    
   /* Start the vertical centering */
   .site-wrapper-inner {
     vertical-align: middle;
   }
     
-    #main-content {
-     padding: 73px 10px 
-    }
+   
 
 }
 

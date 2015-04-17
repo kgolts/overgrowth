@@ -39,12 +39,13 @@
           </div>
         
         
-          <div class="row body-txt" id="main-content">
+         <div id="main-content">
+          <div class="row body-txt">
             <div class="col-sm-1"></div>
-            <div class="col-sm-4">
+            <div class="col-sm-5">
                 <p class="small-header-txt">PLEDGE</p>
-                <p class="three-txt">$3,000</p>
-                <p class="body-txt">Friends! For the past two years we have been exploring beauty through Overgrowth and the world we’ve been creating is so close to becoming a reality. But before reach our final goal, we want to do something really special by bringing you into the project through an exclusive workshop!</p>
+                <p class="three-txt heightspacer100">$3,000</p>
+                <p>Friends! For the past two years we have been exploring beauty through Overgrowth and the world we’ve been creating is so close to becoming a reality. But before reach our final goal, we want to do something really special by bringing you into the project through an exclusive workshop!</p>
 
                 <p>This August, in a beautiful location on the coast of the Pacific Northwest, we’ll spend three days and three nights fully immersed in the Overgrowth world and each day we'll be taking you on a step-by-step tour of how we do what we do—no questions will be off limits.</p>
 
@@ -52,21 +53,100 @@
 
                 <p>On top of all this, master photographer and friend Ryan Muirhead will be guest speaking during the weekend and will be there all three days providing instruction.</p>
                 
-                <a href="#" class="box-a">Early Sign Up</a>
+                <a href="#mc-form" id="formpop2" class="box-a mobile-show">Early Sign Up</a>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-5">
                 <p class="small-header-txt">REWARDS</p>
-                <img src="http://overgrowth.dev/workshop/public/images/icons.png" class="fullwidth" />
+                <p class="heightspacer100"><img src="public/images/icons.png" class="img-responsive rewards" /></p>
+                <p>Best of all, you'll be the first to receive the entire complete finished Overgrowth project and your name will go on a special page in the front of the book forever marking you as a dedicated and honored supporter.</p>
+
+<p>This weekend is for everybody from beginners to professionals. No matter what your skill level coming in, we want you to leave as a better artist. And by being a part of our workshop, you’ll be helping us make Overgrowth come true. But most importantly to us, we'll all be parting as friends. </p>
+
+<p><strong>Spots are very limited (only ten!) so sign up early by filling out the form below. Those who do will be emailed a special link on April 29th in order to complete the purchase of their tickets before the Kickstarter officially launches. Don't miss this opportunity!</strong></p>
+
+<p>Come help us celebrate the culmination of almost two full years of work! You are Overgrowth's final key element, and we're excited to have you with us!</p>
               
             </div>
             <div class="col-sm-1"></div>
+              
+            
           </div>
-          
+             
+      <div class="footer row">
+           <div class="col-sm-1"></div>
+          <div class="col-sm-3">
+           <a href="#mc-form" class="box-a mobile-hide-inline" id="formpop">Early Sign Up</a>
+           
+          </div>
+           <div class="col-sm-4 text-center top-pad10">
+               <p class="small-header-txt inline"><a href="#faq">FAQ</a> &nbsp; &nbsp;</p> 
+               <p class="small-header-txt inline"><a href="#contact">CONTACT</a></p>
+          </div>
+           <div class="col-sm-3 text-right">
+          <img src="public/images/overgrowth-logo.png" class="ologo">
+                <img src="public/images/editions-logo.png" class="elogo">
+          </div>
+            <div class="col-sm-1"></div>
+     </div> 
+             
+     </div>
 
-
-      
+   
 
       </div>    
+  
+ <!-- popup form -->
+
+   <form id="mc-form" action="//ransomltd.us10.list-manage.com/subscribe/post-json?u=0cf8103d5f160a55ecd8465cb&amp;id=5c3abecef4&c=?" method="get" class="white-popup-block mfp-hide"  role="form">
+       
+       
+       
+        <fieldset style="border:0;" id="formcontent">  
+        <div class="container-liquid">
+            
+        <div class="row">
+             <div class="col-sm-12">
+            <p class="signup-head-txt"><span class="spaced">WORKSHOP</span> Sign Up</p> 
+            </div>
+        </div>    
+         <div class="row">    
+             <div class="col-sm-3 form-group">
+                 
+                 <input id="mc-name" class="form-control" type="text" placeholder="Name (Required)" name="NAME" required>
+                   <label for="mc-name" class="control-label"></label>
+             </div>
+             <div class="col-sm-3 form-group">
+                <input id="mc-email"  lass="form-control" type="email" placeholder="Email" name="EMAIL" required>
+                <label for="mc-email" class="control-label"></label>
+             </div>
+             <div class="col-sm-3 form-group">
+                <input id="mc-address" lass="form-control" name="ADDRESS" type="text" placeholder="Address  (Required)" required>
+                <label for="mc-address" class="control-label"></label>
+             </div>
+            </div>
+            
+             <div class="row">    
+             <div class="col-sm-3">
+                 <input id="mc-instagram" type="text" placeholder="Instagram (Optional)" name="INSTAGRAM">
+                <label for="mc-instagram"></label>
+             </div>
+             <div class="col-sm-3">
+                <input id="mc-profession" type="text" placeholder="Profession  (Optional)" name="PROFESSION">
+                <label for="mc-profession"></label>
+             </div>
+             <div class="col-sm-3">
+                <button type="submit" class="box-a">Send</button>
+             </div>
+            </div>
+            
+        </div>
+            
+        </fieldset>
+       
+       <div id="thankyou">Thanks!</div>
+       
+      </form>
+
     
 <script src="public/js/vendor.min.js"></script>
 <script src="public/js/application.min.js"></script>
@@ -81,18 +161,88 @@ $(function() {
     
 
     //on scroll or click, show content idv
-    $(document).click(function() {
+    $(window).click(function() {
         showContent();
     })
     
-   // $(document).scroll(function() {
-//      showContent();
-  //  });
+    $(window).scroll(function() {
+     showContent();
+    });
+    
+    $('#formpop,#formpop2').magnificPopup({
+      type:'inline',
+      midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+    });
 
-
+    
+   
+    $('#mc-form').validator().on('submit', function (e) {
+  if (e.isDefaultPrevented()) {
+      alert('invalid form');
+    // handle the invalid form...
+  } else {
+      e.preventDefault();
+       var $form = $('form');
+       register($form);
+//       $('#mc-form').ajaxChimp({
+//        url: '//ransomltd.us10.list-manage.com/subscribe/post?u=0cf8103d5f160a55ecd8465cb&amp;id=5c3abecef4',
+//       callback: callbackFunction
+//    });
+  }
+})
+    
+    
+ 
  }) //end page ready function
 
 //functions
+
+function register($form) {
+    
+var data = {};
+    var dataArray = $form.serializeArray();
+    $.each(dataArray, function (index, item) {
+        data[item.name] = item.value;
+    });
+    
+    $.ajax({
+       
+        url: $form.attr('action'),
+        data: data,
+        cache       : false,
+        dataType    : 'jsonp',
+        
+        error       : function(err) { alert("Could not connect to the registration server. Please try again later."); },
+        success     : function(data) {
+            if (data.result != "success") {
+                // Something went wrong, do something to notify the user. maybe alert(data.msg);
+                //console.log(data.msg);
+                showErrorMsg(data.msg);
+            } else {
+                // It worked, carry on...
+                showThankyouContent();
+            }
+        }
+    });
+}
+
+function callbackFunction (resp) {
+    console.log(resp);
+    if (resp.result === 'success') {
+        showThankyouContent();
+    }
+}
+
+    
+function showThankyouContent(){  
+          $("#formcontent").fadeOut( 50, function(){
+             $( "#thankyou" ).fadeIn( 200, function(){
+               
+             } );
+          } );
+       
+}    
+    
 function showContent(){
     if($('#main-content').is(':hidden')) {
           $("#show-main-content-link").fadeOut( 100, function(){
@@ -104,8 +254,13 @@ function showContent(){
       
     }
 }
+    
+    
 
 </script>
+    
+    
+    
 <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 </body>
 </html>

@@ -39,13 +39,16 @@
         
          // Misc Vendor Libraries
       'assets/vendor/jquery.easing/js/jquery.easing.js',
-        
+               'assets/vendor/retina.js/dist/retina.js',
+        'assets/vendor/magnific-popup/dist/jquery.magnific-popup.min.js',
+        'assets/vendor/bootstrap-validator/dist/validator.min.js',
+        'assets/vendor/ajaxchimp/jquery.ajaxchimp.min.js',
         // Lazy Load Assets unveil
         // 'assets/vendor/jquery.unveil/jquery.unveil.js',
         
-        'assets/vendor/jquery.lazyload/jquery.lazyload.js',
+        'assets/vendor/jquery.lazyload/jquery.lazyload.js'
         
-         'assets/vendor/retina.js/dist/retina.min.js'
+  
        
     ],
     appScripts: [
