@@ -41,7 +41,11 @@
       'assets/vendor/jquery.easing/js/jquery.easing.js',
         
         // Lazy Load Assets unveil
-        'assets/vendor/jquery.lazyload/jquery.lazyload.js'
+        // 'assets/vendor/jquery.unveil/jquery.unveil.js',
+        
+        'assets/vendor/jquery.lazyload/jquery.lazyload.js',
+        
+         'assets/vendor/retina.js/dist/retina.min.js'
        
     ],
     appScripts: [

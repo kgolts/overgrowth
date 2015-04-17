@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Meta, title, CSS, favicons, etc. -->
-    <meta charset="utf-8">
+<!-- Meta, title, CSS, favicons, etc. -->
+<meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
 <meta name="description" content="">
@@ -29,19 +29,39 @@
 <div class="poster-bg lazy"  data-original="public/images/poster.jpg">
 </div>
 
- <div class="site-wrapper">
+ <div class="site-wrapper container-fluid">
 
-  
-          <div class="link-content" id="show-main-content-link">
-            <p class="action-txt">Scroll or click for content</p>
+          <div class="row" id="show-main-content-link">
+            <div class="col-md-12 text-center">
+                <p class="workshop-txt">Workshop</p>
+                <p class="action-txt">Scroll <span class="lcase">or</span> click for content</p>
+             </div>
           </div>
         
-          <div id="main-content" class="container-fluid">
-              <div class="row">
-                <div class="col-md-6">.col-md-6</div>
-                <div class="col-md-6">.col-md-6</div>
-              </div>
+        
+          <div class="row body-txt" id="main-content">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-4">
+                <p class="small-header-txt">PLEDGE</p>
+                <p class="three-txt">$3,000</p>
+                <p class="body-txt">Friends! For the past two years we have been exploring beauty through Overgrowth and the world we’ve been creating is so close to becoming a reality. But before reach our final goal, we want to do something really special by bringing you into the project through an exclusive workshop!</p>
+
+                <p>This August, in a beautiful location on the coast of the Pacific Northwest, we’ll spend three days and three nights fully immersed in the Overgrowth world and each day we'll be taking you on a step-by-step tour of how we do what we do—no questions will be off limits.</p>
+
+                <p>We’ll be teaching you everything from <strong>constructing scenes, understanding light, botanical and floral design and model direction to color theory, cameras and film.</strong> Food, drinks and lodging are also included!</p>
+
+                <p>On top of all this, master photographer and friend Ryan Muirhead will be guest speaking during the weekend and will be there all three days providing instruction.</p>
+                
+                <a href="#" class="box-a">Early Sign Up</a>
+            </div>
+            <div class="col-sm-4">
+                <p class="small-header-txt">REWARDS</p>
+                <img src="http://overgrowth.dev/workshop/public/images/icons.png" class="fullwidth" />
+              
+            </div>
+            <div class="col-sm-1"></div>
           </div>
+          
 
 
       
@@ -58,15 +78,16 @@ $(function() {
     effect : "fadeIn",
       effectspeed: 1500 
     })
+    
 
     //on scroll or click, show content idv
     $(document).click(function() {
         showContent();
     })
     
-    $(document).scroll(function() {
-      showContent();
-    });
+   // $(document).scroll(function() {
+//      showContent();
+  //  });
 
 
  }) //end page ready function
